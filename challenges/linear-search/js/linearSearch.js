@@ -1,8 +1,3 @@
-// const arrayToSearchThrough = []; // empty list
-// for (let i = 1; i <= 1000; i++) { // pushes 1 . . 1,000 into list
-//     arrayToSearchThrough.push(i);
-// }
-
 exports.linearSearch = function (valueToFind, arrayToSearchThrough) {
     let index = 0;
     for (let i = 0; i <= arrayToSearchThrough.length; i++) {
@@ -12,5 +7,17 @@ exports.linearSearch = function (valueToFind, arrayToSearchThrough) {
         index++;
     }
     return undefined;
+};
+
+exports.linearSearchGlobal = function (valueToFind, arrayToSearchThrough) {
+    let resultArray = [];
+    let index = 0;
+    for (let i = 0; i <= arrayToSearchThrough.length; i++) {
+        if (valueToFind === arrayToSearchThrough[i]) {
+            resultArray.push(index);
+        }
+        index++;
+    }
+    return resultArray;
 };
 

@@ -7,7 +7,7 @@ console.log(fib.fibonacci(8) === 21)
 console.log(fib.fibonacci(11) === 89)
 console.log(fib.fibonacci(14) === 377)
 console.log(fib.fibonacci(17) === 1597)
-console.log(fib.fibonacci(20) === 6765)
+console.log(fib.fibonacci(7) === 13)
 
 
 

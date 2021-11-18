@@ -9,6 +9,7 @@ def linear_search(value_to_find, array_to_search_through):
         if value == value_to_find:
             return index
         index += 1
+    return None
 
 
 def global_linear_search(value_to_find, array_to_search_through):

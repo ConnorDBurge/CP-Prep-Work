@@ -3,12 +3,6 @@ const { detect, expect, test } = require('@jest/globals')
 
 // run test cases using 'npm run test'
 
-test('returns a list object', () => {
-    received = sp.sumPairs([0], 0)
-    expected = Array
-    expect(received).toBeInstanceOf(expected)
-})
-
 test('test an empty list', () => {
     received = sp.sumPairs([], 20)
     expected = 'unable to find pairs'

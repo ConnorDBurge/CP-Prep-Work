@@ -1,15 +1,13 @@
 def credit_check(string):
-    result = 'The number is invalid!'
+    credit_numbers = to_list(string)  # converts string to list of digits
+    two_list = times_two(credit_numbers)  # doubles each digit in list
+    final_list = sum_gt_9(two_list)  # numbers > 9 sum of its own digits
+    sum = sum_all(final_list)  # get sum  of numbers in list
 
-    credit_numbers = to_list(string)
-    two_list = times_two(credit_numbers)
-    final_list = sum_gt_9(two_list)
-    sum = sum_all(final_list)
-
-    if sum % 10 == 0:
+    if sum % 10 == 0:  # check validity
         return 'The number is valid!'
 
-    return result
+    return 'The number is invalid!'
 
 
 def to_list(credit_card_numbers):

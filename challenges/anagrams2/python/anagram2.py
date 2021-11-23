@@ -10,8 +10,7 @@ def is_character_match(string1, string2):  # Performs anagram test
         for char in string1Split:
             if char not in string2Split:
                 return False  # false when different char is found
-            else:
-                return True
+        return True
 
     # returns if strings are not equal size
     return False

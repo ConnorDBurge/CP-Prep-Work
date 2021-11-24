@@ -5,7 +5,6 @@ __pycache__/
 # Ignore Logs
 logs
 *.log
-package-lock-json
 
 # Ignore the build directory
 /dist

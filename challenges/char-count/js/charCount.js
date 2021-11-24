@@ -1,15 +1,12 @@
 const charCount = (str) => {
-    const counts = {}
-    const letters = str.split('').filter((char) => {
+    const counts = {} // creates empty object
+    const letters = str.split('').filter((char) => { // splits string into list of characters
         return char !== ' '
     })
-    for (let char of letters) {
-        counts[char] += 1
-        if (isNaN(counts[char])) {
-            counts[char] = 1
-        }
+    for (let char of letters) { // adds characters to object with count
+        counts[char] = isNaN(counts[char]) ? 1 : counts[char] += 1
     }
-    return counts
+    return counts // returns the final object
 };
 
 module.exports = { charCount }

@@ -22,7 +22,7 @@ class PalindromeTestCase(unittest.TestCase):
         self.assertEqual(received, True)
 
     def test_return_true_4(self):
-        received = palindrome(434)
+        received = palindrome(404)
         self.assertEqual(received, True)
 
     def test_return_true_5(self):

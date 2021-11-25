@@ -1,8 +1,22 @@
 from balance_parens import balance_parens
+import unittest
 
-# Add more test cases!...
-print(balance_parens("abc(d)e(fgh))(i)j)k") == "abc(d)e(fgh)(i)jk")
-print(balance_parens("abc((d)e(fgh)(i)j(k") == "abc(d)e(fgh)(i)jk")
 
-# Challenge: nested parentheses...
-print(balance_parens("abc(d)(ef(g(h))ij)k)lm()o)p") == "abc(d)(ef(g(h))ij)klm()op")
+class BalanceParen(unittest.TestCase):
+    'Unittest BalanceParen.py'
+
+    def test_return_type(self):
+        received = balance_parens('abc(d)e(fgh))(i)j)k')
+        self.assertIsInstance(received, str)
+
+    def test_return_correct_1(self):
+        received = balance_parens('(()()(')
+        self.assertEqual(received, '()()')
+
+    def test_return_correct_2(self):
+        received = balance_parens('abc(d)e(fgh))(i)j)k')
+        self.assertEqual(received, 'abc(d)e(fgh)(i)jk')
+
+
+if __name__ == '__main__':
+    unittest.main()

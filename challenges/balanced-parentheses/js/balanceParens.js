@@ -1,5 +1,4 @@
-balanceParens = (str) =>
-{
+balanceParens = (str) => {
 
 }
 

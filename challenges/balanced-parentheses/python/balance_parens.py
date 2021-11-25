@@ -1,24 +1,28 @@
 def balance_parens(str):
     balanced = ''
-    hold = list()
+    open_parens_index = list()
+    # loop through entire string
+    for char in str:
+        # if we have a open parentheses, then we MAY have a close parentheses
+        if char == '(':
+            open_parens_index.append(len(balanced))  # add index to track
 
-    for x in str:
-        if not(x == '(' or x == ')'):
-            balanced += x  # adds non parentheses to output
+        # if we have a close parentheses, check if we have open parentheses
+        elif char == ')':
+            if len(open_parens_index) > 0:  # if there is an open
+                open_parens_index.pop()  # remove open index
+            else:
+                continue  # skips closing parentheses
 
-        elif (x == '('):
-            balanced += x  # adds open parentheses to output
-            hold.append(len(balanced)-1)
+        balanced += char  # append '(' and '[a-zA-Z0-9]'
 
-        elif (x == ')'):
-            if hold != []:
-                hold.pop()
-                balanced += x
+    if (len(open_parens_index) == 0):
+        return balanced
 
-    if len(hold) > 0:
-        count = 0
-        for x in hold:
-            balanced = balanced[0:x-count] + balanced[(x-count+1):]
-            count += 1
+    fully_balanced = ''
+    for i, char in enumerate(balanced):  # remove any extra open paras
+        if i not in open_parens_index:
+            fully_balanced += char
 
-    return balanced
+    #  return value will be a string
+    return fully_balanced

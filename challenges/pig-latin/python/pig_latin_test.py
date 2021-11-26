@@ -7,24 +7,69 @@ class PigLatinTestCase(unittest.TestCase):
 
     def test_return_type(self):
         'Returns a string'
-        received = PigLatin('apple')
-        self.assertIsInstance(received.__str__(), str)
+        received = PigLatin('apple').__str__()
+        self.assertIsInstance(received, str)
+
+    def test_return_correct_1(self):
+        'Returns an empty string'
+        received = PigLatin('').__str__()
+        expected = ''
+        self.assertEqual(received, expected)
+
+    def test_return_correct_2(self):
+        'Returns correct string'
+        received = PigLatin('apple').__str__()
+        expected = 'appleay'
+        self.assertEqual(received, expected)
+
+    def test_return_correct_3(self):
+        'Returns correct string'
+        received = PigLatin('banana').__str__()
+        expected = 'ananabay'
+        self.assertEqual(received, expected)
+
+    def test_return_correct_4(self):
+        'Returns correct string'
+        received = PigLatin('cherry').__str__()
+        expected = 'errychay'
+        self.assertEqual(received, expected)
+
+    def test_return_correct_5(self):
+        'Returns correct string'
+        received = PigLatin('eat pie').__str__()
+        expected = 'eatay iepay'
+        self.assertEqual(received, expected)
+
+    def test_return_correct_6(self):
+        'Returns correct string'
+        received = PigLatin('three').__str__()
+        expected = 'eethray'
+        self.assertEqual(received, expected)
+
+    def test_return_correct_7(self):
+        'Returns correct string'
+        received = PigLatin('school').__str__()
+        expected = 'oolschay'
+        self.assertEqual(received, expected)
+
+    def test_return_correct_8(self):
+        'Returns correct string'
+        received = PigLatin('quiet').__str__()
+        expected = 'uietqay'
+        self.assertEqual(received, expected)
+
+    def test_return_correct_9(self):
+        'Returns correct string'
+        received = PigLatin('the quick brown fox').__str__()
+        expected = 'ethay uickqay ownbray oxfay'
+        self.assertEqual(received, expected)
+
+    def test_return_correct_10(self):
+        'Returns correct string'
+        received = PigLatin('The Quick Brown Fox').__str__()
+        expected = 'Ethay Uickqay Ownbray Oxfay'
+        self.assertEqual(received, expected)
 
 
 if __name__ == '__main__':
     unittest.main()
-
-
-# print(f"translates a word beginning with a vowel: {translate('apple') == 'appleay'}")
-# print(f"translates a word beginning with a consonant: {translate('banana') == 'ananabay'}")
-# print(f"translates a word beginning with two consonants: {translate('cherry') == 'errychay'}")
-# print(f"translates two words: {translate('eat pie') == 'eatay iepay'}")
-# print(f"translates a word beginning with three consonants: {translate('three') == 'eethray'}")
-# print(f"counts 'sch' as a single phoneme: {translate('school') == 'oolschay'}")
-# print(f"counts 'qu' as a single phoneme: {translate('quiet') == 'ietquay'}")
-# print(f"counts 'qu' as a consonant even when it's preceded by a consonant: {translate('square') == 'aresquay'}")
-# print(f"translates many words: {translate('the quick brown fox') == 'ethay ickquay ownbray oxfay'}")
-
-# write a test asserting that capitalized words are still capitalized
-# (but with a different initial capital letter, of course) retain the
-# punctuation from the original phrase

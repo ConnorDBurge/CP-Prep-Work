@@ -12,12 +12,7 @@ class WordGuess:
 
     def create_modes():
         word_modes = dict()  # create empty dictionary
-        with open('words.csv', 'r') as word_file:
-            file_reader = csv.reader(word_file)  # split line into list
-            for line in file_reader:
-                last_index = len(line)  # find last index
-                # adds [0] as key and uses index[1..last index] as list of words
-                word_modes[line[0]] = line[1:last_index]
+
         return word_modes  # returns a dictionary object
 
     def __init__(self, debug=False):
@@ -25,7 +20,11 @@ class WordGuess:
         self.debug = debug
 
         # possible words, created once during construction of WordGuess object
-        self.words = WordGuess.create_modes()
+        self.words = {}
+        with open('words.csv') as word_file:
+            file_reader = csv.reader(word_file)  # split line into list
+            for line in file_reader:
+                self.words[line[0]] = line[1:]
 
         # ask the user to set the game mode
         self.mode = self.set_mode()

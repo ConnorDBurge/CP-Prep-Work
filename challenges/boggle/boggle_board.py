@@ -7,6 +7,14 @@ class BoggleBoard:
         self.board = [["•"] for _ in range(16)]  # create a new board
         self.show_board()
 
+    def show_board(self):
+        print('-------------')
+        for i, cell in enumerate(self.board):
+            print(f'{cell[0]:<3} ', end='')
+            if (i + 1) % 4 == 0:  # every 4 cells, add new row
+                if not i > 12:  # don't add new line after 4th row
+                    print('\n')
+
     def shake(self):
         dice_sides = [
             ['A', 'A', 'E', 'E', 'G', 'N'], ['E', 'L', 'R', 'T', 'T', 'Y'],
@@ -25,13 +33,15 @@ class BoggleBoard:
         self.show_board()
         return self.board
 
-    def show_board(self):
-        print('-------------')
+    def includes_word(self, word):
+        word_chars = [char.upper() for char in word]
+        board_chars = []
         for i, cell in enumerate(self.board):
-            print(f'{cell[0]:<3} ', end='')
-            if (i + 1) % 4 == 0:  # every 4 cells, add new row
-                if not i > 12:  # don't add new line after 4th row
-                    print('\n')
+            board_chars.append(self.board[i][0])
+        for i, char in enumerate(word_chars):
+            if not word_chars[i] in board_chars:
+                return False
+        return True
 
 
 board = BoggleBoard()
@@ -42,4 +52,4 @@ while True:
     elif selection == 'q':
         break
     else:
-        selection = None
+        print(board.includes_word(selection))

@@ -25,13 +25,12 @@ class BubbleSort:
 
     # Other solution
     def bubble_sort(self, sequence):
-        swapped = True
-        swaps = 0
-        while swapped:
-            swapped = False
-            for i in range(len(sequence) - swaps - 1):
-                if sequence[i] > sequence[i + 1]:
+        swapped = True  # flag to resort array
+        while swapped:  # stays true if swaps > 0
+            swapped = False  # set False, change to true when 'if' below is True
+            # i stops at second to last index, so 'i + 1' doesn't throw an IndexOutOfBounds Error
+            for i in range(len(sequence) - 1):
+                if sequence[i] > sequence[i + 1]:  # [0] > [1] during first iteration
                     sequence[i], sequence[i + 1] = sequence[i + 1], sequence[i]
-                    swapped = True
-            swaps += 1
-        return sequence
+                    swapped = True  # flags True to stay in while loop
+        return sequence  # returns sequence sorted in place

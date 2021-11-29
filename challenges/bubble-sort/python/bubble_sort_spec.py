@@ -15,14 +15,14 @@ class TestBubbleSort(unittest.TestCase):
         self.assertEqual(self.sort1.sorted, expected)
 
     def test_correct_num_of_swaps_sort_1(self):
-        self.assertEqual(self.sort1.swaps, 7)
+        self.assertEqual(self.sort1.iterations, 4)
 
     def test_correct_sort_2(self):
         expected = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         self.assertEqual(self.sort2.sorted, expected)
 
     def test_correct_num_of_swaps_sort_2(self):
-        self.assertEqual(self.sort2.swaps, 45)
+        self.assertEqual(self.sort2.iterations, 10)
 
 
 if __name__ == '__main__':

@@ -8,12 +8,22 @@ class BoggleBoardUnittest(unittest.TestCase):
         'Creates a new blank board'
         received = BoggleBoard()  # new BoggleBoard
         expected = [
-            ['_', '_', '_', '_'],
-            ['_', '_', '_', '_'],
-            ['_', '_', '_', '_'],
-            ['_', '_', '_', '_']
+            ['•'], ['•'], ['•'], ['•'],
+            ['•'], ['•'], ['•'], ['•'],
+            ['•'], ['•'], ['•'], ['•'],
+            ['•'], ['•'], ['•'], ['•']
         ]
         self.assertEqual(received.board, expected)
+
+    def test_random_seed(self):
+        received = BoggleBoard(4)  # new BoggleBoard
+        expected = [
+            ['A'], ['R'], ['A'], ['O'],
+            ['T'], ['O'], ['I'], ['E'],
+            ['D'], ['A'], ['N'], ['S'],
+            ['G'], ['A'], ['L'], ['R']
+        ]
+        self.assertEqual(received.shake(), expected)
 
 
 if __name__ == '__main__':

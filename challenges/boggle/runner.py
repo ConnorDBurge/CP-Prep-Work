@@ -1,6 +1,6 @@
 from boggle_board import BoggleBoard
 
-board = BoggleBoard(4)
+board = BoggleBoard()
 board.print_board()
 while True:
     selection = input()

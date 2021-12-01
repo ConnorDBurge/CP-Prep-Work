@@ -27,6 +27,7 @@ class BoggleBoard:
             ['E', 'E', 'G', 'H', 'N', 'W'], ['A', 'F', 'F', 'K', 'P', 'S'],
             ['H', 'L', 'N', 'N', 'R', 'Z'], ['D', 'E', 'I', 'L', 'R', 'X']]
 
+        random.shuffle(dice_sides)
         for i, _ in enumerate(self.board):
             self.board[i][0] = random.choice(dice_sides[i])
             self.board[i][0] = 'Qu' if self.board[i][0] == 'Q' else self.board[i][0]

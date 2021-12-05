@@ -1,5 +1,5 @@
 from .component import Component
 
 
-class Personal(Component):
+class Income(Component):
     pass

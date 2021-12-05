@@ -12,6 +12,8 @@ class Budget:
         self.expenses = {}
         self.transactions = []
         self.read_transaction_file()
+        for transaction in self.transactions:
+            print(transaction.__dict__)
 
     def read_transaction_file(self):
         my_path = os.path.abspath(os.path.dirname(__file__))
@@ -20,6 +22,9 @@ class Budget:
             reader = csv.DictReader(file)
             for line in reader:
                 self.transaction(**line)
+
+    def write_transaction_file(self):
+        pass
 
     def transaction(self, category, name, amount):
         transaction = Transaction(category, name, amount)
@@ -32,6 +37,8 @@ class Budget:
             if category not in self.expenses:
                 self.expenses[category] = Category(category)
             self.expenses[category].transaction(name, amount)
+
+        self.write_transaction_file()
 
     def total_expenses(self):
         total_expenses = 0

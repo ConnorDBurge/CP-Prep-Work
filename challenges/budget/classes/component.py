@@ -1,4 +1,4 @@
-class Component:
+class Category:
 
     def __init__(self, category):
         self.category = category
@@ -15,8 +15,8 @@ class Component:
         self.total -= int(amount)
         return self.total
 
-    def __str__(self):
-        string = f'\n--------------------------------\n{self.category.upper():<21}$ {self.total:,.2f}'
+    def str(self, percent):
+        string = f'\n--------------------------------\n{self.category.upper() + f" - {percent:.0%}":<21}$ {self.total:,.2f}'
         for name, amount in self.dict.items():
             string += f'\n{name:<21}$ {amount:,.2f}'
         return string

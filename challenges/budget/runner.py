@@ -7,5 +7,11 @@ budget.increse_transaction('income', 'Salary 2', '1317')
 
 budget.increse_transaction('bills', 'Cox', '178')
 budget.increse_transaction('bills', 'Verizon', '103')
+budget.reduce_transaction('bills', 'Cox', '134')
+
+budget.increse_transaction('food', 'Grocery', '420')
+budget.increse_transaction('food', 'Restaurant', '60')
+
+budget.increse_transaction('transportation', 'Gas', '220')
 
 print(str(budget))

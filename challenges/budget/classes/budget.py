@@ -1,36 +1,45 @@
-from classes.component import Component
+from classes.component import Category
 
 
 class Budget:
 
     def __init__(self, month):
         self.month = month
-        self.income = Component('income')
-        self.bills = Component('bills')
-        self.food = Component('food')
-        self.health = Component('health')
-        self.lifestyle = Component('lifestyle')
-        self.personal = Component('personal')
-        self.transportation = Component('transportation')
+        self.income = Category('income')
+        self.bills = Category('bills')
+        self.food = Category('food')
+        self.health = Category('health')
+        self.lifestyle = Category('lifestyle')
+        self.personal = Category('personal')
+        self.transportation = Category('transportation')
 
     def increse_transaction(self, category, name, amount):
         if category == 'income':
             self.income.increase(name, amount)
         elif category == 'bills':
             self.bills.increase(name, amount)
+        elif category == 'food':
+            self.food.increase(name, amount)
+        elif category == 'health':
+            self.health.increase(name, amount)
+        elif category == 'personal':
+            self.personal.increase(name, amount)
+        elif category == 'transportation':
+            self.transportation.increase(name, amount)
 
     def reduce_transaction(self, category, name, amount):
         if category == 'income':
             self.income.reduce(name, amount)
         elif category == 'bills':
-            print('hit')
             self.bills.reduce(name, amount)
-
-    def list_transactions(self, category):
-        if category == 'income':
-            print(str(self.income))
-        elif category == 'bills':
-            print(str(self.bills))
+        elif category == 'food':
+            self.food.reduce(name, amount)
+        elif category == 'health':
+            self.health.reduce(name, amount)
+        elif category == 'personal':
+            self.personal.reduce(name, amount)
+        elif category == 'transportation':
+            self.transportation.reduce(name, amount)
 
     def total_expenses(self):
         total_expenses = 0
@@ -59,7 +68,8 @@ class Budget:
             self.personal,
             self.transportation
         ]
-        string = f'\n{self.month.upper():<21}\n{"INCOME":<21}$ {self.income.total:,.2f}\n{"EXPENSES":<21}$ {self.total_expenses():,.2f}\n{"INCOME - EXPENSES":<21}$ {self.get_remaining():,.2f}'
+        string = f'\n{self.month.upper() + " BUDGET":<21}\n--------------------------------\n{"INCOME":<21}$ {self.income.total:,.2f}\n{"EXPENSES":<21}$ {self.total_expenses():,.2f}\n{"INCOME - EXPENSES":<21}$ {self.get_remaining():,.2f}'
         for expense in expenses:
-            string += str(expense)
+            percent = expense.total / self.income.total
+            string += expense.str(percent)
         return string

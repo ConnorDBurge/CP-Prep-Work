@@ -21,20 +21,25 @@ class Budget:
             for line in reader:
                 self.transaction(**line)
 
+    def save_transactions(self):
+        pass
+
     def transaction(self, category, name, amount):
         transaction = Transaction(category, name, amount)
         self.transactions.append(transaction)
 
         if category == 'income':
-            return self.income.transaction(name, amount)
+            self.income.transaction(name, amount)
 
         else:
             if category not in self.expenses:
                 self.expenses[category] = Category(category)
             self.expenses[category].transaction(name, amount)
 
+        return transaction
+
     def new_transaction(self, category, name, amount):
-        self.transaction(category, name, amount)
+        return self.transaction(category, name, amount)
 
     def total_expenses(self):
         total_expenses = 0

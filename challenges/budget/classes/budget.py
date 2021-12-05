@@ -5,6 +5,8 @@ import os
 
 
 class Budget:
+    my_path = os.path.abspath(os.path.dirname(__file__))
+    path = os.path.join(my_path, "data/transactions.csv")
 
     def __init__(self, month):
         self.month = month
@@ -14,21 +16,17 @@ class Budget:
         self.read_transaction_file()
 
     def read_transaction_file(self):
-        my_path = os.path.abspath(os.path.dirname(__file__))
-        path = os.path.join(my_path, "data/transactions.csv")
-        with open(path) as file:  # open file
+        with open(self.path) as file:  # open file
             reader = csv.DictReader(file)
             for line in reader:
                 self.transaction(**line)
 
     def new_transaction(self, category, name, amount):
         transaction = self.transaction(category, name, amount)
-        my_path = os.path.abspath(os.path.dirname(__file__))
-        path = os.path.join(my_path, "data/transactions.csv")
-        fields = [category, name, amount]
-        with open(path, 'a+', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(fields)
+        fields = ['category', 'name', 'amount']
+        with open(self.path, 'a+', newline='') as file:
+            writer = csv.DictWriter(file, fields)
+            writer.writerow(transaction.__dict__)
 
     def transaction(self, category, name, amount):
         transaction = Transaction(category, name, amount)

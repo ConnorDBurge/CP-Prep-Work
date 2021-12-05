@@ -29,7 +29,7 @@ class Category:
         return self.total
 
     def str(self, percent):
-        string = f'--------------------------------\n{self.name.upper() + f" - {percent:.0%}":<22}' + \
+        string = f'\n--------------------------------\n{self.name.upper() + f" - {percent:.0%}":<22}' + \
             f'$ {self.total:,.2f}'.rjust(10)
         for transaction in self.transactions:
             string += f'\n{transaction.name:<22}' + \

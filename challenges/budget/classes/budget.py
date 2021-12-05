@@ -20,13 +20,29 @@ class Budget:
         self.personal = Personal()
         self.savings = Savings()
         self.transportation = Transportion()
+        self.remaining_balance = 0
 
-    def add_new_income(self, name, amount):
-        self.income.add_new_income(name, amount)
+    def increase_income(self, name, amount):
+        self.income.increase_income(name, amount)
+        self.remaining_balance += int(amount)
         return self.income
 
-    def add_new_expense(self, category):
-        pass
+    def reduce_income(self, name, amount):
+        self.income.reduce_income(name, amount)
+        self.remaining_balance -= (self.remaining_balance - int(amount))
+        return self.income
+
+    def add_new_expense(self, category, name, amount):
+        switcher = {
+            'bill': self.bill.add_new_expense(name, amount),
+            'food': self.food.add_new_expense(name, amount),
+            'health': self.health.add_new_expense(name, amount),
+            'lifestyle': self.lifestyle.add_new_expense(name, amount),
+            'personal': self.personal.add_new_expense(name, amount),
+            'savings': self.savings.add_new_expense(name, amount),
+            'transportation': self.transportation.add_new_expense(name, amount)
+        }
+        return switcher.get(category)
 
     def get_monthly_expenses(self, category=None):
         pass

@@ -27,8 +27,9 @@ class TestBudget(unittest.TestCase):
 
     def test_return_income_dict(self):
         received = Budget('December')
-        received.income.add_new_income('Salary 1', '1317')
-        expected = {'Salary 1': 1317}
+        received.income.increase_income('Salary 1', '1317')
+        received.income.reduce_income('Salary 1', 1000)
+        expected = {'Salary 1': 1000}
         self.assertEqual(received.income.income_dict, expected)
 
     def test_return_type_bill(self):

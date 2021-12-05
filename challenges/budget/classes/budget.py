@@ -1,4 +1,5 @@
 from classes.component import Category
+from classes.transaction import Transaction
 import csv
 import os
 
@@ -7,8 +8,9 @@ class Budget:
 
     def __init__(self, month):
         self.month = month
-        self.income = None
+        self.income = Category('income')
         self.expenses = {}
+        self.transactions = []
         self.read_transaction_file()
 
     def read_transaction_file(self):
@@ -20,14 +22,16 @@ class Budget:
                 self.transaction(**line)
 
     def transaction(self, category, name, amount):
+        transaction = Transaction(category, name, amount)
+        self.transactions.append(transaction)
+
         if category == 'income':
-            if self.income is None:
-                self.income = Category(category)
             return self.income.transaction(name, amount)
 
-        if category not in self.expenses:
-            self.expenses[category] = Category(category)
-        self.expenses[category].transaction(name, amount)
+        else:
+            if category not in self.expenses:
+                self.expenses[category] = Category(category)
+            self.expenses[category].transaction(name, amount)
 
     def total_expenses(self):
         total_expenses = 0

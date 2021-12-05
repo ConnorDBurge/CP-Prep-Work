@@ -1,8 +1,7 @@
-from classes.budget import Budget
+from classes.transaction import Transaction
 
-budget = Budget('December')
-# budget.new_transaction('income', 'Salary 2', '1500')
-# budget.new_transaction('bills', 'Netflix', '4.99')
-# budget.new_transaction('health', 'Dentist', '215')
+transaction1 = Transaction('income', 'Salary 2', '1500')
+transaction2 = Transaction('bills', 'Cox', '178')
 
-print(str(budget))
+print(str(transaction1))
+print(str(transaction2))

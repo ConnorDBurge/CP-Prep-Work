@@ -10,8 +10,8 @@ budget.reduce_transaction('bills', 'Cox', '134')
 
 budget.increse_transaction('food', 'Grocery', '420')
 budget.increse_transaction('food', 'Restaurant', '60')
-budget.reduce_transaction('food', 'Grocery', '400')
 
 budget.increse_transaction('transportation', 'Gas', '220')
+budget.increse_transaction('transportation', 'Registration', '145')
 
 print(str(budget))

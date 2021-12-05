@@ -7,13 +7,19 @@ class Category:
 
     def increase(self, name, amount):
         self.dict[name] = int(amount)
-        self.total += int(amount)
+        self.total = self.sum()
         return self.total
 
     def reduce(self, name, amount):
         self.dict[name] = int(amount)
-        self.total -= int(amount)
+        self.total = self.sum()
         return self.total
+
+    def sum(self):
+        sum = 0
+        for item in self.dict.values():
+            sum += item
+        return sum
 
     def str(self, percent):
         string = f'\n--------------------------------\n{self.category.upper() + f" - {percent:.0%}":<22}' + \

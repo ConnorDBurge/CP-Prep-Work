@@ -1,4 +1,5 @@
 from classes.component import Category
+import csv
 
 
 class Budget:
@@ -7,26 +8,23 @@ class Budget:
         self.month = month
         self.income = None
         self.expenses = {}
+        self.read_transaction_file()
 
-    def increse_transaction(self, category, name, amount):
+    def read_transaction_file(self):
+        with open('/Users/connordburge/Desktop/CP-PrepWork/challenges/budget/classes/data/transactions.csv') as file:  # open file
+            reader = csv.DictReader(file)
+            for line in reader:
+                self.transaction(**line)
+
+    def transaction(self, category, name, amount):
         if category == 'income':
             if self.income is None:
                 self.income = Category(category)
-            return self.income.increase(name, amount)
+            return self.income.transaction(name, amount)
 
         if category not in self.expenses:
             self.expenses[category] = Category(category)
-        self.expenses[category].increase(name, amount)
-
-    def reduce_transaction(self, category, name, amount):
-        if category == 'income':
-            if self.income is None:
-                self.income = Category(category)
-            return self.income.reduce(name, amount)
-
-        if category not in self.expenses:
-            self.expenses[category] = Category(category)
-        self.expenses[category].reduce(name, amount)
+        self.expenses[category].transaction(name, amount)
 
     def total_expenses(self):
         total_expenses = 0

@@ -5,12 +5,7 @@ class Category:
         self.dict = {}
         self.total = 0
 
-    def increase(self, name, amount):
-        self.dict[name] = int(amount)
-        self.total = self.sum()
-        return self.total
-
-    def reduce(self, name, amount):
+    def transaction(self, name, amount):
         self.dict[name] = int(amount)
         self.total = self.sum()
         return self.total

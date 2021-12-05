@@ -21,8 +21,9 @@ class Budget:
         self.savings = Savings()
         self.transportation = Transportion()
 
-    def add_new_income(self, amount):
-        pass
+    def add_new_income(self, name, amount):
+        self.income.add_new_income(name, amount)
+        return self.income
 
     def add_new_expense(self, category):
         pass

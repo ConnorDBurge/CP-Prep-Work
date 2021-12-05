@@ -6,7 +6,7 @@ class Category:
         self.total = 0
 
     def transaction(self, name, amount):
-        self.dict[name] = int(amount)
+        self.dict[name] = float(amount)
         self.total = self.sum()
         return self.total
 

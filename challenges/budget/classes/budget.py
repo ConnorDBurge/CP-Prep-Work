@@ -1,30 +1,46 @@
 from classes.component import Category
+from classes.transaction import Transaction
 import csv
+import os
 
 
 class Budget:
+    my_path = os.path.abspath(os.path.dirname(__file__))
+    path = os.path.join(my_path, "data/transactions.csv")
 
     def __init__(self, month):
         self.month = month
-        self.income = None
+        self.income = Category('income')
         self.expenses = {}
+        self.transactions = []
         self.read_transaction_file()
 
     def read_transaction_file(self):
-        with open('/Users/connordburge/Desktop/CP-PrepWork/challenges/budget/classes/data/transactions.csv') as file:  # open file
+        with open(self.path) as file:  # open file
             reader = csv.DictReader(file)
             for line in reader:
                 self.transaction(**line)
 
-    def transaction(self, category, name, amount):
-        if category == 'income':
-            if self.income is None:
-                self.income = Category(category)
-            return self.income.transaction(name, amount)
+    def new_transaction(self, category, name, amount):
+        transaction = self.transaction(category, name, amount)
+        fields = ['category', 'name', 'amount']
+        with open(self.path, 'a+', newline='') as file:
+            writer = csv.DictWriter(file, fields)
+            writer.writerow(transaction.__dict__)
 
-        if category not in self.expenses:
-            self.expenses[category] = Category(category)
-        self.expenses[category].transaction(name, amount)
+    def transaction(self, category, name, amount):
+        transaction = Transaction(category, name, amount)
+        self.transactions.append(transaction)
+
+        if category == 'income':
+            self.income.transaction(name, amount)
+
+        else:
+            if category not in self.expenses:
+                self.expenses[category] = Category(category)
+            self.expenses[category].transaction(name, amount)
+
+        return transaction
 
     def total_expenses(self):
         total_expenses = 0
@@ -37,9 +53,8 @@ class Budget:
         return remaining
 
     def __str__(self):
-        string = f'\n{self.month.upper() + " BUDGET"}' + f'\n--------------------------------\n{"INCOME":<22}$ {self.income.total:,.2f}\n{"EXPENSES":<22}' + \
-            f'$ {self.total_expenses():,.2f}'.rjust(
-                10) + f'\n{"INCOME - EXPENSES":<22}' + f'$ {self.get_remaining():,.2f}'.rjust(10)
+        string = f'\n{self.month.upper() + " BUDGET"}' + f'\n--------------------------------\n{"INCOME":<22}$ {self.income.total:,.2f}\n{"EXPENSES":<22}' + f'$ {self.total_expenses():,.2f}'.rjust(
+            10) + f'\n{"INCOME - EXPENSES":<22}' + f'$ {self.get_remaining():,.2f}'.rjust(10)
         for category in self.expenses.values():
             percent = category.total / self.income.total
             string += category.str(percent)

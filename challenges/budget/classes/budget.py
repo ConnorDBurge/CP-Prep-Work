@@ -1,5 +1,6 @@
 from classes.component import Category
 import csv
+import os
 
 
 class Budget:
@@ -11,7 +12,9 @@ class Budget:
         self.read_transaction_file()
 
     def read_transaction_file(self):
-        with open('/Users/connordburge/Desktop/CP-PrepWork/challenges/budget/classes/data/transactions.csv') as file:  # open file
+        my_path = os.path.abspath(os.path.dirname(__file__))
+        path = os.path.join(my_path, "data/transactions.csv")
+        with open(path) as file:  # open file
             reader = csv.DictReader(file)
             for line in reader:
                 self.transaction(**line)

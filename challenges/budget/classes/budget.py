@@ -21,8 +21,14 @@ class Budget:
             for line in reader:
                 self.transaction(**line)
 
-    def save_transactions(self):
-        pass
+    def new_transaction(self, category, name, amount):
+        transaction = self.transaction(category, name, amount)
+        my_path = os.path.abspath(os.path.dirname(__file__))
+        path = os.path.join(my_path, "data/transactions.csv")
+        fields = [category, name, amount]
+        with open(path, 'a+', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(fields)
 
     def transaction(self, category, name, amount):
         transaction = Transaction(category, name, amount)

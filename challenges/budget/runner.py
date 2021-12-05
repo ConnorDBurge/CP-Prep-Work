@@ -1,8 +1,11 @@
 from classes.budget import Budget
 
-budget = Budget('Decembers')
-budget.increase_income('Salary 1', '1300')
-budget.increase_income('Salary 2', '2000')
-budget.reduce_income('Salary 2', '1000')
-print(budget.income.income_dict)
-print(budget.remaining_balance)
+budget = Budget('December')
+
+budget.increse_transaction('income', 'Salary 1', '2000')
+budget.increse_transaction('income', 'Salary 2', '1317')
+
+budget.increse_transaction('bills', 'Cox', '178')
+budget.increse_transaction('bills', 'Verizon', '103')
+
+print(str(budget))

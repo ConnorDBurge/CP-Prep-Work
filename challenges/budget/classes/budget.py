@@ -34,8 +34,7 @@ class Budget:
             self.expenses[category].transaction(name, amount)
 
     def new_transaction(self, category, name, amount):
-        transaction = Transaction(category, name, amount)
-        self.transactions.append(transaction)
+        self.transaction(category, name, amount)
 
     def total_expenses(self):
         total_expenses = 0
@@ -48,9 +47,8 @@ class Budget:
         return remaining
 
     def __str__(self):
-        string = f'\n{self.month.upper() + " BUDGET"}' + f'\n--------------------------------\n{"INCOME":<22}$ {self.income.total:,.2f}\n{"EXPENSES":<22}' + \
-            f'$ {self.total_expenses():,.2f}'.rjust(
-                10) + f'\n{"INCOME - EXPENSES":<22}' + f'$ {self.get_remaining():,.2f}'.rjust(10)
+        string = f'\n{self.month.upper() + " BUDGET"}' + f'\n--------------------------------\n{"INCOME":<22}$ {self.income.total:,.2f}\n{"EXPENSES":<22}' + f'$ {self.total_expenses():,.2f}'.rjust(
+            10) + f'\n{"INCOME - EXPENSES":<22}' + f'$ {self.get_remaining():,.2f}'.rjust(10)
         for category in self.expenses.values():
             percent = category.total / self.income.total
             string += category.str(percent)

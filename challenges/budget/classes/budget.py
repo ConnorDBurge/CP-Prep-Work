@@ -68,7 +68,9 @@ class Budget:
             self.personal,
             self.transportation
         ]
-        string = f'\n{self.month.upper() + " BUDGET":<21}\n--------------------------------\n{"INCOME":<21}$ {self.income.total:,.2f}\n{"EXPENSES":<21}$ {self.total_expenses():,.2f}\n{"INCOME - EXPENSES":<21}$ {self.get_remaining():,.2f}'
+        string = f'\n{self.month.upper() + " BUDGET"}' + f'\n--------------------------------\n{"INCOME":<22}$ {self.income.total:,.2f}\n{"EXPENSES":<22}' + \
+            f'$ {self.total_expenses():,.2f}'.rjust(
+                10) + f'\n{"INCOME - EXPENSES":<22}' + f'$ {self.get_remaining():,.2f}'.rjust(10)
         for expense in expenses:
             percent = expense.total / self.income.total
             string += expense.str(percent)

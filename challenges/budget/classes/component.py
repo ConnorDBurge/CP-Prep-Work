@@ -16,7 +16,8 @@ class Category:
         return self.total
 
     def str(self, percent):
-        string = f'\n--------------------------------\n{self.category.upper() + f" - {percent:.0%}":<21}$ {self.total:,.2f}'
+        string = f'\n--------------------------------\n{self.category.upper() + f" - {percent:.0%}":<22}' + \
+            f'$ {self.total:,.2f}'.rjust(10)
         for name, amount in self.dict.items():
-            string += f'\n{name:<21}$ {amount:,.2f}'
+            string += f'\n{name:<22}' + f'$ {amount:,.2f}'.rjust(10)
         return string

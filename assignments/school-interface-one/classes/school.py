@@ -3,6 +3,7 @@ from classes.student import Student
 
 
 class School:
+
     def __init__(self, name):
         self.name = name
         self.staff = Staff.read_from_file('staff.csv')  # calls Person
@@ -39,3 +40,11 @@ class School:
                    student.id != id,  # filter
                    self.students))  # list to filter
         Student.write_to_file('students.csv', self.students)
+
+    def return_staff_ids(self):
+        return list(map(lambda staff: staff.id, self.staff))
+
+    def find_employee_by_id(self, id):
+        for employee in self.staff:
+            if employee.id == id:
+                return employee

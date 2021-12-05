@@ -1,1 +1,9 @@
 type, category, name, amount
+increase, income, Salary 1, 2000
+increase, income, Salary 2, 1317
+increase, bills, Cox, 178
+increase, bills, Verizon, 103
+reduce, bills, Cox, 134
+increase, food, Grocery, 420
+increase, food, Restaurant, 220
+increase, transportation, Gas, 220

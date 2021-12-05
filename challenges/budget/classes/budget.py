@@ -38,9 +38,6 @@ class Budget:
 
         return transaction
 
-    def new_transaction(self, category, name, amount):
-        return self.transaction(category, name, amount)
-
     def total_expenses(self):
         total_expenses = 0
         for category in self.expenses.values():

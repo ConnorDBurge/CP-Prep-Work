@@ -1,7 +1,7 @@
 from classes.budget import Budget
 
 budget = Budget('December')
-budget.new_transaction('bills', 'Netflix', '4.99')
+budget.transaction('bills', 'Netflix', '4.99')
 
 for transaction in budget.transactions:
     print(transaction.__dict__)

@@ -1,11 +1,17 @@
+from classes.transaction import Transaction
+
+
 class Category:
 
     def __init__(self, category):
         self.category = category
         self.dict = {}
         self.total = 0
+        self.transactions = []
 
     def transaction(self, name, amount):
+        transaction = Transaction(self.category, name, amount)
+        self.transactions.append(transaction)
         self.dict[name] = float(amount)
         self.total = self.sum()
         return self.total

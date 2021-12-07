@@ -1,7 +1,9 @@
-from classes.budget import Budget
+from classes.budgets import Budgets
 
-budget = Budget('December')
-# budget.new_transaction('income', 'Salary 2', '400')
-# budget.new_transaction('income', 'Salary 2', '1000')
+budgets = Budgets()
 
-print(str(budget))
+# budgets.new_transaction('may', 'income', 'Salary 1', '156.17')
+# budgets.new_transaction('may', 'bills', 'Cox', '156.17')
+
+for k, v in budgets.budgets.items():
+    print(str(v))

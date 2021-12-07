@@ -1,5 +1,5 @@
 from classes.budgets import Budgets
 
 budgets = Budgets()
-print(budgets.budgets[0])
-print(budgets.budgets[1])
+print(budgets.budgets['APRIL'])
+print(budgets.budgets['MARCH'])

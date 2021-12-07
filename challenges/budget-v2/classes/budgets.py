@@ -8,7 +8,7 @@ class Budgets:
     path = os.path.join(my_path, "data/transactions.csv")
 
     def __init__(self):
-        self.budgets = []  # will hold Budget objects
+        self.budgets = {}  # will hold Budget objects
         self.load_transactions()  # loads file
 
     def load_transactions(self):
@@ -25,11 +25,12 @@ class Budgets:
     #         writer.writerow(transaction.__dict__)
 
     def transaction(self, month, category_name, name, amount):
-        for budget in self.budgets:
+        month = month.upper()
+        for budget in self.budgets.values():
             if budget.month == month:
                 return budget.transaction(category_name, name, amount)
 
         else:
             new_budget = Budget(month)
-            self.budgets.append(new_budget)
+            self.budgets[month] = new_budget
             return new_budget.transaction(category_name, name, amount)

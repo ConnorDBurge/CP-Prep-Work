@@ -1,20 +1,18 @@
 month,category_name,name,amount
-march,income,Salary 1,2000
-march,bills,Cox,178
-march,bills,Verizon,103
-march,bills,Cox,134
-march,food,Grocery,420
-march,food,Restaurant,220
-march,transportation,Gas,220
-march,transportation,Registration,156
-march,transportation,Registration,120
-april,income,Salary 1,2000
-april,bills,Cox,178
-april,bills,Verizon,103
-april,bills,Cox,134
-april,food,Grocery,420
-april,food,Restaurant,220
-april,transportation,Gas,220
-april,transportation,Registration,156
-april,transportation,Registration,120
-march,lifestyle,Disneyland,200
+MARCH,income,Salary 1,2000.0
+MARCH,bills,Verizon,103.0
+MARCH,bills,Cox,134.0
+MARCH,food,Grocery,420.0
+MARCH,food,Restaurant,220.0
+MARCH,transportation,Gas,220.0
+MARCH,transportation,Registration,120.0
+MARCH,lifestyle,Disneyland,200.0
+APRIL,income,Salary 1,2000.0
+APRIL,bills,Verizon,103.0
+APRIL,bills,Cox,134.0
+APRIL,food,Grocery,420.0
+APRIL,food,Restaurant,220.0
+APRIL,transportation,Gas,220.0
+APRIL,transportation,Registration,120.0
+MAY,income,Connor Paycheck,156.17
+MAY,bills,Cox,156.17

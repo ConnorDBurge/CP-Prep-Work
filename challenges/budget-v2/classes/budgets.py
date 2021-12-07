@@ -17,12 +17,15 @@ class Budgets:
             for line in reader:
                 self.transaction(**line)
 
-    def new_transaction(self, month, category_name, name, amount):
-        transaction = self.transaction(month, category_name, name, amount)
+    def write_to_file(self, transaction):
         fields = ['month', 'category_name', 'name', 'amount']
         with open(self.path, 'a+', newline='') as file:
             writer = csv.DictWriter(file, fields)
             writer.writerow(transaction.__dict__)
+
+    def new_transaction(self, month, category_name, name, amount):
+        transaction = self.transaction(month, category_name, name, amount)
+        self.write_to_file(transaction)
 
     def transaction(self, month, category_name, name, amount):
         month = month.upper()
@@ -39,4 +42,6 @@ class Budgets:
         month = month.upper()
         for budget in self.budgets.values():
             if budget.month == month:
-                return budget.change_transaction_name(category_name, name, new_name)
+                transaction = budget.change_transaction_name(
+                    category_name, name, new_name)
+        self.write_to_file(transaction)

@@ -34,3 +34,9 @@ class Budgets:
             new_budget = Budget(month)
             self.budgets[month] = new_budget
             return new_budget.transaction(month, category_name, name, amount)
+
+    def change_transaction_name(self, month, category_name, name, new_name):
+        month = month.upper()
+        for budget in self.budgets.values():
+            if budget.month == month:
+                return budget.change_transaction_name(category_name, name, new_name)

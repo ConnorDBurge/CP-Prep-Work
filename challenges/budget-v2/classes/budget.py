@@ -37,6 +37,11 @@ class Budget:
     def get_percentage(self, category):
         return category.total / self.get_income()
 
+    def change_transaction_name(self, category_name, name, new_name):
+        for category in self.categories:
+            if category.category_name == category_name:
+                return category.change_transaction_name(name, new_name)
+
     def __str__(self):
         string = f'\n{self.month.upper() + " BUDGET"}' + f'\n--------------------------------\n{"INCOME":<22}' + f'$ {self.get_income():,.2f}'.rjust(10) + \
             f'\n{"EXPENSES":<22}' + f'$ {self.get_expenses():,.2f}'.rjust(10) + \

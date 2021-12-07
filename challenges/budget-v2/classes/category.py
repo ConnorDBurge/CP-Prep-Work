@@ -28,6 +28,12 @@ class Category:
         self.total = sum
         return self.total
 
+    def change_transaction_name(self, name, new_name):
+        for transaction in self.transactions:
+            if transaction.name == name:
+                transaction.name = new_name
+                return transaction
+
     def str(self, percent):
         string = f'\n--------------------------------\n{self.category_name.upper() + f" - {percent:.0%}":<22}' + \
             f'$ {self.total:,.2f}'.rjust(10)

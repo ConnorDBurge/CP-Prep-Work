@@ -1,5 +1,9 @@
 from classes.budgets import Budgets
 
 budgets = Budgets()
-print(budgets.budgets['APRIL'])
-print(budgets.budgets['MARCH'])
+
+# budgets.new_transaction('may', 'income', 'Salary 1', '156.17')
+# budgets.new_transaction('may', 'bills', 'Cox', '156.17')
+
+for k, v in budgets.budgets.items():
+    print(str(v))

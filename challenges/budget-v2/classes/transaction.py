@@ -1,6 +1,7 @@
 class Transaction:
 
-    def __init__(self, category_name, name, amount):
+    def __init__(self, month, category_name, name, amount):
+        self.month = month
         self.category_name = category_name
         self.name = name
         self.amount = float(amount)

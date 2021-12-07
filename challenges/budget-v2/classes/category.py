@@ -8,8 +8,8 @@ class Category:
         self.total = 0
         self.transactions = []
 
-    def transaction(self, name, amount):
-        new_transaction = Transaction(self.category_name, name, amount)
+    def transaction(self, month, category_name, name, amount):
+        new_transaction = Transaction(month, category_name, name, amount)
         for transaction in self.transactions:
             if transaction.name == name:
                 self.transactions.remove(transaction)

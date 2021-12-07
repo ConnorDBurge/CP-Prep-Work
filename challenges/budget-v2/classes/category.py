@@ -6,7 +6,7 @@ class Category:
     def __init__(self, name):
         self.category_name = name
         self.total = 0
-        self.transactions = list()
+        self.transactions = []
 
     def transaction(self, name, amount):
         new_transaction = Transaction(self.category_name, name, amount)

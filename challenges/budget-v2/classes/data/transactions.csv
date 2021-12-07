@@ -1,10 +1,20 @@
-category_name,name,amount
-income,Salary 1,2000
-bills,Cox,178
-bills,Verizon,103
-bills,Cox,134
-food,Grocery,420
-food,Restaurant,220
-transportation,Gas,220
-transportation,Registration,156
-transportation,Registration,120
+month,category_name,name,amount
+march,income,Salary 1,2000
+march,bills,Cox,178
+march,bills,Verizon,103
+march,bills,Cox,134
+march,food,Grocery,420
+march,food,Restaurant,220
+march,transportation,Gas,220
+march,transportation,Registration,156
+march,transportation,Registration,120
+april,income,Salary 1,2000
+april,bills,Cox,178
+april,bills,Verizon,103
+april,bills,Cox,134
+april,food,Grocery,420
+april,food,Restaurant,220
+april,transportation,Gas,220
+april,transportation,Registration,156
+april,transportation,Registration,120
+march,lifestyle,Disneyland,200

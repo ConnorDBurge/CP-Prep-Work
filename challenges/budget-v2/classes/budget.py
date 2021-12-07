@@ -1,29 +1,11 @@
 from classes.category import Category
-import csv
-import os
 
 
 class Budget:
-    my_path = os.path.abspath(os.path.dirname(__file__))
-    path = os.path.join(my_path, "data/transactions.csv")
 
     def __init__(self, month):
         self.month = month
-        self.categories = list()
-        self.load_transactions()
-
-    def load_transactions(self):
-        with open(self.path) as file:
-            reader = csv.DictReader(file)
-            for line in reader:
-                self.transaction(**line)
-
-    def new_transaction(self, category, name, amount):
-        transaction = self.transaction(category, name, amount)
-        fields = ['category_name', 'name', 'amount']
-        with open(self.path, 'a+', newline='') as file:
-            writer = csv.DictWriter(file, fields)
-            writer.writerow(transaction.__dict__)
+        self.categories = []
 
     def transaction(self, category_name, name, amount):
         for category in self.categories:

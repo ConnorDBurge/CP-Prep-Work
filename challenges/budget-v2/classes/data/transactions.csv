@@ -1,18 +1,18 @@
 month,category_name,name,amount
-MARCH,income,Salary 1,2000.0
-MARCH,bills,Verizon,103.0
-MARCH,bills,Cox,134.0
-MARCH,food,Grocery,420.0
-MARCH,food,Restaurant,220.0
-MARCH,transportation,Gas,220.0
-MARCH,transportation,Registration,120.0
-MARCH,lifestyle,Disneyland,200.0
-APRIL,income,Salary 1,2000.0
-APRIL,bills,Verizon,103.0
-APRIL,bills,Cox,134.0
-APRIL,food,Grocery,420.0
-APRIL,food,Restaurant,220.0
-APRIL,transportation,Gas,220.0
-APRIL,transportation,Registration,120.0
-MAY,income,Connor Paycheck,156.17
-MAY,bills,Cox,156.17
+November,income,Connor Paycheck,3069.47
+November,income,Kyndall Paycheck,1029.33
+November,savings,Vanguard,500
+November,savings,General Savings,538.95
+November,savings,Student Loans,1448.02
+November,bills,Cox Cable,178.14
+November,bills,Verizon,103.92
+November,bills,USAA,131.92
+November,bills,Spotify,4.99
+November,food,Grocery,306.31
+November,food,Restaurant,60
+November,food,Fast Food,101.32
+November,transportation,Gas,250
+November,personal,Fun Money,100
+November,personal,Haircut,25
+November,lifestyle,Per Care,70
+November,lifestyle,Miscellaneous,100

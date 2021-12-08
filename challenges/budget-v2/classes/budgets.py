@@ -23,7 +23,7 @@ class Budgets:
             writer = csv.DictWriter(file, fields)
             writer.writerow(transaction.__dict__)
 
-    def delete_transaction(self):
+    def clean_up_file(self):
         with open(self.path, 'w', newline='') as file:
             fields = ['month', 'category_name', 'name', 'amount']
             writer = csv.DictWriter(file, fields)
@@ -55,12 +55,4 @@ class Budgets:
                 transaction = budget.change_transaction_name(
                     category_name, name, new_name)
         self.write_to_file(transaction)
-        self.delete_transaction()
-
-    # def change_name(self, level, month, category_name, name, new_name):
-    #     for budget in self.budgets.values():
-    #         if budget.month == month:
-    #             transaction = budget.change_transaction_name(
-    #                 category_name, name, new_name)
-    #     self.write_to_file(transaction)
-    #     self.delete_transaction()
+        self.clean_up_file()

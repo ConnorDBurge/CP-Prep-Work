@@ -1,4 +1,5 @@
 from classes.category import Category
+from termcolor import colored
 
 
 class Budget:
@@ -43,10 +44,8 @@ class Budget:
                 return category.change_transaction_name(name, new_name)
 
     def __str__(self):
-        string = f'\n{self.month.upper() + " BUDGET"}' + f'\n--------------------------------\n{"INCOME":<22}' + f'$ {self.get_income():,.2f}'.rjust(10) + \
-            f'\n{"EXPENSES":<22}' + f'$ {self.get_expenses():,.2f}'.rjust(10) + \
-            f'\n{"INCOME - EXPENSES":<22}' + \
-            f'$ {self.get_remaining():,.2f}'.rjust(10)
+        string = f'\n{self.month + " BUDGET"}' + '\n--------------------------------\n' + colored(f'{"INCOME":<22}' + f'$ {self.get_income():,.2f}'.rjust(10), 'cyan') + colored(
+            f'\n{"EXPENSES":<22}' + f'$ {self.get_expenses():,.2f}'.rjust(10), 'cyan') + colored(f'\n{"INCOME - EXPENSES":<22}', 'cyan') + colored(f'$ {self.get_remaining():,.2f}'.rjust(10), 'cyan')
         for category in self.categories:
             string += category.str(self.get_percentage(category))
         return string

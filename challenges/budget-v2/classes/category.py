@@ -1,4 +1,5 @@
 from classes.transaction import Transaction
+from termcolor import colored
 
 
 class Category:
@@ -35,8 +36,9 @@ class Category:
                 return transaction
 
     def str(self, percent):
-        string = f'\n--------------------------------\n{self.category_name.upper() + f" - {percent:.0%}":<22}' + \
-            f'$ {self.total:,.2f}'.rjust(10)
+        string = '\n--------------------------------\n' + \
+            colored(f'{self.category_name.upper() + f" - {percent:.0%}":<22}' +
+                    f'$ {self.total:,.2f}'.rjust(10), 'magenta')
         for transaction in self.transactions:
             string += f'\n{transaction.name:<22}' + \
                 f'$ {transaction.amount:,.2f}'.rjust(10)

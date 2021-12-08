@@ -1,5 +1,6 @@
 from classes.budgets import Budgets
 
+
 budgets = Budgets()
 
 # budgets.new_transaction('may', 'income', 'Salary 1', '156.17')

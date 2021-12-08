@@ -36,9 +36,13 @@ class Category:
                 return transaction
 
     def str(self, percent):
-        string = '\n--------------------------------\n' + \
-            colored(f'{self.category_name.upper() + f" - {percent:.0%}":<22}' +
-                    f'$ {self.total:,.2f}'.rjust(10), 'magenta')
+        line = '\n--------------------------------\n'
+        percent = f' - {percent:.0%}'
+        name = colored(
+            f'{self.category_name.upper() + f"{percent}":<22}', 'magenta')
+        total = colored(f'$ {self.total:,.2f}'.rjust(10), 'magenta')
+
+        string = line + name + total
         for transaction in self.transactions:
             string += f'\n{transaction.name:<22}' + \
                 f'$ {transaction.amount:,.2f}'.rjust(10)

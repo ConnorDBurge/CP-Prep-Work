@@ -44,8 +44,26 @@ class Budget:
                 return category.change_transaction_name(name, new_name)
 
     def __str__(self):
-        string = f'\n{self.month + " BUDGET"}' + '\n--------------------------------\n' + colored(f'{"INCOME":<22}' + f'$ {self.get_income():,.2f}'.rjust(10), 'cyan') + colored(
-            f'\n{"EXPENSES":<22}' + f'$ {self.get_expenses():,.2f}'.rjust(10), 'cyan') + colored(f'\n{"INCOME - EXPENSES":<22}', 'cyan') + colored(f'$ {self.get_remaining():,.2f}'.rjust(10), 'cyan')
+
+        month = f'\n{self.month + " BUDGET"}'
+        line = '\n--------------------------------\n'
+
+        income_total = colored(f'$ {self.get_income():,.2f}'.rjust(10), 'cyan')
+        expenses_total = colored(
+            f'$ {self.get_expenses():,.2f}'.rjust(10), 'cyan')
+        remaining_total = colored(
+            f'$ {self.get_remaining():,.2f}'.rjust(10), 'cyan')
+
+        income = colored(f'{"INCOME":<22}', 'cyan')
+        expenses = colored(f'\n{"EXPENSES":<22}', 'cyan')
+        remaining = colored(f'\n{"INCOME - EXPENSES":<22}', 'cyan')
+
+        string = month + line + income + income_total + expenses + \
+            expenses_total + remaining + remaining_total
+
         for category in self.categories:
             string += category.str(self.get_percentage(category))
+
+        string += line
+
         return string

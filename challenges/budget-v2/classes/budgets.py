@@ -33,10 +33,6 @@ class Budgets:
                     for transaction in category.transactions:
                         writer.writerow(transaction.__dict__)
 
-    def new_transaction(self, month, category_name, name, amount):
-        transaction = self.transaction(month, category_name, name, amount)
-        self.write_to_file(transaction)
-
     def transaction(self, month, category_name, name, amount):
         month = month.upper()
         for budget in self.budgets.values():
@@ -48,11 +44,13 @@ class Budgets:
             self.budgets[month] = new_budget
             return new_budget.transaction(month, category_name, name, amount)
 
+    def new_transaction(self, month, category_name, name, amount):
+        transaction = self.transaction(month, category_name, name, amount)
+        self.write_to_file(transaction)
+
     def change_transaction_name(self, month, category_name, name, new_name):
         month = month.upper()
         for budget in self.budgets.values():
             if budget.month == month:
-                transaction = budget.change_transaction_name(
-                    category_name, name, new_name)
-        self.write_to_file(transaction)
+                budget.change_transaction_name(category_name, name, new_name)
         self.clean_up_file()

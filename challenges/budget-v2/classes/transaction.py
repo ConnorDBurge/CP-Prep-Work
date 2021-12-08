@@ -7,5 +7,6 @@ class Transaction:
         self.amount = float(amount)
 
     def __str__(self):
-        string = f'{self.name:<22}' + f'$ {self.amount:,.2f}'.rjust(10)
-        return string
+        name = f'{self.name:<22}'
+        amount = f'$ {self.amount:,.2f}'.rjust(10)
+        return name + amount

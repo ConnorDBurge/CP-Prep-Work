@@ -16,3 +16,6 @@ logs
 .idea/
 .vscode/
 *.sw*
+
+# C++ output files
+a.out

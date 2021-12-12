@@ -1,4 +1,9 @@
-# your User class goes here
+import csv
+import os
+my_path = os.path.abspath(os.path.dirname(__file__))
+path = os.path.join(my_path, "user.csv")
+
+
 class User:
     users = {}
 
@@ -11,6 +16,14 @@ class User:
             'licence_number': self.licence_number
         }
 
+    @classmethod
+    def get_all_users(cls):
+        with open(path, 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                User(**row)
 
-connor = User('Connor', 'connor.burge@gmail.com', '123456789')
-print(User.users)
+
+User.get_all_users()
+for user, v in User.users.items():
+    print(user, ": ", v)

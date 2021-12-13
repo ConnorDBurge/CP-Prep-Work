@@ -5,4 +5,4 @@ class Node:
         self.next = None
 
     def __str__(self):
-        return f'{self.data} -> {self.next}'
+        return f'{self.data}'

@@ -7,7 +7,12 @@ class SLinkedList:
         self.length = 0
 
     def __str__(self):
-        return f'{self.head.next}'
+        string = ''
+        current = self.head.next
+        while current is not None:
+            string += f'{current.data} -> '
+            current = current.next
+        return string
 
     def push(self, data):
         new_node = Node(data)

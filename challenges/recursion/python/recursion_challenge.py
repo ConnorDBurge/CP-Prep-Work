@@ -10,19 +10,17 @@ class Recursion:
         return x * self.factorial(x - 1)
 
     def palindrome(self, string):
-        chars = [char for char in str(
-            string).lower() if re.match('[a-z0-9]', char)]
+        chars = re.sub('\W', '', string.lower())
 
         if len(chars) <= 1:
             return True
 
-        if chars[0] != chars[-1]:
-            return False
+        if chars[0] == chars[-1]:
+            return self.palindrome(chars[1:-1])
 
-        return self.palindrome(chars[1:-1])
+        return False
 
-    def bottles(self, num):
-        self.count += 1
+    def bottles(self, num, original):
         print(
             f'{num} bottle{"s" if num > 1 else ""} of beer on the wall, {num} bottle{"s" if num > 1 else ""} of beer.')
         if num > 1:
@@ -31,13 +29,13 @@ class Recursion:
 
         if num < 1:
             return print(
-                f'Take one down and pass it around, no more bottles of beer on the wall. \nNo more bottles of beer on the wall, no more bottles of beer. \nGo to the store and buy some more, {self.count - 1} bottles of beer on the wall.')
+                f'Take one down and pass it around, no more bottles of beer on the wall. \nNo more bottles of beer on the wall, no more bottles of beer. \nGo to the store and buy some more, {original} bottles of beer on the wall.')
 
-        self.bottles(num - 1)
+        self.bottles(num - 1, original)
 
     def roman_num(self, num):
         pass
 
 
 recursion = Recursion()
-recursion.bottles(10)
+recursion.bottles(5, 5)

@@ -1,4 +1,6 @@
 from node import Node
+import re
+# Last in First Out (LIFO)
 
 
 class Stack:
@@ -29,18 +31,30 @@ class Stack:
             current = current.next
         data = current.data  # save data to return
         prev_node.next = current.next
+        self.length -= 1
         return data
 
 
 my_stack = Stack()
 my_stack.push(0)
+print(my_stack)
 my_stack.push(1)
+print(my_stack)
 my_stack.push(2)
+print(my_stack)
 my_stack.push(3)
+print(my_stack)
 my_stack.push(4)
+print(my_stack)
 my_stack.push(5)
 print(my_stack)
-print(my_stack.pop())
+my_stack.pop()
 print(my_stack)
-print(my_stack.pop())
+my_stack.pop()
+print(my_stack)
+my_stack.pop()
+print(my_stack)
+my_stack.pop()
+print(my_stack)
+my_stack.pop()
 print(my_stack)

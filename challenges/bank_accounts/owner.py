@@ -18,9 +18,15 @@ class Owner:
         range_end = (10**10)-1
         return randint(range_start, range_end)
 
-    def new_account(self, type, init_deposit):
-        account = Account(type, init_deposit)
-        self.accounts[account.last_five] = account
+    def new_account(self, type, init_deposit=0):
+        try:
+            if init_deposit < 0:
+                raise ValueError()
+            account = Account(type, init_deposit)
+            self.accounts[type] = account
+            Account.accounts.append(account)
+        except ValueError:
+            print('Initial deposit must be positive')
 
     def show_accounts(self):
         print(self.accounts)

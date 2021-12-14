@@ -2,8 +2,9 @@ from random import randint
 
 
 class Account:
+    accounts = []
 
-    def __init__(self, type, init_deposit=0):
+    def __init__(self, type='', init_deposit=0):
         self.type = type
         self.account_number = self._create_account_number()
         self.last_five = self._last_five(self.account_number)
@@ -27,23 +28,23 @@ class Account:
     def deposit(self, amount):
         try:
             if amount < 0:
-                raise ValueError('Deposit must be positive.')
+                raise ValueError
             if self.balance is None:
                 self.balance = amount
             else:
                 self.balance += amount
-        except ValueError as e:
-            print(e.message)
+        except ValueError:
+            return 'Deposit must be positive.'
         return self.get_balance()
 
     def withdraw(self, amount):
         try:
             if self.get_balance() - amount < 0:
-                raise ValueError('Insufficient funds to withdraw.')
+                raise ValueError
             else:
                 self.balance -= amount
-        except ValueError as e:
-            print(e.message)
+        except ValueError:
+            return 'Insufficient funds to withdraw.'
         return self.get_balance()
 
     # retrun account balance

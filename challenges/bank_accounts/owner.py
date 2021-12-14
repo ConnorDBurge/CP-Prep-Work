@@ -18,11 +18,11 @@ class Owner:
         range_end = (10**10)-1
         return randint(range_start, range_end)
 
-    def new_account(self, type, init_deposit=0):
+    def new_account(self, account_info):
         try:
-            if init_deposit < 0:
+            if account_info['balance'] < 0:
                 raise ValueError()
-            account = Account(type, init_deposit)
+            account = Account(**account_info)
             self.accounts[type] = account
             Account.accounts.append(account)
         except ValueError:

@@ -13,7 +13,7 @@ class AccountsTests(unittest.TestCase):
     def test_account_number(self):
         '2. Test Account._create_account_number()'
         account = Account()
-        self.assertEqual(len(str(account.account_number)), 17)
+        self.assertEqual(len(str(account.id)), 17)
 
     def test_account_number_last_five(self):
         '3. Test Account._last_five()'
@@ -50,13 +50,6 @@ class OwnerTestCase(unittest.TestCase):
         owner.new_account('Savings')
         savings_account = owner.accounts['Savings']
         self.assertEqual(savings_account.get_balance(), 0)
-
-    def test_owner_init_balance_in_valid(self):
-        '3. Test in-valid init owner balance'
-        owner = Owner()
-        owner.new_account('Savings', -100)
-        savings_account = owner.accounts['Savings']
-        self.assertEqual(savings_account.get_balance(), None)
 
 
 class BankTests(unittest.TestCase):

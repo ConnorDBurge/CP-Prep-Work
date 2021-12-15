@@ -17,6 +17,18 @@ class Savings(Account):
         Account.accounts[self.id] = self
         Account.account_ids.append(self.last_five)
 
+    def withdraw(self, amount):
+        amount += 2  # $2.00 dollar fee
+        try:
+            if self.get_balance() - amount < 10:
+                raise ValueError
+            else:
+                self.balance -= amount
+                print(f'\nNew Balance: ${self.get_balance():,.2f}\n')
+        except ValueError:
+            print('\nInsufficient funds to withdraw.')
+        return self.get_balance()
+
     @classmethod
     def validate_balance(self, balance):
         while True:

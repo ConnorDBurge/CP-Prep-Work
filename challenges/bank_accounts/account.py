@@ -36,17 +36,6 @@ class Account:
             print('\nDeposit must be positive.')
         return self.get_balance()
 
-    def withdraw(self, amount):
-        try:
-            if self.get_balance() - amount < 0:
-                raise ValueError
-            else:
-                self.balance -= amount
-                print(f'\nNew Balance: ${self.get_balance():,.2f}\n')
-        except ValueError:
-            print('\nInsufficient funds to withdraw.')
-        return self.get_balance()
-
     # retrun account balance
     def get_balance(self):
         return self.balance

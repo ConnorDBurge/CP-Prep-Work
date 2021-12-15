@@ -42,7 +42,7 @@ class Owner:
             self.accounts[account.last_five] = account
             return account
         except ValueError:
-            print('Initial deposit must be positive')
+            print('\nInitial deposit must be positive\n')
 
     @classmethod
     def load_owners(cls):

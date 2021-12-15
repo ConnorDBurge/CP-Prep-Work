@@ -18,19 +18,19 @@ class Owner:
         self.city = city
         self.state = state
         self.accounts = {}
-        Owner.owners[self.id] = self
+        Owner.owners[str(self.id)] = self
         Owner.owner_ids.append(self.id)
 
     def __str__(self):
-        string = f'{str(self.id)} - {self.last_name}, {self.first_name}:\t'
+        string = f'{str(self.id)} - {self.last_name}, {self.first_name}: '
         for account in self.accounts.values():
-            string += f'\n{account.type}: {account.last_five} '
+            string += f'{account.type}: {account.last_five} '
         return string
 
     def __repr__(self):
-        string = f'{str(self.id)} - {self.last_name}, {self.first_name}:\t'
+        string = f'{str(self.id)} - {self.last_name}, {self.first_name}: '
         for account in self.accounts.values():
-            string += f'\n{account.type}: {account.last_five} '
+            string += f'{account.type}: {account.last_five} '
         return string
 
     def _create_id(self):  # returns 10 digtit owner id
@@ -60,6 +60,7 @@ class Owner:
                 Owner(**row)
         Account.load_accounts()
         cls._attach_accounts()
+        return Owner.owners
 
     @classmethod
     def _attach_accounts(cls):

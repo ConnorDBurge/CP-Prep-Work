@@ -5,7 +5,7 @@ class Prompts:
 
     def main_menu(self):
         return inquirer.list_input("Choose an action",
-                                   choices=['Get Owner Info', 'Get Account Info', 'Exit'])
+                                   choices=['Get All Owners', 'Get Owner Info', 'Get Account Info', 'Create New Owner', 'Login To Owner', 'Exit'])
 
     def try_again(self):
         return inquirer.confirm("Try again?")
@@ -36,3 +36,7 @@ class Prompts:
             inquirer.Text('balance', message="Initial Deposit"),
         ]
         return inquirer.prompt(questions)
+
+    def owner_menu(self):
+        return inquirer.list_input("Choose an action",
+                                   choices=['Deposit', 'Withdraw', 'Create New Account', 'Logout'])

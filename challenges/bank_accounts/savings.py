@@ -29,6 +29,11 @@ class Savings(Account):
             print('\nInsufficient funds to withdraw.')
         return self.get_balance()
 
+    def add_interest(self, rate):
+        interest = self.get_balance() * rate/100
+        self.deposit(interest)
+        return interest
+
     @classmethod
     def validate_balance(self, balance):
         while True:

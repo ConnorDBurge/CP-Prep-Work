@@ -57,7 +57,7 @@ class Bank:
                 break
         print()
         for account in Account.accounts.values():
-            print(str(account)[11:])
+            print(f'{str(account)}\n')
 
     def create_new_owner(self):
         os.system('clear')

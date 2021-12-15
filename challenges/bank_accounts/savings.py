@@ -18,9 +18,10 @@ class Savings(Account):
         Account.account_ids.append(self.last_five)
 
     def withdraw(self, amount):
-        amount += 2  # $2.00 dollar fee
+        amount *= 100  # Convert to dollars
+        amount += 200  # $2.00 dollar fee
         try:
-            if self.get_balance() - amount < 10:
+            if self.balance - amount < 1000:
                 raise ValueError
             else:
                 self.balance -= amount
@@ -30,7 +31,7 @@ class Savings(Account):
         return self.get_balance()
 
     def add_interest(self, rate):
-        interest = self.get_balance() * rate/100
+        interest = self.balance * rate/100
         self.deposit(interest)
         return interest
 

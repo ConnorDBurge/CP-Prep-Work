@@ -41,10 +41,12 @@ class Owner:
             account_info['owner'] = self.id  # attach owner id to account
             if account_info['type'] == 'Savings':
                 balance = Savings.validate_balance(
-                    int(account_info['balance']))
+                    int(account_info['balance'])) * 100
                 account_info['balance'] = balance
                 account = Savings(**account_info)
             elif account_info['type'] == 'Checking':
+                balance = int(account_info['balance']) * 100
+                account_info['balance'] = balance
                 account = Checking(**account_info)
             # add account to owners dict()
             self.accounts[account.last_five] = account

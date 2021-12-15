@@ -19,9 +19,10 @@ class Checking(Account):
         Account.account_ids.append(self.last_five)
 
     def withdraw(self, amount):
-        amount += 1  # $1.00 dollar fee
+        amount *= 100  # Convert to dollars
+        amount += 100  # $1.00 dollar fee
         try:
-            if self.get_balance() - amount < 0:
+            if self.balance - amount < 0:
                 raise ValueError
             else:
                 self.balance -= amount
@@ -35,11 +36,12 @@ class Checking(Account):
         fee = 0
         if self.checks_written >= 3:
             print('$2.00 fee added.\n')
-            fee = 2  # $2.00 dollar fee
+            fee = 200  # $2.00 dollar fee
         amount = int(prompt.check()) + fee
+        amount *= 100  # Convert to dollars
         self.checks_written += 1
-        if self.get_balance() - amount < -10:
-            self.balance = -10
+        if self.balance - amount < -1000:
+            self.balance = -1000
         else:
             self.balance -= amount
         print(f'\nNew Balance: ${self.get_balance():,.2f}\n')

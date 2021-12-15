@@ -35,7 +35,7 @@ class Account:
             if self.balance is None:
                 self.balance = amount
             else:
-                self.balance += amount
+                self.balance += amount * 100
             print(f'\nNew Balance: ${self.get_balance():,.2f}\n')
         except ValueError:
             print('\nDeposit must be positive.')
@@ -43,7 +43,7 @@ class Account:
 
     # retrun account balance
     def get_balance(self):
-        return self.balance
+        return self.balance / 100
 
     @classmethod
     def save(cls):

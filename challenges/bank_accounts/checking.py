@@ -16,6 +16,7 @@ class Checking(Account):
         Account.account_ids.append(self.last_five)
 
     def withdraw(self, amount):
+        amount += 1  # $1.00 dollar fee
         try:
             if self.get_balance() - amount < 0:
                 raise ValueError

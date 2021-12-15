@@ -14,7 +14,7 @@ class Account:
         self.id = id if id is not None else self._create_id()
         self.last_five = self._last_five(self.id)
         self.open_date = open_date if open_date is not None else datetime.now().date()
-        self.balance = int(balance if balance is not None else self.deposit(
+        self.balance = int(int(balance) / 100 if balance is not None else self.deposit(
             balance))
         self.owner = owner
         self.type = type

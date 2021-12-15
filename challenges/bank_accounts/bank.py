@@ -1,13 +1,15 @@
 import os
 from owner import Owner
-from account import Account
 from prompts import Prompts
 prompt = Prompts()
 
 
 class Bank:
     def __init__(self):
-        Owner.load_owners()
+        self.owners = Owner.load_owners()
+
+    def get_all_owners(self):
+        return self.owners
 
     def get_owner(self):
         while True:
@@ -42,3 +44,50 @@ class Bank:
                 f'Account not found'
                 if not prompt.try_again():
                     return ''
+
+    def create_new_owner(self):
+        os.system('clear')
+        owner_info = prompt.get_owner_info()
+        owner = Owner(**owner_info)
+        print(f'\n{owner}\n')
+        if prompt.account_creation():
+            self.create_new_account(owner)
+
+    def create_new_account(self, owner):
+        account_info = prompt.get_account_info()
+        account = owner.new_account(account_info)
+        print(f'\n{account}\n')
+
+    def login(self):
+        count = 0
+        logged_in = False
+        while True:
+            while not logged_in:
+                os.system('clear')
+                try:
+                    id = prompt.owner_id_prompt()  # 5656435622
+                    print()
+                    owner = Owner.owners[id]
+                    logged_in = True
+                    break
+                except KeyError:
+                    f'Owner not found'
+                    if not prompt.try_again():
+                        return ''
+            os.system('clear')
+            if count == 0:
+                print(f'\nWelcome back {owner.first_name}.\n')
+            else:
+                print()
+            count += 1
+            option = prompt.owner_menu()
+            if option == 'Deposit':
+                input()
+            elif option == 'Withdraw':
+                input()
+            elif option == 'View Accounts':
+                input()
+            elif option == 'Create New Account':
+                self.create_new_account(owner)
+            elif option == 'Logout':
+                break

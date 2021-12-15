@@ -1,4 +1,6 @@
 from account import Account
+from savings import Savings
+from checking import Checking
 from random import randint
 import os
 import csv
@@ -37,7 +39,10 @@ class Owner:
             if int(account_info['balance']) < 0:
                 raise ValueError()
             account_info['owner'] = self.id  # attach owner id to account
-            account = Account(**account_info)  # create new account
+            if account_info['type'] == 'Savings':
+                account = Savings(**account_info)
+            elif account_info['type'] == 'Checking':
+                account = Checking(**account_info)
             # add account to owners dict()
             self.accounts[account.last_five] = account
             return account
@@ -52,9 +57,21 @@ class Owner:
                 if row['id'] in cls.owner_ids:
                     continue
                 Owner(**row)
-        Account.load_accounts()
+        cls.load_accounts()
         cls._attach_accounts()
         return Owner.owners
+
+    @classmethod
+    def load_accounts(cls):
+        with open(Account.account_path, 'r') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row['id'] in Account.account_ids:
+                    continue
+                if row['type'] == 'Savings':
+                    Savings(**row)
+                elif row['type'] == 'Checking':
+                    Checking(**row)
 
     @classmethod
     def _attach_accounts(cls):

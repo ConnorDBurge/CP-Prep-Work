@@ -120,5 +120,18 @@ class Bank:
             elif option == 'Create New Account':
                 account_info = prompt.get_account_info()
                 owner.new_account(account_info)
+            elif option == 'Write A Check':
+                accounts = [
+                    f'{account.last_five} {account.type}: ${account.get_balance():,.2f}' for account in owner.accounts.values() if account.type == 'Checking']
+                choice = str(prompt.choose_account(accounts))[0:5]
+                acc = owner.accounts[choice]
+                acc.withdraw_using_check()
+                input()
+            elif option == 'Reset Checks':
+                accounts = [
+                    f'{account.last_five} {account.type}: ${account.get_balance():,.2f}' for account in owner.accounts.values() if account.type == 'Checking']
+                choice = str(prompt.choose_account(accounts))[0:5]
+                acc = owner.accounts[choice]
+                acc.reset_checks()
             elif option == 'Logout':
                 break

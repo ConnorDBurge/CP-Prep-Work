@@ -50,6 +50,15 @@ class Bank:
                 if not prompt.try_again():
                     return ''
 
+    def list_all_accounts(self):
+        while True:
+            password = prompt.password_prompt()
+            if password == '12345':
+                break
+        print()
+        for account in Account.accounts.values():
+            print(str(account)[11:])
+
     def create_new_owner(self):
         os.system('clear')
         owner_info = prompt.get_owner_info()

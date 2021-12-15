@@ -5,13 +5,16 @@ class Prompts:
 
     def main_menu(self):
         return inquirer.list_input("Choose an action",
-                                   choices=['Get All Owners', 'Get Owner Info', 'Get Account Info', 'Create New Owner', 'Login To Owner', 'Exit'])
+                                   choices=['Get All Owners', 'Get Owner Info', 'Get Account Info', 'List All Accounts', 'Create New Owner', 'Login To Owner', 'Exit'])
 
     def try_again(self):
         return inquirer.confirm("Try again?")
 
     def owner_id_prompt(self):
         return inquirer.text(message="Enter an Owner ID")
+
+    def password_prompt(self):
+        return inquirer.text(message="Enter Password")
 
     def account_id_prompt(self):
         return inquirer.text(message="Enter last five of account number")

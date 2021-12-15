@@ -1,3 +1,4 @@
+import os
 from bank import Bank
 from prompts import Prompts
 bank = Bank()
@@ -5,6 +6,7 @@ prompt = Prompts()
 
 
 while True:
+    os.system('clear')
     main_option = prompt.main_menu()
     if main_option == 'Get Owner Info':
         print(bank.get_owner())

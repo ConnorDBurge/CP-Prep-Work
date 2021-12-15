@@ -40,18 +40,15 @@ class Owner:
 
     def new_account(self, account_info):
         try:
-            if account_info['balance'] < 0:
+            if int(account_info['balance']) < 0:
                 raise ValueError()
             account_info['owner'] = self.id  # attach owner id to account
             account = Account(**account_info)  # create new account
             # add account to owners dict()
             self.accounts[account.last_five] = account
-            self._save(account_info)
+            return account
         except ValueError:
             print('Initial deposit must be positive')
-
-    def _save(self, account_info):
-        pass
 
     @classmethod
     def load_owners(cls):
@@ -68,8 +65,9 @@ class Owner:
     def _attach_accounts(cls):
         for owner in Owner.owners.values():
             for account in Account.accounts.values():
-                if account.last_five not in owner.accounts:
-                    owner.accounts[account.last_five] = account
-                else:
-                    existing = owner.accounts[account.last_five]
-                    print(f'\n{account.type} account ending with {account.last_five} could not be attached to {owner.last_name}, {owner.first_name}.\nAn account labled {account.type} already exist ending with {existing.last_five}\n')
+                if account.owner == owner.id:
+                    if account.last_five not in owner.accounts:
+                        owner.accounts[account.last_five] = account
+                    else:
+                        existing = owner.accounts[account.last_five]
+                        print(f'\n{account.type} account ending with {account.last_five} could not be attached to {owner.last_name}, {owner.first_name}.\nAn account labled {account.type} already exist ending with {existing.last_five}\n')

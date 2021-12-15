@@ -1,5 +1,7 @@
 from account import Account
 from datetime import datetime
+from prompts import Prompts
+prompt = Prompts()
 
 
 class Savings(Account):
@@ -14,3 +16,15 @@ class Savings(Account):
         self.type = type
         Account.accounts[self.id] = self
         Account.account_ids.append(self.last_five)
+
+    @classmethod
+    def validate_balance(self, balance):
+        while True:
+            try:
+                if balance > 9:
+                    return balance
+                else:
+                    raise ValueError()
+            except ValueError:
+                print('\nInitial deposit must be $10 or more.\n')
+                balance = int(prompt.deposit())

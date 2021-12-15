@@ -1,5 +1,6 @@
 import os
 from owner import Owner
+from account import Account
 from prompts import Prompts
 prompt = Prompts()
 
@@ -7,6 +8,10 @@ prompt = Prompts()
 class Bank:
     def __init__(self):
         self.owners = Owner.load_owners()
+
+    def save(self):
+        Owner.save()
+        Account.save()
 
     def get_all_owners(self):
         return self.owners

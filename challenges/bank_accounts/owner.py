@@ -66,3 +66,21 @@ class Owner:
                     else:
                         existing = owner.accounts[account.last_five]
                         print(f'\n{account.type} account ending with {account.last_five} could not be attached to {owner.last_name}, {owner.first_name}.\nAn account labled {account.type} already exist ending with {existing.last_five}\n')
+
+    @classmethod
+    def save(cls):
+        with open(cls.path, 'w') as f:
+            fields = ['id', 'last_name', 'first_name',
+                      'street', 'city', 'state']
+            writer = csv.DictWriter(f, fields)
+            writer.writeheader()
+            for owner in cls.owners.values():
+                owner_info = {
+                    'id': owner.id,
+                    'last_name': owner.last_name,
+                    'first_name': owner.first_name,
+                    'street': owner.street,
+                    'city': owner.city,
+                    'state': owner.state
+                }
+                writer.writerow(owner_info)

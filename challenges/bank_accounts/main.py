@@ -23,4 +23,5 @@ while True:
     elif main_option == 'Login To Owner':
         bank.login()
     elif main_option == 'Exit':
+        bank.save()
         break  # leave application

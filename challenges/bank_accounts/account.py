@@ -11,7 +11,12 @@ class Account:
     account_ids = []
 
     def __str__(self):
-        return f'{self.owner}-{self.type[0]}{self.last_five}: ${self.get_balance():,.2f}'
+        string = f'\n{self.last_five} {self.type}: ${self.get_balance():,.2f}\n'
+        string += '---------------------------------------------------------'
+        account_dict = (self.__dict__)
+        for k, v in account_dict.items():
+            string += f'\n{k}: {v}'
+        return string
 
     # create 17 digit account number
     def _create_id(self):

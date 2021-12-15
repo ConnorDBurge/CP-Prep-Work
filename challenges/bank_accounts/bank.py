@@ -112,8 +112,10 @@ class Bank:
                 acc.withdraw(amount)
                 input()
             elif option == 'View Accounts':
-                for account in owner.accounts.values():
-                    print(account)
+                choice = str(prompt.choose_account(accounts))[0:5]
+                acc = owner.accounts[choice]
+                os.system('clear')
+                print(acc)
                 input()
             elif option == 'Create New Account':
                 account_info = prompt.get_account_info()

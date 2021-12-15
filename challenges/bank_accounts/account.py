@@ -24,9 +24,6 @@ class Account:
     def __str__(self):
         return f'{self.owner}-A{self.last_five} {self.type}: ${self.get_balance():,.2f}'
 
-    def __repr__(self):
-        return f'{self.owner}-A{self.last_five} {self.type}: ${self.get_balance():,.2f}'
-
     # create 17 digit account number
     def _create_id(self):
         range_start = 10**(17 - 1)
@@ -45,8 +42,9 @@ class Account:
                 self.balance = amount
             else:
                 self.balance += amount
+            print(f'\nNew Balance: ${self.get_balance():,.2f}\n')
         except ValueError:
-            return 'Deposit must be positive.'
+            print('\nDeposit must be positive.')
         return self.get_balance()
 
     def withdraw(self, amount):
@@ -56,7 +54,7 @@ class Account:
             else:
                 self.balance -= amount
         except ValueError:
-            return 'Insufficient funds to withdraw.'
+            print('\nInsufficient funds to withdraw.')
         return self.get_balance()
 
     # retrun account balance

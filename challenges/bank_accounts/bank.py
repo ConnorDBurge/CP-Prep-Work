@@ -81,9 +81,17 @@ class Bank:
                 print()
             count += 1
             option = prompt.owner_menu()
+            accounts = [
+                account.last_five for account in owner.accounts.values()]
             if option == 'Deposit':
+                choice = str(prompt.choose_account(accounts))
+                acc = owner.accounts[choice]
+                print(f'\nBalance: ${acc.get_balance():,.2f}\n')
+                amount = int(prompt.deposit())
+                acc.deposit(amount)
                 input()
             elif option == 'Withdraw':
+                choice = str(prompt.choose_account(accounts))
                 input()
             elif option == 'View Accounts':
                 input()

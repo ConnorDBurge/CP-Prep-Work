@@ -40,3 +40,13 @@ class Prompts:
     def owner_menu(self):
         return inquirer.list_input("Choose an action",
                                    choices=['Deposit', 'Withdraw', 'Create New Account', 'Logout'])
+
+    def choose_account(self, accounts):
+        return inquirer.list_input("Choose an Account",
+                                   choices=accounts)
+
+    def deposit(self):
+        return inquirer.text(message="Deposit Amount")
+
+    def withdraw(self):
+        return inquirer.text(message="Withdraw Amount")

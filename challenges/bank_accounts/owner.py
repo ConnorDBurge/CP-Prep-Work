@@ -27,12 +27,6 @@ class Owner:
             string += f'{account.type}: {account.last_five} '
         return string
 
-    def __repr__(self):
-        string = f'{str(self.id)} - {self.last_name}, {self.first_name}: '
-        for account in self.accounts.values():
-            string += f'{account.type}: {account.last_five} '
-        return string
-
     def _create_id(self):  # returns 10 digtit owner id
         range_start = 10**(10 - 1)
         range_end = (10**10)-1

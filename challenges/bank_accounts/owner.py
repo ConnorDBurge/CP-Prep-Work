@@ -27,12 +27,6 @@ class Owner:
             string += f'{account.type}: {account.last_five} '
         return string
 
-    def __repr__(self):
-        string = f'{str(self.id)} - {self.last_name}, {self.first_name}: '
-        for account in self.accounts.values():
-            string += f'{account.type}: {account.last_five} '
-        return string
-
     def _create_id(self):  # returns 10 digtit owner id
         range_start = 10**(10 - 1)
         range_end = (10**10)-1
@@ -48,7 +42,7 @@ class Owner:
             self.accounts[account.last_five] = account
             return account
         except ValueError:
-            print('Initial deposit must be positive')
+            print('\nInitial deposit must be positive\n')
 
     @classmethod
     def load_owners(cls):
@@ -72,3 +66,21 @@ class Owner:
                     else:
                         existing = owner.accounts[account.last_five]
                         print(f'\n{account.type} account ending with {account.last_five} could not be attached to {owner.last_name}, {owner.first_name}.\nAn account labled {account.type} already exist ending with {existing.last_five}\n')
+
+    @classmethod
+    def save(cls):
+        with open(cls.path, 'w') as f:
+            fields = ['id', 'last_name', 'first_name',
+                      'street', 'city', 'state']
+            writer = csv.DictWriter(f, fields)
+            writer.writeheader()
+            for owner in cls.owners.values():
+                owner_info = {
+                    'id': owner.id,
+                    'last_name': owner.last_name,
+                    'first_name': owner.first_name,
+                    'street': owner.street,
+                    'city': owner.city,
+                    'state': owner.state
+                }
+                writer.writerow(owner_info)

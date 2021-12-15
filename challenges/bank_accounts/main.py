@@ -14,6 +14,9 @@ while True:
     elif main_option == 'Get Owner Info':
         print(bank.get_owner())
         input()
+    elif main_option == 'List All Accounts':
+        bank.list_all_accounts()
+        input()
     elif main_option == 'Get Account Info':
         print(bank.get_account())
         input()
@@ -23,4 +26,5 @@ while True:
     elif main_option == 'Login To Owner':
         bank.login()
     elif main_option == 'Exit':
+        bank.save()
         break  # leave application

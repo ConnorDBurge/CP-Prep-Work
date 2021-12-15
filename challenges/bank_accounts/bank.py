@@ -1,5 +1,6 @@
 import os
 from owner import Owner
+from account import Account
 from prompts import Prompts
 prompt = Prompts()
 
@@ -7,6 +8,10 @@ prompt = Prompts()
 class Bank:
     def __init__(self):
         self.owners = Owner.load_owners()
+
+    def save(self):
+        Owner.save()
+        Account.save()
 
     def get_all_owners(self):
         return self.owners
@@ -45,6 +50,15 @@ class Bank:
                 if not prompt.try_again():
                     return ''
 
+    def list_all_accounts(self):
+        while True:
+            password = prompt.password_prompt()
+            if password == '12345':
+                break
+        print()
+        for account in Account.accounts.values():
+            print(str(account)[11:])
+
     def create_new_owner(self):
         os.system('clear')
         owner_info = prompt.get_owner_info()
@@ -81,13 +95,28 @@ class Bank:
                 print()
             count += 1
             option = prompt.owner_menu()
+            accounts = [
+                f'{account.last_five} {account.type}: ${account.get_balance():,.2f}' for account in owner.accounts.values()]
             if option == 'Deposit':
+                choice = str(prompt.choose_account(accounts))[0:5]
+                acc = owner.accounts[choice]
+                print(f'\nBalance: ${acc.get_balance():,.2f}\n')
+                amount = int(prompt.deposit())
+                acc.deposit(amount)
                 input()
             elif option == 'Withdraw':
+                choice = str(prompt.choose_account(accounts))[0:5]
+                acc = owner.accounts[choice]
+                print(f'\nBalance: ${acc.get_balance():,.2f}\n')
+                amount = int(prompt.withdraw())
+                acc.withdraw(amount)
                 input()
             elif option == 'View Accounts':
+                for account in owner.accounts.values():
+                    print(account)
                 input()
             elif option == 'Create New Account':
-                self.create_new_account(owner)
+                account_info = prompt.get_account_info()
+                owner.new_account(account_info)
             elif option == 'Logout':
                 break

@@ -7,7 +7,7 @@ import csv
 class Account:
     my_path = os.path.abspath(os.path.dirname(__file__))
     path = os.path.join(my_path, 'data/account.csv')
-    accounts = []
+    accounts = {}
     account_ids = []
 
     def __init__(self, type, owner, balance=None, id=None, open_date=None):
@@ -18,8 +18,8 @@ class Account:
             balance))
         self.owner = owner
         self.type = type
-        Account.accounts.append(self)
-        Account.account_ids.append(self.id)
+        Account.accounts[self.id] = self
+        Account.account_ids.append(self.last_five)
 
     def __str__(self):
         return f'{self.owner}-A{self.last_five} {self.type}: ${self.get_balance():,.2f}'

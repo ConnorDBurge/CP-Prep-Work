@@ -42,7 +42,7 @@ class Prompts:
 
     def owner_menu(self):
         return inquirer.list_input("Choose an action",
-                                   choices=['Deposit', 'Withdraw', 'View Accounts', 'Create New Account', 'Logout'])
+                                   choices=['Deposit', 'Withdraw', 'View Accounts', 'Create New Account', 'Write A Check', 'Reset Checks', 'Logout'])
 
     def choose_account(self, accounts):
         return inquirer.list_input("Choose an Account",
@@ -53,3 +53,6 @@ class Prompts:
 
     def withdraw(self):
         return inquirer.text(message="Withdraw Amount")
+
+    def check(self):
+        return inquirer.text(message="Check Amount")

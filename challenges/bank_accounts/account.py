@@ -1,5 +1,4 @@
 from random import randint
-from datetime import datetime
 import os
 import csv
 
@@ -11,19 +10,13 @@ class Account:
     accounts = {}
     account_ids = []
 
-    def __init__(self, type, owner, balance=None, id=None, open_date=None):
-        self.id = id if id is not None else self._create_id()
-        self.last_five = self._last_five(self.id)
-        self.open_date = open_date if open_date is not None else datetime.now().date()
-        self.balance = int(
-            balance if balance is not None else self.deposit(balance))
-        self.owner = owner
-        self.type = type
-        Account.accounts[self.id] = self
-        Account.account_ids.append(self.last_five)
-
     def __str__(self):
-        return f'{self.owner}-A{self.last_five} {self.type}: ${self.get_balance():,.2f}'
+        string = f'\n{self.last_five} {self.type}: ${self.get_balance():,.2f}\n'
+        string += '---------------------------------------------------------'
+        account_dict = (self.__dict__)
+        for k, v in account_dict.items():
+            string += f'\n{k}: {v}'
+        return string
 
     # create 17 digit account number
     def _create_id(self):
@@ -42,35 +35,15 @@ class Account:
             if self.balance is None:
                 self.balance = amount
             else:
-                self.balance += amount
+                self.balance += amount * 100
             print(f'\nNew Balance: ${self.get_balance():,.2f}\n')
         except ValueError:
             print('\nDeposit must be positive.')
         return self.get_balance()
 
-    def withdraw(self, amount):
-        try:
-            if self.get_balance() - amount < 0:
-                raise ValueError
-            else:
-                self.balance -= amount
-                print(f'\nNew Balance: ${self.get_balance():,.2f}\n')
-        except ValueError:
-            print('\nInsufficient funds to withdraw.')
-        return self.get_balance()
-
     # retrun account balance
     def get_balance(self):
-        return self.balance
-
-    @classmethod
-    def load_accounts(cls):
-        with open(cls.account_path, 'r') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                if row['id'] in cls.account_ids:
-                    continue
-                Account(**row)
+        return self.balance / 100
 
     @classmethod
     def save(cls):

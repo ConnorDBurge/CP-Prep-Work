@@ -51,6 +51,7 @@ class Bank:
                     return ''
 
     def list_all_accounts(self):
+        os.system('clear')
         while True:
             password = prompt.password_prompt()
             if password == '12345':

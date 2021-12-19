@@ -54,7 +54,7 @@ class User:
 
 User.load_all_users()
 User.load_all_post()
-# for user in User.users:
+# for user in User.users:us
 #     print(user)
 kyndall = User.get_user('kyndall.burge@gmail.com')
 print(kyndall)

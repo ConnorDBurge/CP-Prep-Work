@@ -25,5 +25,5 @@ arr_10000 = [x for x in range(10000)]
 # bin  ary_search(10, arr_10)
 # bin  ary_search(100, arr_100)
 # bin  ary_search(1000, arr_1000)
-binary_search(9889, arr_10000)
+binary_search(9999, arr_10000)
 print('Num of operations:', operations)

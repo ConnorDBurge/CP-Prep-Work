@@ -67,5 +67,3 @@ for func in functions:
         t1 = time.time()
         times[func.__name__].append((t1 - t0) * 1000)
     print(f'{func.__name__:>18} |', func(), 'iterations')
-
-# alexcha8879@gmail.com

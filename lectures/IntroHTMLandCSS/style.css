@@ -1,0 +1,15 @@
+#title:hover { 
+    background-color: red;
+    cursor: crosshair;
+}
+
+#title:active { 
+    background-color: pink;
+    cursor: grabbing;
+    color: white;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}

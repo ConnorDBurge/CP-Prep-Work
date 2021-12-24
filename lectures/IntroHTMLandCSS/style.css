@@ -1,15 +1,51 @@
-#title:hover { 
-    background-color: red;
-    cursor: crosshair;
+.grid {
+    display: grid;
+    grid-template-columns: 100px auto 300px auto auto;
+    grid-template-rows: 100px 100px 150px;
 }
 
-#title:active { 
-    background-color: pink;
-    cursor: grabbing;
-    color: white;
+.grid h1, .grid h2, .grid h3, .grid h4, .grid h5 {
+    border: 2px solid black;
 }
 
-.link {
-    text-decoration: none;
-    color: black;
+.grid h1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.grid h2 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    align-self: end;
+}
+
+.grid h3 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 3;
+}
+
+.grid h4 {
+    grid-column-start: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.grid h5 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    justify-self: center;
+}
+
+.flex h1, .flex h2, .flex h3, .flex h4, .flex h5 {
+    border: 2px solid black;
+    width: 200px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }

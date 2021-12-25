@@ -1,1 +1,1 @@
-!(challenges/linkedIn/linkedin.png)
+!(https://github.com/ConnorDBurge/CP-Prep-Work/blob/master/challenges/LinkedIn/linkedin.png?raw=true)

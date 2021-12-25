@@ -2,8 +2,12 @@ body {
     width: 80%;
     height: 80%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(241, 241, 241)
 }
+
+/* 
+    Header-container
+*/
 
 .header-container {
     width: 782px;
@@ -53,8 +57,9 @@ h2 {
 
 .occupation {
     position: absolute;
+    font-weight: 400;
     margin: 300px 0 0 20px;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 .location-block {
@@ -69,7 +74,7 @@ h2 {
 }
 
 .contact-info a {
-    color: rgb(3, 99, 209);
+    color: rgb(10, 102, 194);
     font-weight: bold;
     padding-left: 5px;
     text-decoration: none;
@@ -82,14 +87,14 @@ h2 {
 .followers {
     position: absolute;
     margin: 360px 0 0 20px;
-    color: rgb(3, 99, 209);
+    color: rgb(10, 102, 194);
     font-weight: bold;
     font-size: .87rem;
 }
 
 .followers a {
     text-decoration: none;
-    color: rgb(3, 99, 209);
+    color: rgb(10, 102, 194);
 }
 
 .followers a:hover {
@@ -111,7 +116,7 @@ h2 {
     border-radius: 40px;
     border: none;
     color: white;
-    background-color: rgb(3, 99, 209);
+    background-color: rgb(10, 102, 194);
     align-items: center;
     margin-right: 7px;
     font-weight: bold;
@@ -162,8 +167,7 @@ h2 {
 .offer-me {
     position: absolute;
     width: 671px;
-    /* height: 76.5px; */
-    background-color: rgb(223, 223, 223);
+    background-color: rgb(233, 229, 223);
     border-radius: 10px;
     margin: 440px 0 0 20px;
     padding: 10px 0 10px 0;
@@ -182,7 +186,7 @@ h2 {
 .offer-me p.see-details a {
     text-decoration: none;
     font-weight: bold;
-    color: rgb(3, 99, 209);
+    color: rgb(10, 102, 194);
 }
 
 .offer-me p.see-details a:hover {
@@ -233,4 +237,245 @@ h2 {
     padding: 4px 8px;
     font-weight: bold;
     font-size: .9rem;
+}
+
+/* 
+    Edit box
+*/
+.edit {
+    margin-left: 1000px;
+    margin-top: -531px;
+    width: 332px;
+    height: auto;
+    padding: 16px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    position: absolute;
+}
+
+.edit p {
+    margin: 5px 0 5px 0;
+}
+
+.edit a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: rgb(102, 102, 102);
+}
+
+.edit a:hover {
+    color: rgb(10, 102, 194);
+    text-decoration: underline;
+}
+
+.edit hr {
+    color: rgb(233, 233, 233);
+}
+
+/* 
+    Ad box
+*/
+.ad {
+    margin-left: 1000px;
+    margin-top: -411px;
+    width: 332px;
+    height: 250px;
+    padding: 16px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    position: absolute;
+}
+
+/* 
+    Your Dashboard Container
+*/
+.dashboard {
+    width: 782px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    margin-top: 10px;
+    margin-left: 200px;
+    position: relative;
+    background-color: rgb(220, 230, 241);
+}
+
+.dashboard h2 {
+    position: absolute;
+    font-weight: 400;
+    font-size: 1.3rem;
+    height: 28px;
+    margin: 24px 0 0 24px;
+}
+
+.dashboard h3 {
+    position: absolute;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 55px 0 0 24px;
+    color: rgb(88, 92, 96);
+}
+
+.views {
+    margin: 90px 0 0 24px;
+    display: flex;
+}
+
+.dashboard .views .profile {
+    border: 1px solid lightgrey;
+    padding: 8px 12px 12px;
+    background-color: white;
+    width: 219.333px;
+    height: auto;
+    border-radius: 10px 0 0 10px;
+}
+
+.dashboard .views .profile h1 {
+    margin: 0;
+    font-weight: 100;
+    color: rgb(10, 102, 194);
+}
+
+.dashboard .views .profile p {
+    margin: 0;
+    padding-top: 5px;
+    font-size: .9rem;
+    font-weight: 100;
+}
+
+.dashboard .views .article {
+    border: 1px solid lightgrey;
+    border-left: none;
+    border-right: none;
+    padding: 8px 12px 12px;
+    background-color: white;
+    width: 219.333px;
+    height: auto;
+}
+
+.dashboard .views .article h1 {
+    margin: 0;
+    font-weight: 100;
+    color: rgb(10, 102, 194);
+}
+
+.dashboard .views .article p {
+    margin: 0;
+    padding-top: 5px;
+    font-size: .9rem;
+    font-weight: 100;
+}
+
+.dashboard .views .search {
+    border: 1px solid lightgrey;
+    padding: 8px 12px 12px;
+    background-color: white;
+    width: 219.333px;
+    height: auto;
+    border-radius: 0 10px 10px 0;
+}
+
+.dashboard .views .search h1 {
+    margin: 0;
+    font-weight: 100;
+    color: rgb(10, 102, 194);
+}
+
+.dashboard .views .search p {
+    margin: 0;
+    padding-top: 5px;
+    font-size: .9rem;
+    font-weight: 100;
+}
+
+.menu {
+    margin: 15px 0 0 24px;
+}
+
+.green {
+    color: green;
+}
+
+.menu .creator-mode {
+    width: 732px;
+    height: 64px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.menu .creator-mode img {
+    width: 24px;
+    height: 24px;
+    margin: 15px 0 0 15px;
+}
+
+.menu .creator-mode p.sub-text {
+    font-weight: 400;
+    margin: 0 0 0 50px;
+    color: rgb(88, 92, 96);
+}
+
+.menu .creator-mode p {
+    margin: -30px 0 0 50px;
+    font-weight: 400;
+}
+
+.menu .manage-network, .menu .salary-insights {
+    width: 732px;
+    height: 64px;
+    border: 1px solid lightgrey;
+    border-top: none;
+    background-color: white;
+    position: relative;
+}
+
+.menu .manage-network img, .menu .salary-insights img {
+    width: 24px;
+    height: 24px;
+    margin: 15px 0 0 15px;
+}
+
+.menu .manage-network p.sub-text, .menu .salary-insights p.sub-text {
+    font-weight: 400;
+    margin: 0 0 0 50px;
+    color: rgb(88, 92, 96);
+}
+
+.menu .manage-network p, .menu .salary-insights p {
+    margin: -30px 0 0 50px;
+    font-weight: 400;
+}
+
+.menu .my-items {
+    width: 732px;
+    height: 64px;
+    border: 1px solid lightgrey;
+    background-color: white;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.menu .my-items img {
+    width: 24px;
+    height: 24px;
+    margin: 15px 0 0 15px;
+}
+
+.menu .my-items p.sub-text {
+    font-weight: 400;
+    margin: 0 0 0 50px;
+    color: rgb(88, 92, 96);
+}
+
+.menu .my-items p {
+    margin: -30px 0 0 50px;
+    font-weight: 400;
 }

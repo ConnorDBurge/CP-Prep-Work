@@ -1,1 +1,1 @@
-!(linkedIn/linkedin.png)
+!(/linkedIn/linkedin.png)

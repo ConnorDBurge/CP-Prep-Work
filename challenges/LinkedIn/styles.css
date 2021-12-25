@@ -271,6 +271,7 @@ h2 {
 
 .edit hr {
     color: rgb(233, 233, 233);
+    border: thin solid rgb(233, 233, 233);
 }
 
 /* 
@@ -396,6 +397,7 @@ h2 {
 .views {
     margin: 90px 0 0 24px;
     display: flex;
+    cursor: pointer;
 }
 
 .dashboard .views .profile {
@@ -418,6 +420,10 @@ h2 {
     padding-top: 5px;
     font-size: .9rem;
     font-weight: 100;
+}
+
+.dashboard .views .profile:hover {
+    text-decoration: underline solid rgb(10, 102, 194);
 }
 
 .dashboard .views .article {
@@ -443,6 +449,10 @@ h2 {
     font-weight: 100;
 }
 
+.dashboard .views .article:hover {
+    text-decoration: underline solid rgb(10, 102, 194);
+}
+
 .dashboard .views .search {
     border: 1px solid lightgray;
     padding: 8px 12px 12px;
@@ -465,8 +475,13 @@ h2 {
     font-weight: 100;
 }
 
+.dashboard .views .search:hover {
+    text-decoration: underline solid rgb(10, 102, 194);
+}
+
 .menu {
     margin: 15px 0 0 24px;
+    cursor: pointer;
 }
 
 .green {

@@ -289,6 +289,80 @@ h2 {
     position: absolute;
 }
 
+.ad p.ad-dot {
+    color: rgb(66, 66, 66);
+    font-size: .8rem;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 0;
+}
+
+.ad p.visit {
+    color: rgb(129, 129, 129);
+    font-size: .9rem;
+    text-align: center;
+}
+
+.ad .images {
+    display: flex;
+    justify-content: center;
+}
+
+.ad .headshot {
+    border-radius: 50%;
+    margin: 0 10px 0 10px;
+    width: 70px;
+    height: 70px;
+}
+
+.ad .blue-sky {
+    margin: 0 10px 0 10px;
+    height: 70px;
+}
+
+.ad p.might-follow {
+    color: rgb(109, 108, 108);
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.ad p.blue {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.follow-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 17px;
+}
+
+.follow {
+    width: 80px;
+    height: 32px;
+    border-radius: 40px;
+    border: 1px solid rgb(10, 102, 194);
+    color: rgb(10, 102, 194);
+    background-color: white;
+    align-items: center;
+    margin-right: 7px;
+    font-weight: bold;
+    word-wrap: normal;
+    transition: .2s;
+}
+
+.follow:hover{
+    border: 2px solid rgb(10, 102, 194);
+    color: rgb(10, 102, 194);
+    background-color: rgb(227, 241, 255);
+    cursor: pointer;
+}
+
 /* 
     Your Dashboard Container
 */

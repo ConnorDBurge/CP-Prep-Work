@@ -2,18 +2,17 @@ body {
     width: 80%;
     height: 80%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(241, 241, 241)
+    background-color: rgb(241, 241, 241);
 }
 
 /* 
     Header-container
 */
-
 .header-container {
     width: 782px;
     height: 530px;
     border-radius: 10px;
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     margin-left: 200px;
     position: relative;
     background-color: white;
@@ -250,7 +249,7 @@ h2 {
     padding: 16px;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     position: absolute;
 }
 
@@ -285,7 +284,7 @@ h2 {
     padding: 16px;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     position: absolute;
 }
 
@@ -370,8 +369,8 @@ h2 {
     width: 782px;
     height: auto;
     border-radius: 10px;
-    border: 1px solid lightgrey;
-    margin-top: 10px;
+    border: 1px solid lightgray;
+    margin-top: 20px;
     margin-left: 200px;
     position: relative;
     background-color: rgb(220, 230, 241);
@@ -400,7 +399,7 @@ h2 {
 }
 
 .dashboard .views .profile {
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     padding: 8px 12px 12px;
     background-color: white;
     width: 219.333px;
@@ -422,7 +421,7 @@ h2 {
 }
 
 .dashboard .views .article {
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     border-left: none;
     border-right: none;
     padding: 8px 12px 12px;
@@ -445,7 +444,7 @@ h2 {
 }
 
 .dashboard .views .search {
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     padding: 8px 12px 12px;
     background-color: white;
     width: 219.333px;
@@ -477,7 +476,7 @@ h2 {
 .menu .creator-mode {
     width: 732px;
     height: 64px;
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     background-color: white;
     border-radius: 10px 10px 0 0;
     position: relative;
@@ -503,7 +502,7 @@ h2 {
 .menu .manage-network, .menu .salary-insights {
     width: 732px;
     height: 64px;
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     border-top: none;
     background-color: white;
     position: relative;
@@ -529,7 +528,7 @@ h2 {
 .menu .my-items {
     width: 732px;
     height: 64px;
-    border: 1px solid lightgrey;
+    border: 1px solid lightgray;
     background-color: white;
     border-top: none;
     border-radius: 0 0 10px 10px;

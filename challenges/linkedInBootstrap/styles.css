@@ -1,0 +1,93 @@
+body {
+    background-color: #F1F1F1;
+}
+
+#card {
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid #d3d3d3;
+}
+
+#cover-photo {
+    border-radius: 10px 10px 0 0;
+}
+
+.edit-cover-photo {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+}
+
+#head-shot {
+    width: 160px;
+    height: 160px;
+    border: 5px solid white;
+    margin: -110px 0 0 40px;
+}
+
+#premium-badge {
+    width: 25px;
+    height: 25px;
+}
+
+.badges {
+    padding: 12px 0 0 500px;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(10, 102, 194);
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+#name {
+    margin-top: 65px;
+    font-weight: bold;
+}
+
+.btn-blue {
+    border: none;
+    background-color: rgb(10, 102, 194);
+    color: white;
+    height: 34px;
+    padding: 0 15px 0 15px;
+}
+
+.btn-blue:hover {
+    background-color: rgb(10, 81, 151);
+}
+
+.btn-grey {
+    border: 1px solid #7e7e7e;
+    color: #7e7e7e;
+    background-color: white;
+    height: 34px;
+    padding: 0 15px 0 15px;
+}
+
+.btn-grey:hover {
+    border: 1px solid #575757;
+    color: #575757;
+    background-color: rgb(228, 228, 228);
+}
+
+.button button {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.offer-me {
+    border-radius: 10px;
+    background-color: #E9E5DF;
+    width: 671px;
+}
+
+.offer-me p a {
+    text-decoration: none;
+}

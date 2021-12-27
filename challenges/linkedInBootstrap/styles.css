@@ -2,7 +2,15 @@ body {
     background-color: #F1F1F1;
 }
 
-#card {
+/* Navbar */
+.navbar {
+    padding-left: 110px;
+    padding-right: 110px;
+}
+
+
+/* Profile Header Card */
+.card {
     border-radius: 10px;
     position: relative;
     border: 1px solid #d3d3d3;
@@ -90,4 +98,23 @@ body {
 
 .offer-me p a {
     text-decoration: none;
+}
+
+/* Edit Profile Card */
+#edit-profile-card a {
+    color: #575757;
+}
+
+#edit-profile-card a:hover {
+    color: rgb(10, 102, 194);
+}
+
+
+/* SVG classes */
+.svg-grey {
+    color: #575757;
+}
+
+.global-nav__logo {
+    color: rgb(10, 81, 151);
 }

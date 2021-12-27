@@ -6,6 +6,39 @@ body {
 .navbar {
     padding-left: 110px;
     padding-right: 110px;
+    background-color: white;
+}
+
+#search {
+    width: 400px;
+}
+
+#search-box {
+    background-color: #EEF3F8;
+    border-radius: 5px;
+    border: none;
+}
+
+#search-box:hover {
+    width: 400px;
+}
+
+.nav-square {
+    width: 88px;
+}
+
+
+.nav-square a {
+    color: #7e7e7e;
+    text-decoration: none;
+}
+
+.nav-square a:hover {
+    color: rgb(10, 102, 194);
+}
+
+.nav-square-border {
+    border-left: 1px solid #d3d3d3;
 }
 
 
@@ -21,9 +54,8 @@ body {
 }
 
 .edit-cover-photo {
-    width: 25px;
-    height: 25px;
-    background-color: white;
+    position: absolute;
+    margin: 15px 0 0 792px;
 }
 
 #head-shot {
@@ -33,13 +65,12 @@ body {
     margin: -110px 0 0 40px;
 }
 
-#premium-badge {
-    width: 25px;
-    height: 25px;
+.premium-badge {
+    color: #C37D16;
 }
 
 .badges {
-    padding: 12px 0 0 500px;
+    padding: 12px 0 0 520px;
 }
 
 .link {
@@ -115,6 +146,33 @@ body {
     color: #575757;
 }
 
+.svg-black:hover {
+    color: black;
+    cursor: pointer;
+}
+
 .global-nav__logo {
     color: rgb(10, 81, 151);
+}
+
+.edit-button-grey {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: white;
+}
+
+.edit-button-grey:hover {
+    background-color: #EBEBEB;
+}
+
+.edit-button-white {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: white;
+}
+
+.edit-button-white:hover svg {
+    color: rgb(10, 102, 194);
 }

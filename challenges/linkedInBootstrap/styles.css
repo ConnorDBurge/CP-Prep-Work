@@ -17,17 +17,17 @@ body {
 #search-box {
     background-color: #EEF3F8;
     border-radius: 5px;
-    border: none;
+    border: 1px solid #d3d3d3;
+    transition: 2s;
 }
 
-#search-box:hover {
+#search-box:focus {
     width: 400px;
 }
 
 .nav-square {
     width: 88px;
 }
-
 
 .nav-square a {
     color: #7e7e7e;
@@ -180,6 +180,10 @@ body {
 
 .global-nav__logo {
     color: rgb(10, 81, 151);
+}
+
+.global-nav__logo:hover {
+    cursor: pointer;
 }
 
 .edit-button-grey {

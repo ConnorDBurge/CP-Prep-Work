@@ -18,7 +18,7 @@ body {
     background-color: #EEF3F8;
     border-radius: 5px;
     border: 1px solid #d3d3d3;
-    transition: 2s;
+    outline: none;
 }
 
 #search-box:focus {
@@ -75,6 +75,11 @@ body {
     height: 160px;
     border: 5px solid white;
     margin: -110px 0 0 40px;
+}
+
+.rotated-image {
+    transform: rotate(360deg);
+    transition: 1s;
 }
 
 .premium-badge {
@@ -150,6 +155,14 @@ body {
 
 #edit-profile-card a:hover {
     color: rgb(10, 102, 194);
+}
+
+#open-to-text {
+    border: 1px solid #7e7e7e;
+    background-color: #EBEBEB;
+    height: 34px;
+    display: none;
+    outline: none;
 }
 
 /* Ad Card */

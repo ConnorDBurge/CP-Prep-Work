@@ -133,10 +133,9 @@
     </nav>
     <nav class="navbar navbar-expand-lg sticky-top py-1 shadow d-none" id="drop-nav">
         <div class="row-cols-auto me-3">
-            <img src="images/Headshot.jpg" class="rounded-circle p-0 img-responsive" height="40" width="40"
-                id="profile-photo">
+            <img src="images/Headshot.jpg" class="rounded-circle p-0 img-responsive" height="40" width="40">
         </div>
-        <div class=" row-cols-auto">
+        <div class="row-cols-auto">
             <strong class="d-block">Connor Burge</strong>
             <small class="text-muted d-block">Software Engineer | U.S. Marine | Secret
                 Clearance</small>
@@ -166,8 +165,12 @@
                     <div class="container px-0">
                         <img src="images/LinkedIn_Cover_Photo.jpg" id="cover-photo" class="card-img-top">
                         <div class="row">
-                            <div class="col"><img src="images/Headshot.jpg"
-                                    class="rounded-circle p-0 img-responsive shadow" id="head-shot"></div>
+                            <div class="col">
+                                <a href="#">
+                                    <img src="images/Headshot.jpg" class="rounded-circle p-0 img-responsive shadow"
+                                        id="head-shot" onclick="rotate();">
+                                </a>
+                            </div>
                             <div class="col badges">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                     class="bi bi-linkedin premium-badge" viewBox="0 0 16 16">
@@ -203,13 +206,18 @@
                         </div>
                         <div class="row ms-4">
                             <div class="col-md-auto p-0 button me-2">
-                                <button class="rounded-pill btn-blue">Open to</button>
+                                <button class="rounded-pill btn-blue" id="open-btn">Open
+                                    to</button>
                             </div>
                             <div class="col-md-auto p-0 button me-2">
                                 <button class="rounded-pill btn-grey">Add section</button>
                             </div>
                             <div class="col-md-auto p-0 button me-2">
                                 <button class="rounded-pill btn-grey" onclick="more();">More</button>
+                            </div>
+                            <div class="col-md-auto p-0 button me-2">
+                                <input class="rounded-pill px-3" type="text" name="open-to-text" placeholder="Open to.."
+                                    id="open-to-text">
                             </div>
                         </div>
                         <div class="row mt-3 ms-4 w-auto offer">

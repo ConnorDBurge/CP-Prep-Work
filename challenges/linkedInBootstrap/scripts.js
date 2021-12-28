@@ -64,4 +64,36 @@ function follow() {
     elem.style.border = '2px solid rgb(7, 65, 122)';
     elem.style.backgroundColor = 'rgb(220, 237, 253)';
     elem.style.color = 'rgb(7, 65, 122)';
+    elem.style.pointerEvents = 'none';
+}
+
+function rotate() {
+    let elem = document.querySelector("#head-shot");
+    elem.classList.add('rotated-image')
+}
+
+let input = document.querySelector("#open-to-text");
+let button = document.querySelector("#open-btn");
+button.addEventListener('click', () => {
+
+    if (button.innerHTML === 'Save') {
+        button.innerHTML = 'Open to';
+        button.style.backgroundColor = 'rgb(10, 102, 194)'
+        input.style.display = 'none';
+        if (input.value !== '') {
+            let name = document.querySelector('#name');
+            name.innerHTML = input.value;
+        }
+        input.value = '';
+    } else {
+        input.style.display = 'inline';
+        button.innerHTML = 'Save';
+        button.style.backgroundColor = '#C37D16'
+    }
+})
+
+function openTo() {
+
+
+
 }

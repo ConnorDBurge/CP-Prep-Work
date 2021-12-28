@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+}
+
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0; 
+    background: deepskyblue;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+    transition: background-color .25s;
+}
+
+.navigation a:hover {
+    background: #1565C0;
+  }
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
+    }
+}
+
+/* Small screens */
+@media all and (max-width: 600px) {
+    .navigation {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .navigation a {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255,0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);  
+    }
+
+    .navigation li:last-of-type a {
+        border-bottom: none;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.flex-item {
+    background-color: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 10px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+}
+
+@media all and (max-width: 600px) {
+    .flex-item {
+        width: 100%;
+    }
+}
+
+.wrapper {
+    margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+}
+.header { 
+    background-color: tomato; 
+    border-radius: 10px 10px 0 0;
+}
+.footer { 
+    background-color: lightgreen;
+    border-radius: 0 0 10px 10px;
+}
+.main { 
+    background-color: deepskyblue;
+    text-align: left;
+}
+.aside-1 { 
+    background-color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aside-2 { 
+    background-color: hotpink; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 2. article
+ * 3. aside 1
+ * 4. aside 2
+ * 5. footer
+ */
+
+ @media all and (min-width: 600px) {
+     /* We tell both sidebars to share a row */
+     .aside { flex: 1 auto;}
+ }
+
+/* Large screens */
+@media all and (min-width: 800px) {
+    .main { flex: 2 0px; }
+    .aside-1 { order: 1; }
+    .main    { order: 2; }
+    .aside-2 { order: 3; }
+    .footer  { order: 4; }
+}

@@ -1,8 +1,18 @@
 body {
     background-color: #F3F2EF;
     margin: 0;
+    font-family: Arial;
 }
 
+.shadow {
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+/* 
+
+    Navbar
+
+*/
 /* Big Navbar */
 .big-nav {
     padding-left: 100px;
@@ -11,9 +21,9 @@ body {
     flex-flow: row wrap;
     justify-content: space-between;
     background-color: #FFFFFF;
+    border-bottom: #e9e9e9;
     margin: 0;
     align-items: center;
-    box-shadow: 0px 8px 8px -4px rgb(182, 182, 182);
 }
 
 .navigation {
@@ -108,7 +118,7 @@ body {
     background-color: #FFFFFF;
     margin: 0;
     align-items: center;
-    box-shadow: 0px 8px 8px -4px rgb(182, 182, 182);
+    border-bottom: #e9e9e9;
     height: auto;
 }
 
@@ -118,9 +128,8 @@ body {
     flex-flow: column;
     justify-content: start;
     background-color: #FFFFFF;
-    border-top: 1px solid #b8bcc0;
+    border-top: 1px solid #e9e9e9;
     margin: 0;
-    box-shadow: 0px 8px 8px -4px rgb(182, 182, 182);
 }
 
 .dropdown-menu {
@@ -259,3 +268,160 @@ body {
 
 
 
+/* Main Content Container */
+#big-main { 
+    padding: 15px 100px 0 100px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.blue-link {
+    color: #0A66C2;
+    font-weight: bold;
+    font-size: .9rem;
+    text-decoration: none;
+}
+
+.blue-link:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    border-radius: 25px;
+    border: 1px solid;
+    padding: 8px 15px 8px 15px;
+    font-weight: bold;
+}
+
+.blue-btn {
+    color: white;
+    border-color: #0A66C2;
+    background-color: #0A66C2;
+}
+
+.blue-btn:hover {
+    background-color: #004b96;
+    border-color: #004b96;
+    cursor: pointer;
+}
+
+.grey-outline-btn {
+    color: #686868;
+    border-color: #686868;
+    background-color: white;
+}
+
+.grey-outline-btn:hover {
+    color: #474747;
+    border-color: #474747;
+    background-color: #EBEBEB;
+    cursor: pointer;
+}
+
+/*  Profile Header Container */
+#profile-header-container {
+    width: 728px;
+    background-color: white;
+    border: 1px solid #e9e9e9;
+    margin: 15px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#profile-photos {
+    margin-bottom: 220px;
+}
+
+#cover-photo {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    position: absolute;
+}
+
+#head-shot {
+    height: 152px;
+    width: 152px;
+    border-radius: 50%;
+    border: 5px solid white;
+    position: absolute;
+    margin: 75px 0 0 25px;
+    transition: all 0.5s;
+}
+
+#head-shot:hover {
+    box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.397);
+}
+
+#profile-badges {
+    color: #C37D16;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: end;
+    justify-content: end;
+    position: absolute;
+    margin-top: -15px;
+    width: 100%;
+}
+
+#profile-badges > * {
+    padding-bottom: 10px;
+    margin-right: 25px;
+}
+
+#marine-corps-flag {
+    border-radius: 5px;
+}
+
+#profile-name-data {
+    padding: 25px 25px 10px 25px;
+}
+
+#name {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+#profile-tag {
+    padding-top: 3px;
+    font-size: 1rem;
+    margin: 0;
+}
+
+#profile-location {
+    padding-top: 3px;
+    font-size: .95rem;
+    margin: 0;
+    color: #686868;
+}
+
+#profile-hits {
+    margin: 8px 0 0 0;
+}
+
+#profile-button-group {
+    padding: 0px 25px 0px 25px;
+}
+
+#profile-button-group > .btn {
+    margin-right: 5px;
+}
+
+#profile-more {
+    display: none;
+    margin: 25px 25px 0px 25px;
+    padding: 15px;
+    background-color: #E9E5DF;
+    border-radius: 10px;
+}
+
+#profile-more > *{
+    margin: 0;
+    font-size: .9rem;
+}
+
+@media all and (max-width: 968px) {
+    #big-main {
+        display: none;
+    }
+}

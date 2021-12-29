@@ -11,7 +11,10 @@
 </head>
 
 <body>
-    <div class="small-nav">
+    <!--
+        Navbar
+     -->
+    <div class="small-nav shadow">
         <ul class="navigation" id="small-left-nav">
             <li id="linkedin-logo">
                 <a href="https://www.linkedin.com/feed/" id="linkedin-logo">
@@ -78,7 +81,7 @@
             </li>
         </ul>
     </div>
-    <div id="drop-nav">
+    <div id="drop-nav" class="shadow">
         <ul class="dropdown-menu">
             <li>
                 <a href="#" class="drop-nav-link nav-link">
@@ -132,7 +135,7 @@
             </li>
         </ul>
     </div>
-    <div class="big-nav">
+    <div class="big-nav shadow">
         <ul class="navigation" id="big-left-nav">
             <li id="linkedin-logo">
                 <a href="https://www.linkedin.com/feed/" id="linkedin-logo" class="drop-nav-item">
@@ -269,6 +272,56 @@
             </li>
         </ul>
     </div>
+
+    <!-- 
+        Main Content container
+     -->
+    <div id="big-main">
+        <!-- 
+            Profile Header Container
+        -->
+        <div id="profile-header-container" class="shadow">
+            <div id="profile-photos">
+                <img src="images/LinkedIn_Cover_Photo.jpg" alt="cover-photo" id="cover-photo">
+                <img src="images/Headshot.jpg" alt="head-shot" id="head-shot" class="shadow">
+            </div>
+            <div id="profile-badges">
+                <svg viewBox="0 0 21 21" fill="currentColor" class="premium-badge" width="32.9667" height="30">
+                    <path
+                        d="M19.5 0h-18A1.5 1.5 0 000 1.5v18A1.5 1.5 0 001.5 21h18a1.5 1.5 0 001.5-1.5v-18A1.5 1.5 0 0019.5 0zM6 18H3V8h3zM4.5 6.25a1.75 1.75 0 110-3.5 1.75 1.75 0 110 3.5zM18 18h-3v-5.09c0-1.62-.74-2.44-1.84-2.44A2.31 2.31 0 0011 13v5H8V8h3v1.39a4.06 4.06 0 013.3-1.63c1.77 0 3.66.93 3.66 4z">
+                    </path>
+                </svg>
+                <a href="https://www.marines.mil/" class="orginazation">
+                    <img id="marine-corps-flag" src="images/EGA.jpg" height="35">
+                </a>
+                <a href="#" class="orginazation">
+
+                </a>
+            </div>
+            <div id="profile-name-data">
+                <h1 id="name">Connor Burge</h1 id="name">
+                <p id="profile-tag">Software Engineer | U.S. Marine | Secret Clearance</p>
+                <p id="profile-location">Oceanside, California, United States • <a href="#" class="blue-link">Contact
+                        info</a></p>
+                <p id="profile-hits">
+                    <a href="#" class="blue-link">117 followers</a>
+                    <span> • </span>
+                    <a href="#" class="blue-link">107 connections</a>
+                </p>
+            </div>
+            <div id="profile-button-group">
+                <button class="blue-btn btn">Open to</button>
+                <button class="grey-outline-btn btn">Add section</button>
+                <input type="button" value="More" class="grey-outline-btn btn" id="more-btn" onclick="showMore();">
+            </div>
+            <div id="profile-more">
+                <p><b>My next job should be:</b></p>
+                <p>Software Engineer, Junior Software Engineer, 401(k), Dental insurance, Full-time</p>
+                <p><a href="#" class="blue-link">See details</a></p>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

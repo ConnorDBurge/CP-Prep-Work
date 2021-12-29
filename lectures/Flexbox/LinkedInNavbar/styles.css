@@ -100,6 +100,61 @@ body {
     width: 75%
 }
 
+/* Small Nav */
+.small-nav {
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    margin: 0;
+    align-items: center;
+    box-shadow: 0px 8px 8px -4px rgb(182, 182, 182);
+    height: auto;
+}
+
+/* Small Drop Nav */
+#drop-nav {
+    display: none; /* CHANGE ME TO NONE */
+    flex-flow: column;
+    justify-content: start;
+    background-color: #FFFFFF;
+    border-top: 1px solid #b8bcc0;
+    margin: 0;
+    box-shadow: 0px 8px 8px -4px rgb(182, 182, 182);
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-flow: column wrap;
+    list-style: none;
+    margin: 0;
+    padding-left: 16px;
+}
+
+.drop-nav-link {
+    display: flex;
+    flex-flow: row none;
+    justify-content: end;
+    text-decoration: none;
+    font-size: 1.8rem;
+    align-items: center;
+}
+
+.drop-nav-link span {
+    display: flex;
+    align-items: center;
+}
+
+.drop-nav-label {
+    margin-right: 15px;
+}
+
+.hamburger span {
+    display: flex;
+    align-items: center;
+}
+
+
 /* Media Queries */
 @media all and (max-width: 1280px) {
     /* Big Navbar Left */
@@ -151,6 +206,54 @@ body {
     /* Big Navbar */
     .big-nav { 
         display: none;
+    }
+    .small-nav {
+        display: flex;
+    }
+}
+
+@media all and (max-width: 360px) { 
+    .nav-link svg.nav-icon {
+        height: 30px;
+        width: 30px;
+    }
+    .global-nav__logo {
+        height: 30px;
+        width: 30px;
+    }
+    .drop-nav-label {
+        font-size: 1.5rem;
+    }
+}
+
+@media all and (max-width: 332px) { 
+    .nav-link svg.nav-icon {
+        height: 25px;
+        width: 25px;
+    }
+    .global-nav__logo {
+        height: 25px;
+        width: 25px;
+    }
+    .drop-nav-label {
+        font-size: 1.2rem;
+    }
+}
+
+@media all and (max-width: 288px) { 
+    .nav-link svg.nav-icon {
+        height: 20px;
+        width: 20px;
+    }
+    .nav-link {
+        padding: .5rem .5rem;
+    }
+    .global-nav__logo {
+        height: 20px;
+        width: 20px;
+    }
+    .drop-nav-label {
+        font-size: .9rem;
     }
 }
 

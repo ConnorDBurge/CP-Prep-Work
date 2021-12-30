@@ -8,6 +8,12 @@ body {
     box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
 }
 
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index:1
+}
+
 /* 
 
     Navbar
@@ -269,10 +275,11 @@ body {
 
 
 /* Main Content Container */
-#big-main { 
-    padding: 15px 100px 0 100px;
+#big-main {
+    padding: 15px 15px 15px 15px;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .blue-link {
@@ -318,15 +325,19 @@ body {
     cursor: pointer;
 }
 
-/*  Profile Header Container */
-#profile-header-container {
-    width: 728px;
+.panel {
+    box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
     background-color: white;
     border: 1px solid #e9e9e9;
     margin: 15px;
     padding-bottom: 25px;
     border-radius: 10px;
     position: relative;
+}
+
+/*  Profile Header Container */
+#profile-header-container {
+    width: 728px;
 }
 
 #profile-photos {
@@ -420,8 +431,57 @@ body {
     font-size: .9rem;
 }
 
-@media all and (max-width: 968px) {
+@media all and (max-width: 1160px) {
+    #profile-header-container {
+        width: 600px;
+    }
+    #profile-badges {
+        margin-top: -45px;
+    }
+}
+@media all and (max-width: 1033px) {
     #big-main {
         display: none;
     }
+}
+
+.side-panel {
+    display: flex;
+    flex-flow: column;
+}
+
+.side-panel > .panel {
+    padding: 20px;
+}
+
+/* Setting Panel */
+#settings-panel {
+    width: 300px;
+    height: auto;
+    align-items: center;
+}
+
+#settings-panel a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #737373;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s;
+}
+
+#settings-panel a:hover {
+    text-decoration: underline;
+    color: #0A66C2;
+}
+
+#settings-panel hr {
+    border: 1px solid lightgray;
+}
+
+/* Ad Panel */
+#ad-panel {
+    width: 300px;
+    flex: 1;
 }

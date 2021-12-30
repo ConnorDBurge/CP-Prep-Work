@@ -488,3 +488,92 @@ body {
     color: #585C60;
     margin-top: 10px;
 }
+
+#dashboard-views {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    height: 84px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border: 1px solid #cacaca;
+    margin-top: 15px;
+}
+
+.dashboard-views-center {
+    border-left: 1px solid #cacaca;
+    border-right: 1px solid #cacaca;
+}
+
+#dashboard-views a {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    padding-left: 12px;
+}
+
+#dashboard-views a > *, #dashboard-settings a > *{
+    margin: 0;
+    font-weight: 100;
+}
+
+#dashboard-views a p, #dashboard-settings a p {
+    color: black;
+    margin-top: 6px;
+}
+
+#dashboard-settings {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    border: 1px solid #cacaca;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.dashboard-settings-section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+.dashboard-border-bottom {
+    border-bottom: 1px solid #cacaca;
+}
+
+.settings-links {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.settings-links > * {
+    margin: 0;
+}
+
+.green-text {
+    color: #049c37;
+}
+
+.grey-text {
+    color: #737373;
+    font-size: .9rem;
+}
+
+.svg-grey {
+    color: #737373;
+}

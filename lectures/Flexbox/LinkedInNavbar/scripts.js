@@ -20,3 +20,19 @@ const showMore = () => {
         button.value = 'More';
     }
 }
+
+const follow = () => {
+    let button = document.getElementById('follow-btn');
+    let prompt = document.getElementById('follow-prompt');
+    if (button.innerHTML === "Follow") {
+        button.innerHTML = "&#x2714;";
+        button.style.paddingLeft = "10px";
+        button.style.paddingRight = "10px";
+        button.classList.remove('blue-outline-btn');
+        button.classList.add('green-btn');
+    } else {
+        button.innerHTML = "Follow";
+        button.classList.add('blue-outline-btn');
+        button.classList.remove('green-btn');
+    }
+}

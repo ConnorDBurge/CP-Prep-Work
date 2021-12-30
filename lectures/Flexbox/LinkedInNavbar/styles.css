@@ -22,6 +22,92 @@ body {
     z-index:1
 }
 
+.blue-link {
+    color: #0A66C2;
+    font-weight: bold;
+    font-size: .9rem;
+    text-decoration: none;
+}
+
+.blue-link:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    border-radius: 25px;
+    border: 1px solid;
+    padding: 8px 20px 8px 20px;
+    font-weight: bold;
+}
+
+.blue-btn {
+    color: white;
+    border-color: #0A66C2;
+    background-color: #0A66C2;
+}
+
+.blue-btn:hover {
+    background-color: #004b96;
+    border-color: #004b96;
+    cursor: pointer;
+}
+
+.blue-outline-btn {
+    color: #0A66C2;
+    border-color: #0A66C2;
+    background-color: white;
+    width: 100px;
+    transition: all 0.6s;
+}
+
+.blue-outline-btn:hover {
+    color: #0856a3;
+    border-color: #0856a3;
+    background-color: #d4eaff;
+    cursor: pointer;
+}
+
+.grey-outline-btn {
+    color: #686868;
+    border-color: #686868;
+    background-color: white;
+    width: auto;
+    transition: all 0.6s;
+}
+
+.grey-outline-btn:hover {
+    color: #474747;
+    border-color: #474747;
+    background-color: #EBEBEB;
+    cursor: pointer;
+}
+
+.green-btn {
+    color: white;
+    border-color: #06c044;
+    background-color: #06c044;
+    transition: all 0.6s;
+}
+
+.green-btn:hover {
+    border-color: #049c37;
+    background-color: #049c37;
+    cursor: pointer;
+}
+
+.red-btn {
+    color: white;
+    border-color: #bb0000;
+    background-color: #bb0000;
+    transition: all 0.6s;
+}
+
+.red-btn:hover {
+    border-color: #a10000;
+    background-color: #a10000;
+    cursor: pointer;
+}
+
 /* 
     Navbar
 */
@@ -208,77 +294,6 @@ body {
     justify-content: center;
 }
 
-.blue-link {
-    color: #0A66C2;
-    font-weight: bold;
-    font-size: .9rem;
-    text-decoration: none;
-}
-
-.blue-link:hover {
-    text-decoration: underline;
-}
-
-.btn {
-    border-radius: 25px;
-    border: 1px solid;
-    padding: 8px 15px 8px 15px;
-    font-weight: bold;
-}
-
-.blue-btn {
-    color: white;
-    border-color: #0A66C2;
-    background-color: #0A66C2;
-}
-
-.blue-btn:hover {
-    background-color: #004b96;
-    border-color: #004b96;
-    cursor: pointer;
-}
-
-.blue-outline-btn {
-    color: #0A66C2;
-    border-color: #0A66C2;
-    background-color: white;
-    width: 100px;
-    transition: all 0.6s;
-}
-
-.blue-outline-btn:hover {
-    color: #0856a3;
-    border-color: #0856a3;
-    background-color: #d4eaff;
-    cursor: pointer;
-}
-
-.grey-outline-btn {
-    color: #686868;
-    border-color: #686868;
-    background-color: white;
-}
-
-.grey-outline-btn:hover {
-    color: #474747;
-    border-color: #474747;
-    background-color: #EBEBEB;
-    cursor: pointer;
-}
-
-.green-btn {
-    color: white;
-    border-color: #06c044;
-    background-color: #06c044;
-    transition: all 0.6s;
-}
-
-.green-btn:hover {
-    border-color: #049c37;
-    background-color: #049c37;
-    cursor: pointer;
-}
-
 .panel {
     box-shadow:0 .5rem 1rem rgba(0,0,0,.15);
     background-color: white;
@@ -380,7 +395,7 @@ body {
     border-radius: 10px;
 }
 
-#profile-more > *{
+#profile-more > * {
     margin: 0;
     font-size: .9rem;
 }
@@ -469,7 +484,7 @@ body {
 
 /* Dashboard Panel */
 #dashboard {
-    width: 730px;
+    width: 680px;
     padding: 25px;
     background-color: #DCE6F1;
 }
@@ -576,4 +591,64 @@ body {
 
 .svg-grey {
     color: #737373;
+}
+
+@media all and (max-width: 1161px) {
+    #dashboard {
+        width: 550px;
+    }
+}
+
+/* Follow Suggestions */
+#follow-suggestions-panel h4 {
+    margin: 0;
+    padding: 0 0 3px 0;
+}
+
+#follow-suggestions-panel {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 300px;
+    flex: 1;
+    justify-content: start;
+    align-items: start;
+}
+
+.profile-card-small {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    margin-top: 3px;
+}
+
+.profile-card-small img {
+    border-radius: 50%;
+    width: 50px;
+    transition: width .5s;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.profile-card-small img:hover {
+    width: 75px;
+    box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.397);
+    border: 1px solid white;
+}
+
+.profile-card-info > button {
+    margin: 5px 0 5px 0;
+}
+
+.profile-card-info > *:not(button) {
+    margin: 0;
+    padding: 0;
+}
+
+.profile-card-info {
+    margin-left: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
 }

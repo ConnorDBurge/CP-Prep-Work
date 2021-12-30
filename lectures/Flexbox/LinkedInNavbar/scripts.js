@@ -1,29 +1,23 @@
-const smallDropNav = () => {
-    let dropNav = document.getElementById('drop-nav');
-    if (dropNav.style.display === 'flex') {
-        dropNav.style.display = 'none';
-    } else {
-        dropNav.style.display = 'flex';
-    }
-}
-
 const showMore = () => {
     let button = document.getElementById('more-btn');
     let section = document.getElementById('profile-more');
-    if (button.value === 'More') {
+    if (button.innerHTML === 'More') {
         section.style.display = 'block';
-        button.style.backgroundColor = "#EBEBEB";
-        button.value = 'Close';
-    } else if (button.value === 'Close') {
+        button.classList.remove('grey-outline-btn');
+        button.classList.add('red-btn');
+        button.style.paddingLeft = "10px";
+        button.style.paddingRight = "10px";
+        button.innerHTML = '&#10007;'
+    } else {
         section.style.display = 'none';
-        button.style.backgroundColor = "white";
-        button.value = 'More';
+        button.innerHTML = "More";
+        button.classList.add('grey-outline-btn');
+        button.classList.remove('red-btn');
     }
 }
 
 const follow = () => {
     let button = document.getElementById('follow-btn');
-    let prompt = document.getElementById('follow-prompt');
     if (button.innerHTML === "Follow") {
         button.innerHTML = "&#x2714;";
         button.style.paddingLeft = "10px";
@@ -36,3 +30,4 @@ const follow = () => {
         button.classList.remove('green-btn');
     }
 }
+

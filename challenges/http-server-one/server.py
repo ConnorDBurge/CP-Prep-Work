@@ -12,7 +12,7 @@ while True:
     data = client_connection.recv(1024).decode()
 
     print('GET request received')
-    message = "HTTP/1.0 200 OK\nContent-Type: text\plain\n\nHello World\n".encode()
+    message = "HTTP/1.0 200 OK\nContent-Type: text\plain\n\n<html><body><p>Hello World!</p></body></html>\n".encode()
     client_connection.send(message)
 
     client_connection.close()

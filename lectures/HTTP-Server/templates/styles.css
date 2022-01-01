@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navigation {
+    /* Position on Page */
+    position: sticky;
+    top: 0;
+    /* Internal Display */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: end;
+    align-content: center;
+    z-index: 1;
+    /* Style */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #00BFFF;
+    list-style: none;
+}
+
+.navigation li {
+    padding: 16px;
+    transition: background-color 0.2s;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation li:hover {
+    background-color: #1565C0;
+    cursor: pointer;
+}
+
+@media all and (max-width: 800px) {
+    .navigation { 
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .navigation { 
+        flex-flow: column nowrap;
+        text-align: center;
+    }
+    .navigation li {
+        border-top: 1px solid #3cceff;
+        border-bottom: 1px solid #00a3da;
+        padding: 10px
+    }
+}
+
+.body-container {
+    /* Grid */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+        "m m m m m m m m m m m m"
+        "a a a a a a a a a a a a";
+    /* Style */
+    padding-bottom: 10px;
+}
+
+@media all and (max-width: 600px) {
+    .body-container {
+        grid-template-areas: 
+        "a a a a a a a a a a a a"
+        "m m m m m m m m m m m m";
+    }
+}
+
+/* Main */
+.main { 
+    /* Parent Grid Area */
+    grid-area: m;
+    /* Grid */
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    justify-items: center;
+    /* Style */
+    margin: 0;
+    padding: 0 10px;
+    list-style: none;
+}
+
+.main li { 
+    /* Internal Display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Style */
+    width: 210px;
+    height: 160px;
+    margin: 10px 5px 0 5px;
+    background-color: #FF6347;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 3rem;
+}
+
+@media all and (max-width: 600px) {
+    .main { 
+        grid-template-columns: 1fr;
+    }
+    .main li { 
+        width: 100%;
+    }
+
+}
+
+/* Article */
+.article {
+    /* Parent Grid Area */
+    grid-area: a;
+    /* Grid */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "a1 a1 m m m m m m m m a2 a2"
+        "f f f f f f f f f f f f";
+    /* Style */
+    margin: 10px;
+}
+
+@media all and (max-width: 800px) {
+    .article {
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "m m m m m m m m m m m m"
+        "a1 a1 a1 a1 a1 a1 a2 a2 a2 a2 a2 a2"
+        "f f f f f f f f f f f f";
+    }
+}
+
+@media all and (max-width: 600px) {
+    .article {
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "m m m m m m m m m m m m"
+        "a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1 a1"
+        "a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2 a2"
+        "f f f f f f f f f f f f";
+    }
+}
+
+.article > *, p {
+    /* Internal Display */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Style */
+    margin: 0;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.header {
+    /* Parent Grid Area */
+    grid-area: h;
+    /* Style */
+    border-radius: 10px 10px 0 0;
+    background-color: #FF6347;
+}
+
+.article-main {
+    /* Parent Grid Area */
+    grid-area: m;
+    /* Style */
+    background-color: #00BFFF;
+}
+
+.aside-1 {
+    /* Parent Grid Area */
+    grid-area: a1;
+    /* Style */
+    background-color: #FFD700;
+}
+
+.aside-2 {
+    /* Parent Grid Area */
+    grid-area: a2;
+    /* Style */
+    background-color: #FF69B4;
+}
+
+.footer { 
+    /* Parent Grid Area */
+    grid-area: f;
+    /* Style */
+    border-radius: 0 0 10px 10px;
+    background-color: #90EE90;
+}
+   

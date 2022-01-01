@@ -24,6 +24,14 @@ def facts(request):
     return response
 
 
+@Router.route(r'\/facts', 'POST')
+def add_fact(request):
+    print(request['Resource'])
+    fact = Fact(**request['params'])
+    print(fact.id, fact.fact)
+    return f'HTTP/1.1 303 See Other\r\nLocation: http://localhost:8888/facts/{fact.id}'
+
+
 @Router.route(r'\/facts\/(\d+)')
 def fact(request):
     fact_id = re.match(r'\/facts\/(\d+)', request['Resource']).group(1)
@@ -33,3 +41,8 @@ def fact(request):
             fact = Fact(row[0], row[1])
     response = Response('fact', {'fact': fact})
     return response
+
+
+@Router.route(r'\/facts\/new')
+def new_fact(request):
+    return Response('form')

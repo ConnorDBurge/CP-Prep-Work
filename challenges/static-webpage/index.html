@@ -20,43 +20,39 @@
 
 <body>
 
-  <section id="carousel">
+  <div id="carousel">
     <img class="logo" src="images/pied-piper-logo-secondary.png" />
     <h1>The Internet We Deserve</h1>
-  </section>
+  </div>
 
-  <header id="navbar">
+  <div id="navbar">
     <div id="logo">
       <img src="images/pied_piper_logo.png" height="30">
     </div>
-    <nav>
+    <div id="links">
       <a href="">The Box</a>
       <a href="">Projects</a>
       <a href="">Contact</a>
-    </nav>
-  </header>
-
-  <section id='product'>
-    <h2>Introducing The Box</h2>
-    <div class="flex">
-      <p>
-        The Box is a very, very exciting new data backup device that uses Pied Piper’s next-level compression algorithm
-        to store duplicate copies of vast quantities of data. It is fun; it is sexy; it is the future of information
-        safeguarding hardware. I am tingling just writing about it. So even in the event of a catastrophic system
-        failure—caused by hacking, some natural disaster, or what have you—not one kilobyte would be corrupted or lost.
-        So the Box is also peace of mind, whether you’re a large healthcare corporation, a large for-profit prison
-        corporation, or even a large government agency
-      </p>
-      <div id="productmockup">
-        <img src="images/the_box.png" alt="The Box product" />
-      </div>
     </div>
-  </section>
+  </div>
 
-  <section id='portfolio'>
-    <h1>PROJECTS</h1>
-    <div class="wrap">
-      <div class="projects">
+  <div id='product'>
+    <h2>Introducing The Box</h2>
+    <p>
+      The Box is a very, very exciting new data backup device that uses Pied Piper’s next-level compression algorithm
+      to store duplicate copies of vast quantities of data. It is fun; it is sexy; it is the future of information
+      safeguarding hardware. I am tingling just writing about it. So even in the event of a catastrophic system
+      failure—caused by hacking, some natural disaster, or what have you—not one kilobyte would be corrupted or lost.
+      So the Box is also peace of mind, whether you’re a large healthcare corporation, a large for-profit prison
+      corporation, or even a large government agency
+    </p>
+    <img src="images/the_box.png" alt="The Box product" />
+  </div>
+
+  <div id='portfolio'>
+    <h1 id="portfolio-header">PROJECTS</h1>
+    <ul class="portfolio-main">
+      <li class="portfolio-item">
         <h1>Aviatto</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -64,8 +60,8 @@
           pariatur.
         </p>
         <button>DEMO</button>
-      </div>
-      <div class="projects">
+      </li>
+      <li class="portfolio-item">
         <h1>Bit Soup</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -73,8 +69,8 @@
           pariatur.
         </p>
         <button>DEMO</button>
-      </div>
-      <div class="projects">
+      </li>
+      <li class="portfolio-item">
         <h1>Hooli</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -82,8 +78,8 @@
           pariatur.
         </p>
         <button>DEMO</button>
-      </div>
-      <div class="projects">
+      </li>
+      <li class="portfolio-item">
         <h1>Internet Radio by Russ Hanneman</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -91,8 +87,8 @@
           pariatur.
         </p>
         <button>DEMO</button>
-      </div>
-      <div class="projects">
+      </li>
+      <li class="portfolio-item">
         <h1>Nucleus</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -100,8 +96,8 @@
           pariatur.
         </p>
         <button>DEMO</button>
-      </div>
-      <div class="projects">
+      </li>
+      <li class="portfolio-item">
         <h1>Project Title</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -109,15 +105,9 @@
           pariatur.
         </p>
         <button>DEMO</button>
-      </div>
-    </div>
-
-  </section>
-  <footer>
-  </footer>
-
-
-  <script src="index.js" async defer></script>
+      </li>
+    </ul>
+  </div>
 </body>
 
 </html>

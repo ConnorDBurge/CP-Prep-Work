@@ -1,9 +1,9 @@
 .container > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: #ffeead;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #ffeead;
 }
 
 html, body {
@@ -20,9 +20,9 @@ html, body {
 }
 
 .container > div:nth-child(2n) {
-      background-color: #ff6f69;
+  background-color: #ff6f69;
 }
 
 .container > div:nth-child(4n) {
-      background-color: #ffcc5c;
+  background-color: #ffcc5c;
 }

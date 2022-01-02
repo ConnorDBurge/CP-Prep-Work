@@ -196,8 +196,10 @@ body, body > * {
     border-radius: 15px;
     border: none;
     box-shadow: 0 8px 8px -4px #2CC18B;
+    transition: all 0.6s;
 }
 
 .demo:hover {
     cursor: pointer;
+    box-shadow: 0 8px 8px -4px #14553d;
 }

@@ -1,113 +1,156 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Pied Piper</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:100i,200,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="index.js" defer></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100i,200,300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="index.js" defer></script>
+	<script src="observers.js" defer></script>
+	<title>Pied Piper</title>
 </head>
 
 <body>
 
-  <div id="carousel">
-    <img class="logo" src="images/pied-piper-logo-secondary.png" />
-    <h1>The Internet We Deserve</h1>
-  </div>
+	<div id="cover-area">
+		<div id="cover-overlay">
+			<img id="cover-logo" src="./images/pied-piper-logo-secondary.png">
+			<h1 id="cover-title">The Internet We Deserve</h1>
+		</div>
+		<img id="cover-photo" class="carousel-image" src="./images/sv-cover.jpeg">
+		<img id="cover-photo" class="carousel-image" src="./images/sv-group.jpeg">
+		<img id="cover-photo" class="carousel-image" src="./images/sv-garage.jpg">
+		<img id="cover-photo" class="carousel-image" src="./images/sv-pair-programming.jpg">
+	</div>
 
-  <div id="navbar">
-    <div id="logo">
-      <img src="images/pied_piper_logo.png" height="30">
-    </div>
-    <div id="links">
-      <a href="">The Box</a>
-      <a href="">Projects</a>
-      <a href="">Contact</a>
-    </div>
-  </div>
+	<div id="navbar">
+		<img src="images/pied_piper_logo.png">
+		<div id="links">
+			<a href="#product">The Box</a>
+			<a href="#portfolio">Projects</a>
+			<a href="#footer">Contact</a>
+		</div>
+	</div>
 
-  <div id='product'>
-    <h2>Introducing The Box</h2>
-    <p>
-      The Box is a very, very exciting new data backup device that uses Pied Piper’s next-level compression algorithm
-      to store duplicate copies of vast quantities of data. It is fun; it is sexy; it is the future of information
-      safeguarding hardware. I am tingling just writing about it. So even in the event of a catastrophic system
-      failure—caused by hacking, some natural disaster, or what have you—not one kilobyte would be corrupted or lost.
-      So the Box is also peace of mind, whether you’re a large healthcare corporation, a large for-profit prison
-      corporation, or even a large government agency
-    </p>
-    <img src="images/the_box.png" alt="The Box product" />
-  </div>
+	<div id='product'>
+		<h2>Introducing The Box</h2>
+		<p class="slide-in from-left">
+			The Box is a very, very exciting new data backup device that uses Pied Piper’s next-level compression
+			algorithm to store duplicate copies of vast quantities of data. It is fun; it is sexy; it is the future of
+			information
+			safeguarding hardware.
+		</p>
+		<img src="images/the_box.png" alt="The Box product" class="slide-in from-right" />
+		<p class="slide-in from-left">
+			I am tingling just writing about it. So even in the event of a catastrophic system
+			failure caused by hacking, some natural disaster, or what have you—not one kilobyte would be corrupted or
+			lost.
+			So the Box is also peace of mind, whether you’re a large healthcare corporation, a large for-profit prison
+			corporation, or even a large government agency.
+		</p>
+	</div>
 
-  <div id='portfolio'>
-    <h1 id="portfolio-header">PROJECTS</h1>
-    <ul class="portfolio-main">
-      <li class="portfolio-item">
-        <h1>Aviatto</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
-        <button class="demo">DEMO</button>
-      </li>
-      <li class="portfolio-item">
-        <h1>Bit Soup</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
-        <button class="demo">DEMO</button>
-      </li>
-      <li class="portfolio-item">
-        <h1>Hooli</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
-        <button class="demo">DEMO</button>
-      </li>
-      <li class="portfolio-item">
-        <h1>Internet Radio by Russ Hanneman</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
-        <button class="demo">DEMO</button>
-      </li>
-      <li class="portfolio-item">
-        <h1>Nucleus</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
-        <button class="demo">DEMO</button>
-      </li>
-      <li class="portfolio-item">
-        <h1>Project Title</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
-        <button class="demo">DEMO</button>
-      </li>
-    </ul>
-  </div>
+	<div id='portfolio'>
+		<h1 id="portfolio-header">PROJECTS</h1>
+		<ul class="portfolio-main">
+			<li class="portfolio-item">
+				<h1>Aviatto</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+					ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+					nulla
+					pariatur.
+				</p>
+				<button class="demo">DEMO</button>
+			</li>
+			<li class="portfolio-item">
+				<h1>Bit Soup</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+					ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+					nulla
+					pariatur.
+				</p>
+				<button class="demo">DEMO</button>
+			</li>
+			<li class="portfolio-item">
+				<h1>Hooli</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+					ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+					nulla
+					pariatur.
+				</p>
+				<button class="demo">DEMO</button>
+			</li>
+			<li class="portfolio-item">
+				<h1>Internet Radio by Russ Hanneman</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+					ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+					nulla
+					pariatur.
+				</p>
+				<button class="demo">DEMO</button>
+			</li>
+			<li class="portfolio-item">
+				<h1>Nucleus</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+					ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+					nulla
+					pariatur.
+				</p>
+				<button class="demo">DEMO</button>
+			</li>
+			<li class="portfolio-item">
+				<h1>Project Title</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+					ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+					nulla
+					pariatur.
+				</p>
+				<button class="demo">DEMO</button>
+			</li>
+		</ul>
+	</div>
+
+	<div id="footer">
+		<p>Connor D Burge</p>
+		<a href="https://github.com/ConnorDBurge">
+			<svg viewBox="0 0 16 16" width="25" height="25" fill="currentColor">
+				<path fill-rule="evenodd"
+					d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+				</path>
+			</svg>
+		</a>
+		<a href="https://linkedin.com/in/connordburge">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 34 34" class="global-nav__logo">
+				<g>
+					<path
+						d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z"
+						fill="currentColor"></path>
+				</g>
+			</svg>
+		</a>
+		<p>Software Engineer</p>
+	</div>
+
 </body>
 
 </html>

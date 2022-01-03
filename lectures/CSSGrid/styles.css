@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightslategrey;
+}
+
+.section {
+    padding: 10px;
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        'one one two five'
+        'three four four five'
+}
+
+@media all and (max-width: 900px) {
+    .section {
+        grid-template-areas: 
+            'one one'
+            'two five'
+            'three five'
+            'four four'
+    }
+}
+
+@media all and (max-width: 600px) {
+    .section {
+        grid-template-areas: 
+            'one'
+            'two'
+            'three'
+            'four'
+            'five'
+    }
+}
+
+#one {
+    grid-area: one;
+    background-color: lightcoral;
+}
+
+#two {
+    grid-area: two;
+    background-color: lightcyan;
+}
+
+#three {
+    grid-area: three;
+    background-color: lightpink;
+}
+
+#four {
+    grid-area: four;
+    background-color: lightseagreen
+}
+
+#five {
+    grid-area: five;
+    background-color: lightgreen
+}
+
+.grid-col-span-2 { 
+    grid-column: span 2;
+}
+.grid-row-span-2 { 
+    grid-row: span 2;
+}
+
+.card {
+    width: auto;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+}

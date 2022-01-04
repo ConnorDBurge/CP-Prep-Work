@@ -1,0 +1,19 @@
+$primaryBtn: rgb(0, 140, 255);
+@mixin flex-center($direction, $background) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: $direction;
+    background: $background;
+}
+@import "./header";
+
+.contact {
+    @include flex-center(row, red);
+
+    &__button {
+        background-color: $primaryBtn;
+    }
+}
+

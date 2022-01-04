@@ -1,0 +1,13 @@
+.header {
+    @include flex-center(column, lightseagreen);
+    display: flex;
+
+    &__button {
+        background-color: $primaryBtn;
+        transition: all 0.5s;
+
+        &:hover {
+            background-color: red;
+        }
+    }
+}

@@ -3,10 +3,10 @@
 -- so it references a specific address record. If we didn't specify a value
 -- for the id columns, the database would choose an integer for us.
 
-INSERT INTO addresses (id, line_1, city, state, zipcode) VALUES (1, '6232 Guiseppe Courts', 'Jamartown', 'Maryland', 49028);
-INSERT INTO addresses (id, line_1, city, state, zipcode) VALUES (2, '704 Cecil Mountain', 'West Jon', 'South Dakota', 91578);
-INSERT INTO addresses (id, line_1, city, state, zipcode) VALUES (3, '41613 Huel Ranch', 'Loycefort', 'Florida', 12109);
-INSERT INTO addresses (id, line_1, city, state, zipcode) VALUES (4, '1397 Braden Shoals', 'New Karine', 'New York', 03913);
+INSERT INTO addresses (id, line_1, city, state, zipcode) VALUES (1, '6232 Guiseppe Courts', 'Jamartown', 'Maryland', '49028');
+INSERT INTO addresses (id, line_1, city, state, zipcode) VALUES (2, '704 Cecil Mountain', 'West Jon', 'South Dakota', '91578');
+INSERT INTO addresses (id, line_1, city, state, zipcode) VALUES (3, '41613 Huel Ranch', 'Loycefort', 'Florida', '12109');
+INSERT INTO addresses (id, line_1, city, state, zipcode) VALUES (4, '1397 Braden Shoals', 'New Karine', 'New York', '03913');
 
 
 INSERT INTO students (id, first_name, last_name, birthdate, address_id) VALUES (1, 'Tianna', 'Lowe', '1985-02-17', 1);

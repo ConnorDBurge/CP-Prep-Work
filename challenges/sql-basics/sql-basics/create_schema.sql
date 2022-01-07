@@ -32,3 +32,6 @@ CREATE TABLE enrollments (
   class_id INTEGER REFERENCES classes(id),
   grade VARCHAR(12)
 );
+
+-- seeds databse using seed_data.sql file
+\i seed_data.sql

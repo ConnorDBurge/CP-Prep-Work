@@ -44,7 +44,7 @@ def clean_data(csv_row):  # Cleaning the CSV file
         cleaned['annual_salary'] = round(float(csv_row['Annual Salary']), 2)
     else:
         annual_salary = round(float(
-            csv_row['Typical Hours']) * float(csv_row['Hourly Rate']), 2)
+            csv_row['Typical Hours']) * float(csv_row['Hourly Rate']), 2) * 50
         cleaned['annual_salary'] = annual_salary
     return cleaned
 
@@ -60,6 +60,8 @@ with open('./salaries.csv', mode='r') as csv_file:
         cleaned_data = clean_data(row)
         cursor.execute(insert_record(),
                        (cleaned_data['first_name'], cleaned_data['last_name'], cleaned_data['job_title'], cleaned_data['full_or_part_time'], cleaned_data['department'], cleaned_data['annual_salary']))
+
+print('chicago_salaries has been seeded.')
 
 connection.commit()
 connection.close()

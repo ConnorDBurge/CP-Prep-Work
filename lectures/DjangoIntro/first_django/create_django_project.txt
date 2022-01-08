@@ -1,0 +1,34 @@
+INSTALL DJANGO
+python -m venv .venv
+source .venv/bin/activate
+pip install django 
+django-admin startproject <PROJECT NAME> .
+
+CREATE APPLICATION
+python manage.py startapp <APPLICATION NAME>
+ADD APPLICATION NAME TO settings.py UNDER INSTALLED APPS
+
+UPDATE DATABASE SETTINGS
+pip install psycopg2
+createdb <DATABASE NAME>
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'school_django',
+    }
+}
+
+CREATE URLS FILE IN PROJECT FOLDER
+urls.py
+
+CREATE MODELS IN models.py
+THEN...
+CREATE MIGRATION SCRIPT
+python manage.py makemigrations
+RUN MIGRATION SCRIPT
+python manage.py migrate
+
+CREATE VIEWS AND URLS
+
+RUN SERVER
+python manage.py runserver

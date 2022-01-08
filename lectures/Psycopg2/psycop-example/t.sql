@@ -1,0 +1,8 @@
+-- What's the most expensive house and condo sold? What's the cost per square foot?
+-- SELECT  
+--     properties.sale_price AS sale_price,
+--     properties.sale_price / properties.square_feet AS per_sqft
+-- FROM properties
+-- WHERE property_type = 'Residential'
+-- ORDER BY properties.sale_price DESC
+-- LIMIT 1;

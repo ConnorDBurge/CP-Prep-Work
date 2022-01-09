@@ -18,7 +18,7 @@ class ProductCrud:
 
     @classmethod
     def last_record(cls):
-        return Product.objects.last()  # returns last object added to database
+        return Product.objects.last()
 
     @classmethod
     def by_rating(cls, rating):

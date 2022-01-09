@@ -4,17 +4,14 @@ from django.db.models.functions import Length
 
 
 class ProductCrud:
+
     @classmethod
     def get_all_products(cls):
         return Product.objects.all()  # returns all Products in the database
 
     @classmethod
     def find_by_model(cls, model_name):
-        for product in Product.objects.all():
-            if product.model == model_name:
-                return product
-        else:
-            return 'Model not found'
+        return Product.objects.get(model=model_name)
 
     @classmethod
     def last_record(cls):
@@ -30,7 +27,7 @@ class ProductCrud:
 
     @classmethod
     def by_rating_and_color(cls, rating, color):
-        return Product.objects.filter(Q(rating=rating) & Q(color=color))
+        return Product.objects.filter(rating=rating, color=color)
 
     @classmethod
     def by_rating_or_color(cls, rating, color):

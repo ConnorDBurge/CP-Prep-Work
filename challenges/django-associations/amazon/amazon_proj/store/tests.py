@@ -2,13 +2,15 @@ from django.test import TestCase
 from .models import *
 import redgreenunittest as unittest
 
+
 class AssociationTestCase(TestCase):
     def setUp(self):
         self.shop_owner = User.objects.create()
         self.shop = Shop.objects.create(owner=self.shop_owner)
         self.product = Product.objects.create(shop=self.shop)
         self.user = User.objects.create()
-        self.review = Review.objects.create(product=self.product, user=self.user)
+        self.review = Review.objects.create(
+            product=self.product, user=self.user)
 
     def test_01_owner_of_shop(self):
         """returns the owner of the shop"""

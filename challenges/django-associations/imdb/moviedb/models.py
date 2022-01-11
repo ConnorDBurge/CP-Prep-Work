@@ -6,8 +6,12 @@ class Actor(models.Model):
 
 
 class Movie(models.Model):
-    pass
+    actors = models.ManyToManyField(
+        Actor, related_name='movies', through='Role')
 
 
 class Role(models.Model):
-    pass
+    actor = models.ForeignKey(
+        Actor, related_name='roles', on_delete=models.CASCADE)
+    movie = models.ForeignKey(
+        Movie, related_name='roles', on_delete=models.CASCADE)

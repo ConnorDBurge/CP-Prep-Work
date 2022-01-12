@@ -2,16 +2,17 @@ from django.db import models
 
 
 class Post(models.Model):
-    post_text = models.TextField(null=True)
+    title = models.CharField(max_length=200, null=False)
+    body = models.TextField(null=False)
 
     def __str__(self):
-        return self.post_text
+        return f'Title: {self.title}, Body: {self.body}'
 
 
 class Comment(models.Model):
-    comment_text = models.TextField(null=True)
+    body = models.TextField(null=False)
     post = models.ForeignKey(
         Post, related_name='comments', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.comment_text
+        return f'Body: {self.body}'

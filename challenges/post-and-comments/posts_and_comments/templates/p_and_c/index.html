@@ -10,6 +10,15 @@
 
 <body>
     <h1>All Posts</h1>
+    <div>
+        {% for post in posts %}
+        <h2><a href="{% url 'post_view' post.id %}">{{ post.id }}: {{ post.title }}</a></h2>
+        <h3>{{ post.body }}</h3>
+        {% for comment in post.comments.all %}
+        <p>- {{ comment.body }}</p>
+        {% endfor %}
+        {% endfor %}
+    </div>
 </body>
 
 </html>

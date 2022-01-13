@@ -2,6 +2,13 @@
 
 {% block content %}
 
-<h1>All Events</h1>
+{% for event in events %}
+<div class="event">
+    <h2 class="event__name">{{ event.name }}</h2>
+    <small>{{ event.created_at }}</small>
+    <p>{{ event.description }}</p>
+    <small><i>{{ event.starts_at }} - {{ event.ends_at }}</i></small>
+</div>
+{% endfor %}
 
 {% endblock %}

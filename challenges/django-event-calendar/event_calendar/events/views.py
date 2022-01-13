@@ -3,4 +3,6 @@ from .models import Event
 
 
 def index(request):
-    return render(request, 'events/index.html')
+    events = Event.objects.order_by('starts_at')
+    data = {'events': events}
+    return render(request, 'events/index.html', data)

@@ -1,0 +1,8 @@
+{% extends 'todo/base.html' %}
+
+{% block main %}
+<h1>{{ todo.title }}</h1>
+<h3>{{ todo.description }}</h3>
+<a href="#"><button type="submit">edit</button></a>
+<a href="#"><button type="submit">delete</button></a>
+{% endblock %}

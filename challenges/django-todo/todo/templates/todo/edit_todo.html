@@ -2,7 +2,7 @@
 
 {% block main %}
 <h1>{{ method }}</h1>
-<form action="{% url 'create' %}" method="POST">
+<form action="{% url 'edit' todo.id%}" method="POST">
     {% csrf_token %}
     <table>
         {{ form.as_table }}

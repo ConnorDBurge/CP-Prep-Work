@@ -1,0 +1,5 @@
+asgiref==3.4.1
+Django==4.0.1
+psycopg2==2.8.6
+pytz==2018.7
+sqlparse==0.4.2

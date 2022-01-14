@@ -1,0 +1,11 @@
+{% extends 'todo/base.html'%}
+
+{% block main %}
+<h1>All To Do's</h1>
+<ul>
+    {% for todo in all_todo %}
+    <li><a href="{% url 'view' todo.id%}">{{ todo.title }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create' %}"><button type="submit">Create ToDo</button></a>
+{% endblock %}

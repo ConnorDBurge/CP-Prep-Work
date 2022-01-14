@@ -4,6 +4,14 @@ from .models import ToDo
 from .forms import ToDoForm
 
 
+def index(request):
+    all_todo = ToDo.objects.all()
+    data = {
+        'all_todo': all_todo
+    }
+    return render(request, 'todo/index.html', data)
+
+
 def create(request):
     if request.method == "POST":
         form = ToDoForm(request.POST)
@@ -13,7 +21,8 @@ def create(request):
     else:
         form = ToDoForm()
     data = {
-        'form': form
+        'form': form,
+        'method': 'Create New ToDo'
     }
     return render(request, 'todo/new_todo.html', data)
 

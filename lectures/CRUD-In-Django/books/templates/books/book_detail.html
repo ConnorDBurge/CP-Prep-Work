@@ -1,0 +1,9 @@
+{% extends 'books/base.html' %}
+
+{% block main %}
+<h1>Book Details</h1>
+<h2>Title: {{ book.title }}</h2>
+Pages: {{ book.pages }}
+<hr />
+<a href="{% url 'books:book_list' %}">Back</a>
+{% endblock %}

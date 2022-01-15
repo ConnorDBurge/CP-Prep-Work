@@ -1,0 +1,11 @@
+<h1> All Students for {{ cohort.cohort_name }} </h1>
+<ul>
+    {% for student in students %}
+    <div>
+        <li><a href="{% url 'student_detail' cohort_id=cohort.id student_id=student.id %}">{{ student.first_name }}</a>
+        </li>
+    </div>
+    {% endfor %}
+</ul>
+<a href="{% url 'cohort_detail' cohort_id=cohort.id %}">Back</a>
+<a href="{% url 'new_student' cohort_id=cohort.id %}">New</a>

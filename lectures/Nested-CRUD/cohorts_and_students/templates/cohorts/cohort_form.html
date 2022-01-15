@@ -1,0 +1,10 @@
+<h2>{{ type_of_request }} Cohort</h2>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <button type="submit">Save</button>
+</form>
+<br>
+<a href="{% url 'cohort_list' %}">Back</a>

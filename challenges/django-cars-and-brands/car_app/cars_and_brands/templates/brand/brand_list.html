@@ -1,0 +1,9 @@
+<h1>All Brands</h1>
+
+<ul>
+    {% for brand in brands %}
+    <li><a href="{% url 'brand_detail' brand_id=brand.id %}">{{ brand.brand_name }}</a></li>
+    {% endfor %}
+</ul>
+
+<button type="submit"><a href="{% url 'brand_new' %}">New Brand</a></button>

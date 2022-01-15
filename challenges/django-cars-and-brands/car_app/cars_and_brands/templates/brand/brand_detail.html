@@ -2,9 +2,10 @@
 
 <ul>
     {% for car in cars %}
-    <li><a href="#">{{ car.car_model }}</a></li>
+    <li><a href="{% url 'car_detail' brand_id=brand.id car_id=car.id %}">{{ car.car_model }}</a></li>
     {% endfor %}
 </ul>
 
 <button type="submit"><a href="{% url 'brand_list' %}">Back</a></button>
 <button type="submit"><a href="{% url 'brand_edit' brand_id=brand.id%}">Edit</a></button>
+<button type="submit"><a href="{% url 'car_new' brand_id=brand.id%}">New Car</a></button>

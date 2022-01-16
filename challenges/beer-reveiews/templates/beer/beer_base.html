@@ -12,6 +12,7 @@
     <div class="header">
         <a href="{% url 'all_beer' %}">All Beer</a>
         <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'new_beer' %}">Add New Beer</a>
         <a>{{ user.username }}</a>
     </div>
     {% block main %}

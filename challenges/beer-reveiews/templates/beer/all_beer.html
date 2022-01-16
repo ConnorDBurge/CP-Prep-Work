@@ -2,4 +2,9 @@
 
 {% block main %}
 <h1>Welcome to Beer Reviews!</h1>
+<ul>
+    {% for beer in beers %}
+    <li><a href="#">{{ beer.beer_name }}</a><small> - {{ beer.added_by }}</small></li>
+    {% endfor %}
+</ul>
 {% endblock main %}

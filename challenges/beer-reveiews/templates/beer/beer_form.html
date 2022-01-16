@@ -1,0 +1,14 @@
+{% extends 'beer/beer_base.html' %}
+
+{% block title %}{{ type }} Beer{% endblock title%}
+
+{% block main %}
+<h1>{{ type }} Beer</h1>
+<form method="POST">
+    <table>
+        {% csrf_token %}
+        {{ form.as_table }}
+    </table>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

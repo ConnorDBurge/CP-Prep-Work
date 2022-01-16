@@ -1,0 +1,13 @@
+{% extends "beer/beer_base.html" %}
+
+{% block title %}{{ beet.beer_name }} Review {% endblock title %}
+
+{% block main %}
+<form method="POST">
+    <table>
+        {% csrf_token %}
+        {{ form.as_table }}
+    </table>
+    <button type="submit">Submit review</button>
+</form>
+{% endblock main %}

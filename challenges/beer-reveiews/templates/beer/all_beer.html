@@ -4,7 +4,9 @@
 <h1>Welcome to Beer Reviews!</h1>
 <ul>
     {% for beer in beers %}
-    <li><a href="#">{{ beer.beer_name }}</a><small> - {{ beer.added_by }}</small></li>
+    <li><a href="{% url 'beer_reviews' beer_id=beer.id %}">{{ beer.beer_name }}</a>
+        <small> - added by {{ beer.added_by }}</small>
+    </li>
     {% endfor %}
 </ul>
 {% endblock main %}

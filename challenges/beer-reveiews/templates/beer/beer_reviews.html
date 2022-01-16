@@ -1,0 +1,19 @@
+{% extends "beer/beer_base.html" %}
+
+{% block title %}{{ beer.beer_name }} Reviews{% endblock title %}
+
+{% block main %}
+<h1>{{ beer.beer_name }} Reviews</h1>
+<h3>Beer Submitted by {{ beer.added_by }}</h3>
+<ul>
+    {% for review in reviews %}
+    <p><small><i>{{ review.added_by }} said:</i></small></p>
+    <p>{{ review.review_body }}</p>
+    {% if user.id == review.added_by_id %}
+    <a href="{% url 'delete_review' beer_id=beer.id review_id=review.id %}">Delete Review</a>
+    <a href="{% url 'edit_review' beer_id=beer.id review_id=review.id %}">Edit Review</a>
+    {% endif %}
+    {% endfor %}
+</ul>
+<button type="submit"><a href="{% url 'new_review' beer_id=beer.id%}">Leave a review</a></button>
+{% endblock %}

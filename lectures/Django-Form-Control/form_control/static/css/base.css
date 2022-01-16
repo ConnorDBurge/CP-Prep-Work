@@ -1,0 +1,41 @@
+body {
+  background-color: #494646;
+  padding: 25px;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  padding: 25px;
+  background-color: #bfe6f3;
+  border: 1px solid #CED4DA;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+.container .form {
+  text-align: center;
+}
+
+.container .button {
+  background-color: #e3edf0;
+  border: 1px solid #CED4DA;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.container .button a {
+  text-decoration: none;
+  color: black;
+}
+/*# sourceMappingURL=base.css.map */

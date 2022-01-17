@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.welcometag {
+    width: 630px;
+    margin-top: 20%;
+    margin-left: 15%;
+
+    &__header {
+        font-weight: bold;
+        font-size: 64px;
+        color: white;
+    }
+
+    &__concert {
+        color: #3399FF;
+    }
+}

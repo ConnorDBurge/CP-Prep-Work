@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300&display=swap");
+body {
+  background-color: #001E3C;
+}
+
+.navbar {
+  background-color: #071A2E;
+  border-bottom: 1px solid #0c2b4d;
+  font-family: 'Work Sans', sans-serif;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.navbar__logo {
+  color: white;
+  margin-right: 1.5rem;
+}
+
+.navbar__brand {
+  color: white;
+  font-weight: bold;
+  font-family: 'PT Sans', sans-serif;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0 25px 0 25px;
+}
+
+.navbar__brand:hover {
+  color: white;
+}
+
+.navbar__link {
+  color: white;
+  font-weight: bold;
+  margin: 0 25px 0 25px;
+  border-radius: 10px;
+}
+
+@media (max-width: 991px) {
+  .navbar__link {
+    text-align: center;
+  }
+}
+
+.navbar__hover:hover {
+  color: #91B9E3;
+  background-color: #132F4C;
+}
+
+.navbar__search {
+  background-color: #0A1929;
+  border: 1px solid #86B7FE;
+  border-radius: 10px 0 0 10px;
+  padding-left: 1.2rem;
+  color: #86B7FE;
+  margin: 0px;
+}
+
+.navbar__search::-webkit-input-placeholder {
+  color: #86B7FE;
+  opacity: 1;
+}
+
+.navbar__search:-ms-input-placeholder {
+  color: #86B7FE;
+  opacity: 1;
+}
+
+.navbar__search::-ms-input-placeholder {
+  color: #86B7FE;
+  opacity: 1;
+}
+
+.navbar__search::placeholder {
+  color: #86B7FE;
+  opacity: 1;
+}
+
+.navbar__search:focus {
+  background-color: #0B223A;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #86B7FE;
+}
+
+.navbar__search_button {
+  background-color: #0A1929;
+  border: 1px solid #86B7FE;
+  border-radius: 0 10px 10px 0;
+  border-left: 0px;
+  color: #86B7FE;
+  margin: 0px;
+}
+
+.navbar__search_button:hover {
+  color: #86B7FE;
+}
+
+.navbar__search_button:focus {
+  background-color: #0B223A;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #86B7FE;
+  border-color: #86B7FE;
+}
+
+.navbar .navbar-toggler {
+  width: 47px;
+  height: 34px;
+  background-color: #0B223A;
+  border: 1px solid #86B7FE;
+}
+
+.navbar .navbar-toggler .line {
+  width: 100%;
+  float: left;
+  height: 2px;
+  background-color: #86B7FE;
+  margin-bottom: 5px;
+}
+/*# sourceMappingURL=navbar.css.map */

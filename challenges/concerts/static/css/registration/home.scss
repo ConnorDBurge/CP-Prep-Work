@@ -1,14 +1,31 @@
-body {
+.main {
     height: 100vh;
     width: 100%;
     display: flex;
+    padding: 25px 25px;
+    padding-top: 70px;
+    @media (max-width: 990px) { 
+        justify-content: center;
+        align-items: center;
+    }
+    @media (max-width: 420px) { 
+        align-items: start;
+        padding: 15px;
+        padding-top: 75px;
+    }
 }
 
 .welcometag {
-    width: 630px;
-    margin-top: 20%;
+    width: 590px;
+    height: auto;
+    font-family: 'PT Sans';
+    margin-top: 15%;
     margin-left: 15%;
+    @media (max-width: 990px) { 
+        margin: 0;
+    }
 
+    
     &__header {
         font-weight: bold;
         font-size: 64px;
@@ -17,5 +34,13 @@ body {
 
     &__concert {
         color: #3399FF;
+    }
+
+    &__subtext {
+        margin-top: 20px;
+        font-family: 'Work Sans';
+        font-weight: bold;
+        color: white;
+        font-size: 1.4rem;
     }
 }

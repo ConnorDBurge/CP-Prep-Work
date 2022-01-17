@@ -3,12 +3,26 @@
 
 {% block custom_styles %}
 <link rel="stylesheet" href="{% static 'css/registration/home.css' %}">
-{% endblock %}
+{% endblock custom_styles %}
 
 {% block main %}
-<div class="welcometag">
-    <h1 class="welcometag__header">
-        Discover <span class="welcometag__concert">Concerts</span> near you.
-    </h1>
+<div class="main">
+    <div class="welcometag">
+        <h1 class="welcometag__header">
+            Discover <span class="welcometag__concert">Concerts</span> near you.
+        </h1>
+        <p class="welcometag__subtext">Search for concerts, events and festivals near you.</p>
+        <form class="d-flex" class="welcometag__searchbar">
+            <input class="form-control navbar__search" type="search" placeholder="ex: George Straight"
+                aria-label="Search">
+            <button class="btn navbar__search_button" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </button>
+        </form>
+    </div>
 </div>
-{% endblock %}
+{% endblock main %}

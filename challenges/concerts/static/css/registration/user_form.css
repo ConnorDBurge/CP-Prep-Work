@@ -1,4 +1,4 @@
-body {
+.main {
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -15,19 +15,12 @@ body {
 
 .user_form_container {
   background-color: white;
-  width: 600px;
+  width: 100%;
   height: auto;
   font-family: 'PT Sans';
   background-color: #132F4C;
   border-radius: 10px;
-  padding: 20px;
   border: 1px solid #86B7FE;
-}
-
-@media (max-width: 680px) {
-  .user_form_container {
-    width: 90%;
-  }
 }
 
 .user_form_container__form {

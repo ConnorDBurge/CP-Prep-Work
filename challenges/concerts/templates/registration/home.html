@@ -12,9 +12,11 @@
             Discover <span class="welcometag__concert">Concerts</span> near you.
         </h1>
         <p class="welcometag__subtext">Search for concerts, events and festivals near you.</p>
-        <form class="d-flex" class="welcometag__searchbar">
-            <input class="form-control navbar__search" type="search" placeholder="ex: George Straight"
-                aria-label="Search">
+        <form class="d-flex" class="welcometag__searchbar" method="POST"
+            action='{% url "concerts_app:search_results" %}'>
+            {% csrf_token %}
+            <input class="form-control navbar__search" type="search" placeholder="ex: J Cole" aria-label="Search"
+                id='query' name="query">
             <button class="btn navbar__search_button" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">

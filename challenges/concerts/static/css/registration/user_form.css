@@ -14,13 +14,25 @@
 }
 
 .user_form_container {
-  background-color: white;
-  width: 100%;
+  width: 50%;
   height: auto;
   font-family: 'PT Sans';
   background-color: #132F4C;
   border-radius: 10px;
+  padding: 25px;
   border: 1px solid #86B7FE;
+}
+
+@media (max-width: 1200px) {
+  .user_form_container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 420px) {
+  .user_form_container {
+    width: 90%;
+  }
 }
 
 .user_form_container__form {

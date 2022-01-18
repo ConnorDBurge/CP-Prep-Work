@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block custom_styles %}
+<link rel="stylesheet" href="{% static 'css/concerts_pages/search_results.html' %}">
+{% endblock custom_styles %}
+
+{% block title %}
+{{ }}
+{% endblock title %}
+
+<h1>Hello From Search Results</h1>
+<h2>Search results for {{ search_topic }}</h2>
+
+<ul>
+    {% for event in events %}
+    <li>
+        <h1>{{ event.name }}</h1>
+        <h3>{{ event.dates }}</h3>
+        <h3>{{ event.venue_name }}</h3>
+        <a href="{{ event.url }}">See via Ticketmaster</a>
+    </li>
+    {% endfor %}
+</ul>

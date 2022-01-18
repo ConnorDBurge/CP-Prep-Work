@@ -7,23 +7,25 @@
 {% endblock custom_styles %}
 
 {% block main %}
-<div class="user_form_container">
-    <h1 class="user_form_container__title">Login</h1>
-    <form action="" method=POST class="user_form_container__form">
-        <ul class="user_form_container__inputs">
-            {% csrf_token %}
-            <li class="user_form_container__item">
-                <label for="id_username" class="user_form_container__label">Username</label>
-                <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username"
-                    maxlength="150" required id="id_username" class="user_form_container__input">
-            </li>
-            <li class="user_form_container__item">
-                <label for=" id_password" class="user_form_container__label">Password</label>
-                <input type="password" name="password" autocomplete="current-password" required id="id_password"
-                    class="user_form_container__input">
-            </li>
-            <input type="submit" value="Submit" class="user_form_container__button">
-        </ul>
-    </form>
+<div class="main">
+    <div class="user_form_container">
+        <h1 class="user_form_container__title">Login</h1>
+        <form action="" method=POST class="user_form_container__form">
+            <ul class="user_form_container__inputs">
+                {% csrf_token %}
+                <li class="user_form_container__item">
+                    <label for="id_username" class="user_form_container__label">Username</label>
+                    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username"
+                        maxlength="150" required id="id_username" class="user_form_container__input">
+                </li>
+                <li class="user_form_container__item">
+                    <label for=" id_password" class="user_form_container__label">Password</label>
+                    <input type="password" name="password" autocomplete="current-password" required id="id_password"
+                        class="user_form_container__input">
+                </li>
+                <input type="submit" value="Submit" class="user_form_container__button">
+            </ul>
+        </form>
+    </div>
 </div>
 {% endblock %}

@@ -5,11 +5,16 @@
     grid-gap: 25px;
     grid-auto-columns: 1fr;
     grid-template-areas:
-        'i i i m m';
+        'i i i m m'
+        'a a a a a';
     @media (max-width: 991px) {
         grid-template-areas:
             'i'
-            'm';
+            'm'
+            'a';
+    }
+    @media (max-width: 420px) {
+        padding: 80px 10px 10px 10px;
     }
 }
 
@@ -75,6 +80,45 @@
 
         &__street {
             margin: 0;
+        }
+    }
+}
+
+.add_info {
+    grid-area: a;
+    padding: 20px;
+
+    &__header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    &__expand {
+        display: none;
+        flex-grow: 1;
+        background: none;
+        border: none;
+        color: white;
+        text-align: end;
+        @media (max-width: 991px) {
+            display: block;
+        }
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__text {
+        margin: 20px 0 0 0;
+        font-family: 'Work Sans';
+        @media (max-width: 991px) {
+            display: none;
+        }
+
+        &__info {
+            margin: 20px 0 0 0;
         }
     }
 }

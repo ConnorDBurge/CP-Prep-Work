@@ -21,6 +21,7 @@
 
 {% block custom_styles %}
 <link rel="stylesheet" href="{% static 'css/concert_pages/event_details.css' %}">
+<script src="{% static 'js/event_details.js' %}"></script>
 {% endblock custom_styles %}
 
 {% block title %}
@@ -49,5 +50,23 @@
             <p class='event__location__street'>{{ event.address }}, {{ event.postal_code }}</p>
         </div>
     </div>
+    {% if event.info is not None %}
+    <div class="add_info card">
+        <div class=add_info__header>
+            <h2 class=add_info__title>Additional Info</h2>
+            <button class="add_info__expand" onclick="showAdditionalInfo();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-three-dots" viewBox="0 0 16 16">
+                    <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                </svg>
+            </button>
+        </div>
+        <div class="add_info__text" id="add_info_text">
+            <h4>{{ event.please_note }}</h4>
+            <p class="add_info__text__info">{{ event.info }}</p>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock main %}

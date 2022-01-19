@@ -44,7 +44,11 @@ class Event:
         except KeyError:
             self.price_range = 'No Price Range'
         try:
-            self.img = event['images'][0]['url']
+            images = event['images']
+            for image in images:
+                if image['width'] == 2048:
+                    self.img = image['url']
+                    break
         except KeyError:
             self.img = None
         self.read_dates = self.read_dates(event['dates'])
@@ -115,7 +119,7 @@ class Event:
         except KeyError:
             self.country = None
         try:
-            self.address = venue['address']
+            self.address = venue['address']['line1']
         except KeyError:
             self.address = None
         try:

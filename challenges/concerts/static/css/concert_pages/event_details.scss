@@ -1,3 +1,81 @@
 .main {
-    padding-top: 70px;
+    color: white;
+    padding: 80px 25px 25px 25px;
+    display: grid;
+    grid-gap: 25px;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        'i i i m m';
+    @media (max-width: 991px) {
+        grid-template-areas:
+            'i'
+            'm';
+    }
 }
+
+.card {
+    background-color: #132F4C;
+    border: 1px solid #1E4772;
+    border-radius: 10px;
+}
+
+.event {
+
+    &__info {
+        grid-area: i;
+        display: flex;
+        flex-flow: column wrap;
+
+        &__text {
+            padding: 25px;
+        }
+    }
+
+    &__img {
+        object-fit: contain;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    &__name {
+        font-weight: bold;
+        font-family: 'PT Sans';
+    }
+
+    &__dates {
+        font-family: 'PT Sans';
+        font-weight: bold;
+        color: #3399FF;
+
+        span {
+            color: white;
+        }
+    }
+    
+    &__map {
+        grid-area: m;
+
+        &__image {
+            border-radius: 10px 10px 0 0;
+            height: 100%;
+            @media (max-width: 991px) {
+                height: 250px;
+            }
+        }
+    }
+
+    &__location {
+        padding: 20px;
+        font-family: 'Work Sans';
+
+        &__city {
+            font-family: 'PT Sans';
+            font-weight: bold;
+        }
+
+        &__street {
+            margin: 0;
+        }
+    }
+}
+

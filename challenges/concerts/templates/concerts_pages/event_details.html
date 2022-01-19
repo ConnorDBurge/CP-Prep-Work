@@ -29,8 +29,25 @@
 
 {% block main %}
 <div class="main">
-    <iframe width="100%" height="450" style="border:0" loading="lazy" allowfullscreen
-        src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBaWFTVgsRIGMxK4oba6whavy0kpKQmlf4&center={{ event.latitude }},{{ event.longitude }}&zoom=16">
-    </iframe>
+    <div class="event__info card">
+        <img src="{{ event.img }}" class='event__img'>
+        <div class="event__info__text">
+            <h1 class='event__name'>{{ event.name }}</h1>
+            <h2 class='event__dates'>{{ event.dates }}
+                <span>at {{ event.venue_name }}</span>
+            </h2>
+            <h4>{{ event.price_range }}</h4>
+        </div>
+    </div>
+    <div class="event__map card">
+        <iframe style="border:0" loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBaWFTVgsRIGMxK4oba6whavy0kpKQmlf4&center={{ event.latitude }},{{ event.longitude }}&zoom=16"
+            class="event__map__image">
+        </iframe>
+        <div class="event__location">
+            <h2 class='event__location__city'>{{ event.city }}, {{ event.state }}</h2>
+            <p class='event__location__street'>{{ event.address }}, {{ event.postal_code }}</p>
+        </div>
+    </div>
 </div>
 {% endblock main %}

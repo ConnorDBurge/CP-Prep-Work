@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<!-- # self.name
+# self.id
+# self.url
+# self.info
+# self.please_note
+# self.price_range
+# self.start_date
+# self.end_date
+# self.dates
+# self.venue_name
+# self.venue_id
+# self.city
+# self.state
+# self.address
+# self.postal_code
+# self.longitude
+# self.latitude -->
+
 {% block custom_styles %}
 <link rel="stylesheet" href="{% static 'css/concert_pages/search_results.css' %}">
 {% endblock custom_styles %}
@@ -32,11 +50,25 @@
 
     <ul class="events">
         {% for event in events %}
-        <li>
-            <h1>{{ event.name }}</h1>
-            <h3>{{ event.dates }}</h3>
-            <h3>{{ event.venue_name }}</h3>
-            <a href="{{ event.url }}">See via Ticketmaster</a>
+        <li class="events__event">
+            <div class="events__dates">
+                <h1 class="events__dates__start_date">{{ event.start_date }}</h1>
+            </div>
+            <div class="events__info">
+                <div class="events__info__header">
+                    <h1 class="events__title">{{ event.name }} at
+                        <span class="events__venue_name">{{ event.venue_name }}</span>
+                    </h1>
+                </div>
+                <div>
+                    <p class="events__location">{{ event.city }}, {{ event.state }}</p>
+                </div>
+            </div>
+            <!-- <div>
+                {% if event.img is not None%}
+                <img src="{{ event.img }}" alt="img" height="300px">
+                {% endif %}
+            </div> -->
         </li>
         {% endfor %}
     </ul>

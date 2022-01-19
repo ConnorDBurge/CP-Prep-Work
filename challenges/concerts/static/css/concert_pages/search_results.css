@@ -24,6 +24,12 @@
   width: auto;
 }
 
+@media (max-width: 420px) {
+  .header__phrase {
+    font-size: 44px;
+  }
+}
+
 .header__phrase span {
   color: #3399FF;
 }
@@ -46,6 +52,12 @@
   color: #86B7FE;
   margin: 0px;
   font-family: 'Menlo';
+}
+
+@media (max-width: 991px) {
+  .searchbar__search {
+    height: 40px;
+  }
 }
 
 .searchbar__search::-webkit-input-placeholder {
@@ -90,6 +102,12 @@
   margin: 0px;
 }
 
+@media (max-width: 991px) {
+  .searchbar__search_button {
+    height: 40px;
+  }
+}
+
 .searchbar__search_button:hover {
   color: #86B7FE;
 }
@@ -106,5 +124,108 @@
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: e;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+  list-style: none;
+}
+
+@media (max-width: 991px) {
+  .events {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.events__event {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  background-color: #132F4C;
+  border: 1px solid #1e4772;
+  border-radius: 10px;
+  color: white;
+}
+
+@media (max-width: 991px) {
+  .events__event {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+}
+
+.events__dates {
+  width: auto;
+  font-family: 'Work Sans';
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-right: 1px solid #1e4772;
+}
+
+@media (max-width: 991px) {
+  .events__dates {
+    border-right: None;
+    border-bottom: 1px solid #1e4772;
+  }
+}
+
+.events__dates__start_date {
+  width: 90px;
+  font-size: 1.4rem;
+  margin: 20px;
+}
+
+.events__info {
+  padding: 20px;
+  width: 100%;
+}
+
+.events__info__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.events__info__tickets {
+  color: white;
+}
+
+.events__title {
+  color: white;
+  font-weight: bold;
+  font-family: 'PT Sans';
+  margin: 0;
+}
+
+.events__venue_name {
+  color: #3399FF;
+}
+
+.events__location {
+  margin: .5rem 0;
 }
 /*# sourceMappingURL=search_results.css.map */

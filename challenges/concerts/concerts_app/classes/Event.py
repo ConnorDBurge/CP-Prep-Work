@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Event:
 
     def __init__(self, event):
@@ -40,8 +43,23 @@ class Event:
             self.price_range = self.get_price_range(event['priceRanges'])
         except KeyError:
             self.price_range = 'No Price Range'
+        try:
+            self.img = event['images'][0]['url']
+        except KeyError:
+            self.img = None
         self.read_dates = self.read_dates(event['dates'])
-        self.read_venue(event['_embedded']['venues'][0])
+        try:
+            self.read_venue(event['_embedded']['venues'][0])
+        except KeyError:
+            self.venue_name = None
+            self.venue_id = None
+            self.city = None
+            self.state = None
+            self.country = None
+            self.address = None
+            self.postal_code = None
+            self.longitude = None
+            self.latitude = None
 
     def get_price_range(self, priceRanges):
         min = priceRanges[0]['min']
@@ -53,11 +71,19 @@ class Event:
 
     def read_dates(self, dates):
         try:
-            self.start_date = dates['start']['localDate']
+            date_string = dates['start']['localDate']
+            date = datetime.fromisoformat(date_string)
+            datetime_object = datetime.strptime(str(date.month), "%m")
+            month = datetime_object.strftime("%b")
+            self.start_date = f'{month} {date.day}'
         except KeyError:
             self.start_date = None
         try:
-            self.end_date = dates['end']['localDate']
+            date_string = dates['end']['localDate']
+            date = datetime.fromisoformat(date_string)
+            datetime_object = datetime.strptime(str(date.month), "%m")
+            month = datetime_object.strftime("%b")
+            self.end_date = f'{month} {date.day}'
         except KeyError:
             self.end_date = None
         if self.end_date is None:
@@ -77,7 +103,7 @@ class Event:
         except KeyError:
             self.venue_id = None
         try:
-            self.city = venue['city']
+            self.city = venue['city']['name']
         except KeyError:
             self.city = None
         try:

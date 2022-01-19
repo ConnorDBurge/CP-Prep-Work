@@ -56,19 +56,16 @@
             </div>
             <div class="events__info">
                 <div class="events__info__header">
-                    <h1 class="events__title">{{ event.name }} at
-                        <span class="events__venue_name">{{ event.venue_name }}</span>
-                    </h1>
+                    <a href="{% url 'concerts_app:event_info' event_id=event.id %}" class="events__info_link">
+                        <h1 class="events__title">{{ event.name }} at
+                            <span class="events__venue_name">{{ event.venue_name }}</span>
+                        </h1>
+                    </a>
                 </div>
                 <div>
                     <p class="events__location">{{ event.city }}, {{ event.state }}</p>
                 </div>
             </div>
-            <!-- <div>
-                {% if event.img is not None%}
-                <img src="{{ event.img }}" alt="img" height="300px">
-                {% endif %}
-            </div> -->
         </li>
         {% endfor %}
     </ul>

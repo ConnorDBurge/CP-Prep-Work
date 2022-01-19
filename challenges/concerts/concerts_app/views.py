@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 import requests
@@ -18,3 +19,11 @@ def search_results(request):
     for event in events_json:
         events.append(Event(event))
     return render(request, 'concerts_pages/search_results.html', {'search_phrase': search_phrase, 'events': events})
+
+
+def event_info(request, event_id):
+    response = requests.get(
+        f"https://app.ticketmaster.com/discovery/v2/events/{event_id}.json?apikey=3QoGKoIxgONT7MoA5NrrA1XKKXaktmfM").json()
+    event = Event(response)
+    return render(request, 'concerts_pages/event_details.html', {'event': event})
+

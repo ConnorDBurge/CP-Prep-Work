@@ -211,7 +211,16 @@
 }
 
 .events__info__tickets {
+  text-decoration: none;
   color: white;
+}
+
+.events__info_link {
+  text-decoration: none;
+}
+
+.events__info_link:hover h1 {
+  color: #3399FF;
 }
 
 .events__title {

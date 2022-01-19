@@ -148,6 +148,16 @@
         }
     }
 
+    &__info_link {
+        text-decoration: none;
+
+        &:hover {
+            h1 {
+                color: #3399FF;
+            }
+        }
+    }
+
     &__title {
         color: white;
         font-weight: bold;

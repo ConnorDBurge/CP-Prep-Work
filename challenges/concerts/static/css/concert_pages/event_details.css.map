@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACF,WAAW,EAAE,IAAI;CACpB",
+    "sources": [
+        "event_details.scss"
+    ],
+    "names": [],
+    "file": "event_details.css"
+}

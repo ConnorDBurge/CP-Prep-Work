@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- # self.name
+# self.id
+# self.url
+# self.info
+# self.please_note
+# self.price_range
+# self.start_date
+# self.end_date
+# self.dates
+# self.venue_name
+# self.venue_id
+# self.city
+# self.state
+# self.address
+# self.postal_code
+# self.longitude
+# self.latitude -->
+
+{% block custom_styles %}
+<link rel="stylesheet" href="{% static 'css/concert_pages/event_details.css' %}">
+{% endblock custom_styles %}
+
+{% block title %}
+{{ event.name }}
+{% endblock title %}
+
+{% block main %}
+<div class="main">
+    <iframe width="100%" height="450" style="border:0" loading="lazy" allowfullscreen
+        src="https://www.google.com/maps/embed/v1/view?key=AIzaSyBaWFTVgsRIGMxK4oba6whavy0kpKQmlf4&center={{ event.latitude }},{{ event.longitude }}&zoom=16">
+    </iframe>
+</div>
+{% endblock main %}

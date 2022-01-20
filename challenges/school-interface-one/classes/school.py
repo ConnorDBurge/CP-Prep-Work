@@ -35,10 +35,12 @@ class School:
 
     def delete_student(self, id):
         # delete student from list of student in School object
+       # Remove the student with the given id from the list of students.
         self.students = list(
             filter(lambda student:  # Student object
                    student.id != id,  # filter
                    self.students))  # list to filter
+        # Writing the students list to a file called students.csv
         Student.write_to_file('students.csv', self.students)
 
     def return_staff_ids(self):

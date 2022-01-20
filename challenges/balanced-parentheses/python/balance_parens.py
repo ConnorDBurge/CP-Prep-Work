@@ -1,4 +1,10 @@
 def balance_parens(str):
+    '''
+    Given a string, return a string with any balanced parentheses removed.
+
+    :param str: a string of parentheses
+    :return: The string with all the parentheses removed.
+    '''
     balanced = ''
     open_parens_index = list()
     # loop through entire string

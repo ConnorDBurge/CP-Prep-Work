@@ -1,4 +1,10 @@
 def bottle_song(num):
+    '''
+    Print the lyrics to the beer song.
+
+    :param num: The number of bottles of beer on the wall
+    :return: None
+    '''
     for i in range(num, 0, -1):
         print(
             f'{i} bottle{"s" if i > 1 else ""} of beer on the wall, {i} bottle{"s" if i > 1 else ""} of beer.')

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createFactory } from 'react';
 
 class Detention extends React.Component {
     render() {

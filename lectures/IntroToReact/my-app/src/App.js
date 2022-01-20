@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react'
-import ButtonComponent from './components/ButtonComponent/ButtonComponent.js'
+import ButtonComponent from './components/ButtonComponent.js'
 
 class App extends React.Component {
   createButtons = () => {

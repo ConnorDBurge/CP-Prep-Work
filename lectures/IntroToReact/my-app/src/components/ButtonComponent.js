@@ -14,7 +14,6 @@ class ButtonComponent extends React.Component {
     render() {
         return (
             <div className="App">
-                <h1>I have been clicked {this.state.count} times</h1>
                 <button onClick={this.handleButtonClick}>Click me!</button>
             </div>
         );

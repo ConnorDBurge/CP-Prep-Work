@@ -1,6 +1,8 @@
 import './App.css';
 import stateData from './statedata/index.js';
 import { useState } from 'react';
+import USState from './components/USState.js';
+import Select from 'react-select';
 
 function App() {
 
@@ -12,19 +14,17 @@ function App() {
     });
   }
 
-  const handleChange = (event) => {
-    setSelectedState(event.target.value);
+  const handleChange = (state) => {
+    setSelectedState(state.value);
   }
 
   return (
     <div className="App">
       <h1>Select State From Dropdown Menu</h1>
-      <select onChange={handleChange}>
-        {displayDropDownOptions()}
-      </select>
-      <h1>
-        {selectedState}
-      </h1>
+      <Select
+        options={stateData}
+        onChange={handleChange} />
+      <USState state={selectedState} />
     </div>
   );
 }

@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1>Hang Man</h1>
-      <PuzzleWord />
+      <PuzzleWord puzzleWord={puzzleWord} />
       <GuessForm />
     </div>
   );

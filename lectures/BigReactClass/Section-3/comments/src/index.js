@@ -32,7 +32,6 @@ const App = () => {
                     timeAgo="Yesterday at 5:00pm"
                     text="This is some text" />
             </ApprovalCard>
-
         </div>
     );
 }

@@ -7,7 +7,8 @@ import youtube from '../../API/youtube';
 class App extends Component {
 
     state = {
-        videos: []
+        videos: [],
+        selectedVideo: null
     }
 
     onTermSubmit = async (term) => {
@@ -19,11 +20,15 @@ class App extends Component {
         this.setState({ videos: response.data.items })
     }
 
+    onVideoSelect = (video) => {
+        this.setState({ selectedVideo: video })
+    }
+
     render() {
         return (
             <div className="ui container">
                 <SearchBar onFormSubmit={this.onTermSubmit} />
-                <VideoList videos={this.state.videos} />
+                <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
             </div>
         );
     }

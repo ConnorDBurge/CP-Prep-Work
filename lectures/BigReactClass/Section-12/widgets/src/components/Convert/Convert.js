@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Convert = ({ language, text }) => {
+const Convert = (language, text) => {
     const lang = JSON.parse(language); // language is coming in a string
     const [translation, setTranslation] = useState('');
     const [debounceText, setDebounceText] = useState(text);

@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
+const GuessedLetters = ({ guessedLetters }) => {
 
-const GuessedLetters = () => {
+    const renderedLetters = guessedLetters.sort().map((letter, i) => {
+        return <li key={i}>{letter}</li>;
+    })
+
     return (
         <div>
-            GuessedLetters
+            <ul>
+                {renderedLetters}
+            </ul>
         </div>
     );
 }

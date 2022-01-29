@@ -35,16 +35,16 @@ const App = () => {
         "dog"
     ]
 
-    // words[Math.floor(Math.random() * words.length)]
-    const [puzzle, setPuzzle] = useState("northwestward");
-    const [guessedLetters, setGuessedLetters] = useState(['n', 't', 'r', 'd']);
+    // 
+    const [puzzle, setPuzzle] = useState(words[Math.floor(Math.random() * words.length)]);
+    const [guessedLetters, setGuessedLetters] = useState([]);
 
     return (
         <div>
             <h1>Welcome to Hangman</h1>
-            <Puzzle puzzle={puzzle} guessedLetters={guessedLetters} />
-            <Input />
-            <GuessedLetters />
+            <Puzzle puzzle={puzzle} guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters} />
+            <Input puzzle={puzzle} guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters} />
+            <GuessedLetters guessedLetters={guessedLetters} />
         </div>
     );
 }

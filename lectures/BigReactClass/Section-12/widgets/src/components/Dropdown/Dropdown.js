@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const Dropdown = ({ options, selected, onSelectedChange, color }) => {
+const Dropdown = ({ options, selected, onSelectedChange }) => {
 
     const [open, setOpen] = useState(false);
     const ref = useRef();
@@ -52,7 +52,7 @@ const Dropdown = ({ options, selected, onSelectedChange, color }) => {
                     className={`ui selection dropdown ${open ? 'visible active' : ''}`}
                     onClick={() => setOpen(!open)}>
                     <i className='dropdown icon'></i>
-                    <div className='text' style={{ color: `${color}` }}>{JSON.parse(selected).label}</div>
+                    <div className='text'>{JSON.parse(selected).label}</div>
                     <div className={`menu ${open ? 'visible transition' : ''}`}>
                         {renderedOptions}
                     </div>

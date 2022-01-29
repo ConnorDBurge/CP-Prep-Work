@@ -36,13 +36,20 @@ const App = () => {
     ];
 
     const [selected, setSelected] = useState(JSON.stringify(options[0]));
+    const [color, setColor] = useState(JSON.parse(selected).value); // red
     const [showDropdown, setShowDropdown] = useState(true);
+
+    const selectedChange = (option) => {
+        setSelected(option);
+        const object = JSON.parse(option);
+        setColor(object.value)
+    }
 
     return (
         <div>
             <button onClick={() => setShowDropdown(!showDropdown)}>Toggle Dropdown</button>
             {showDropdown ?
-                <Dropdown options={options} selected={selected} onSelectedChange={setSelected} /> : null}
+                <Dropdown options={options} selected={selected} onSelectedChange={selectedChange} color={color} /> : null}
         </div>
     );
 }

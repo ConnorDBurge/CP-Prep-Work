@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import News from './data/news.json';
-import navItems from './data/navItems.json';
+import News from '../../data/news.json';
+import navItems from '../../data/navItems.json';
 import './App.css';
-import AppNav from './components/AppNav/AppNav.js';
-import ArticleTeaser from './components/ArticleTeaser/ArticleTeaser.js'
-import Article from './components/Article/Article.js'
+import AppNav from '../AppNav/AppNav';
+import ArticleTeaser from '../ArticleTeaser/ArticleTeaser';
+import Article from '../Article/Article.js'
 
 class App extends Component {
   constructor(props) {

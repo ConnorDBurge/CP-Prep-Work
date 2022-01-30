@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Article extends Component {
   render() {
 
+    // Passed in using {...} operator in App.js
     const { title, created_date, abstract, byline, image } = this.props;
 
     return (

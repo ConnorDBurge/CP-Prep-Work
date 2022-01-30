@@ -14,12 +14,14 @@ class ArticleList extends Component {
           id={index}
           title={article.title}
           created_date={article.created_date}
-          handleTitleClick={(articleID) => { console.log(articleID) }} />
+          handleTitleClick={() => handleTitleClick(index)} />
       )
     })
 
     return (
-      <div></div>
+      <div>
+        {renderedArticleTeasers}
+      </div>
     );
   }
 }

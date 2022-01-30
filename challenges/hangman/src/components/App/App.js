@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Puzzle from '../Puzzle/Puzzle';
 import Input from '../Input/Input';
 import GuessedLetters from '../GuessedLetters/GuessedLetters';
+import './styles/App.css';
 
 const App = () => {
 
@@ -40,11 +41,13 @@ const App = () => {
     const [guessedLetters, setGuessedLetters] = useState([]);
 
     return (
-        <div>
-            <h1>Welcome to Hangman</h1>
-            <Puzzle puzzle={puzzle} guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters} />
-            <Input puzzle={puzzle} guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters} />
-            <GuessedLetters guessedLetters={guessedLetters} />
+        <div className="container">
+            <div className="app">
+                <h1 className="app__header">Welcome to Hangman</h1>
+                <Puzzle puzzle={puzzle} guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters} />
+                <Input puzzle={puzzle} guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters} />
+                <GuessedLetters guessedLetters={guessedLetters} />
+            </div>
         </div>
     );
 }

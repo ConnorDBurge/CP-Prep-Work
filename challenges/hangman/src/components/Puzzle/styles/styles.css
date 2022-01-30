@@ -1,0 +1,10 @@
+.rendered {
+  font-family: 'Lucida Grande';
+  font-size: 3rem;
+  margin: 0;
+}
+
+.rendered__letter {
+  margin: 0 5px;
+}
+/*# sourceMappingURL=styles.css.map */

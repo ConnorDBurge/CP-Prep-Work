@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/styles.css';
 
 const Puzzle = ({ puzzle, guessedLetters, setGuessedLetters }) => {
 
@@ -12,9 +13,9 @@ const Puzzle = ({ puzzle, guessedLetters, setGuessedLetters }) => {
     // renders puzzle word with correct guesses
     const renderedPuzzle = puzzleLetters.map((letter, i) => {
         if (wrongLetters < 6 && guessedLetters.includes(letter)) {
-            return <span key={i}> {letter} </span>;
+            return <span className="rendered__letter" key={i}> {letter} </span>;
         } else {
-            return <span key={i}> _ </span>;
+            return <span className="rendered__letter" key={i}> _ </span>;
         }
     })
 
@@ -26,7 +27,7 @@ const Puzzle = ({ puzzle, guessedLetters, setGuessedLetters }) => {
 
     return (
         <div>
-            <h2>{renderedPuzzle}</h2>
+            <h2 className="rendered">{renderedPuzzle}</h2>
         </div>
     );
 }

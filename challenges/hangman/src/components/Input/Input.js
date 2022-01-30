@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './styles/Input.css';
 
 const Input = ({ guessedLetters, setGuessedLetters, puzzle }) => {
 
@@ -13,12 +14,13 @@ const Input = ({ guessedLetters, setGuessedLetters, puzzle }) => {
     }, [letter])
 
     return (
-        <div>
+        <div className='input'>
             <input
                 type="text"
                 value='' // resets the input to blank
-                placeholder="Enter a letter"
-                onChange={(e) => setLetter(e.target.value)} />
+                onChange={(e) => setLetter(e.target.value)}
+                className='input__box'
+            />
         </div>
     );
 }

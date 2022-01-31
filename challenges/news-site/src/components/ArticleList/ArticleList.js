@@ -5,7 +5,7 @@ class ArticleList extends Component {
 
   render() {
 
-    const { articles, handleTitleClick } = this.props;
+    const { articles } = this.props;
 
     const renderedArticleTeasers = articles.map((article, index) => {
       return (
@@ -13,8 +13,7 @@ class ArticleList extends Component {
           key={index}
           id={index}
           title={article.title}
-          created_date={article.created_date}
-          handleTitleClick={() => handleTitleClick(index)} />
+          created_date={article.created_date} />
       )
     })
 

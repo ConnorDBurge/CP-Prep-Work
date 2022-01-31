@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ArticleTeaser extends Component {
   render() {
@@ -9,11 +10,7 @@ class ArticleTeaser extends Component {
     const { id, title, created_date: createdDate, handleTitleClick } = this.props;
     return (
       <div>
-        <a href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            handleTitleClick(id);
-          }}>{title}</a>
+        <Link to={`/articles/${id}`}>{title}</Link>
         <p>{createdDate}</p>
       </div>
     )

@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 class Article extends Component {
   render() {
-    const { title, created_date: createdDate, abstract, byline, image } = this.props;
+    const { title, created_date: createdDate, abstract, byline, multimedia } = this.props;
     return (
       <div>
-        <h1>{ title }</h1>
-        <p>{ createdDate }</p>
-        { byline && <h2>{ byline }</h2> }
-        { image && <img src={ image }/> }
-        <p>{ abstract }</p>
+        <h1>{title}</h1>
+        <p>{createdDate}</p>
+        {byline && <h2>{byline}</h2>}
+        {multimedia && <img src={multimedia[0].url} />}
+        <p>{abstract}</p>
       </div>
     )
   }

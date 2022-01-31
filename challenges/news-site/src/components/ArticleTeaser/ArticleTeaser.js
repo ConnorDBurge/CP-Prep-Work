@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 class ArticleTeaser extends Component {
   render() {
@@ -7,11 +7,12 @@ class ArticleTeaser extends Component {
         taking the value of created_date from this.props and setting it to
         a new variable called createdDate
     */
-    const { id, title, created_date: createdDate, handleTitleClick } = this.props;
+    const { id, title, created_date: createdDate } = this.props;
     return (
       <div>
         <Link to={`/articles/${id}`}>{title}</Link>
         <p>{createdDate}</p>
+        <Outlet />
       </div>
     )
   }

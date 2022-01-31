@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import Article from '../components/Article/Article.js'
 import News from '../data/news.json';

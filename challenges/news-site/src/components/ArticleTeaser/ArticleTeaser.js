@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
 
 class ArticleTeaser extends Component {
   render() {
@@ -9,11 +10,13 @@ class ArticleTeaser extends Component {
     */
     const { id, title, created_date: createdDate } = this.props;
     return (
-      <div>
-        <Link to={`/articles/${id}`}>{title}</Link>
-        <p>{createdDate}</p>
+      <Card>
+        <Card.Header><Link to={`/articles/${id}`}>{title}</Link></Card.Header>
+        <Card.Body>
+          <Card.Subtitle className="mb-2 text-muted">{createdDate}</Card.Subtitle>
+        </Card.Body>
         <Outlet />
-      </div>
+      </Card>
     )
   }
 }

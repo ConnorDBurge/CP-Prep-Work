@@ -14,8 +14,6 @@ class App extends Component {
 
     return (
       <div>
-        <h1>AppNav Component</h1>
-        <hr />
         <AppNav navItems={navItems} handleNavClick={(clickedItem) => console.log(clickedItem)} />
         <Router>
           <Routes>

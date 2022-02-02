@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import ArticleTeaser from '../ArticleTeaser/ArticleTeaser.js'
+import ArticleTeaser from '../ArticleTeaser/ArticleTeaser.js';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class ArticleList extends Component {
-
   render() {
-
-    const { articles } = this.props;
-
-    const renderedArticleTeasers = articles.map((article, index) => {
-      return (
-        <ArticleTeaser
-          key={index}
-          id={index}
-          title={article.title}
-          created_date={article.created_date} />
-      )
-    })
-
+    const { articles, handleTitleClick } = this.props;
     return (
-      <div>
-        {renderedArticleTeasers}
-      </div>
+      <ListGroup>
+        {articles.map((article, index) => (
+          <ListGroupItem key={index}>
+            <ArticleTeaser {...article} id={index + 1} />
+          </ListGroupItem>
+        ))}
+      </ListGroup>
     );
   }
 }
 
 export default ArticleList;
+
+
+// Functional solution:
+// function ArticleList({ articles, handleTitleClick }) {
+//   return (
+//     <ListGroup>
+//       {articles.map((article, index) => (
+//         <ListGroupItem>
+//           <ArticleTeaser {...article} id={ index + 1 }
+//              handleTitleClick={handleTitleClick} />
+//         </ListGroupItem>
+//       ))}
+//     </ListGroup>
+//   );
+// }

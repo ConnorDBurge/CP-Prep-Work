@@ -1,16 +1,40 @@
 import React, { Component } from 'react';
-import { useNavigate } from 'react-router-dom' // used in function components
 import ArticleList from '../components/ArticleList/ArticleList.js'
-import News from '../data/news.json';
+import ArticleAPI from '../api/ArticlesAPI';
 
 class HomePage extends Component {
-  render() {
-    return (
-      <div>
-        <ArticleList articles={News} />
-      </div>
-    );
-  }
+
+	state = {
+		news: []
+	}
+
+	async componentDidMount() {
+		try {
+			const articles = await ArticleAPI.fetchArticles();
+			this.setState({ news: articles });
+		} catch (err) {
+			console.error(err);
+		}
+	}
+
+	render() {
+		return (
+			<div>
+				<ArticleList articles={this.state.news} />
+			</div>
+		);
+	}
 }
 
 export default HomePage;
+
+
+// Functional solution:
+// function HomePage() {
+//   return (
+//     <div>
+//       <ArticleList articles={News}
+//         handleTitleClick={(articleID) => props.history.push(`/articles/${articleID}`)} />
+//     </div>
+//   );
+// }

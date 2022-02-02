@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
+import { Media } from 'reactstrap';
+import "./article.css";
 
 class Article extends Component {
   render() {
-    const { title, created_date: createdDate, abstract, byline, multimedia } = this.props;
+    const { title, created_date: createdDate, abstract, byline, image } = this.props;
     return (
-      <div>
-        <Card>
-          {byline && <Card.Header>{byline}</Card.Header>}
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-            <Card.Subtitle>{createdDate}</Card.Subtitle>
-            <Card.Text>{abstract}</Card.Text>
-            {multimedia && <img src={multimedia[0].url} />}
-          </Card.Body>
-        </Card>
-      </div>
+      <Media>
+        <Media left>
+          { image && <img className="image" src={ image }/> }
+        </Media>
+        <Media body className="body">
+          <Media heading>{ title }</Media>
+          <p>{ createdDate }</p>
+          { byline && <p>{ byline }</p> }
+          <p>{ abstract }</p>
+        </Media>
+      </Media>
     )
   }
 }
@@ -26,12 +27,16 @@ export default Article;
 // Functional solution:
 // function Article({ title, created_date: createdDate, abstract, byline, image }) {
 //   return (
-//     <div>
-//       <h1>{ title }</h1>
-//       <p>{ createdDate }</p>
-//       { byline && <h2>{byline}</h2> }
-//       { image && <img src={image} /> }
-//       <p>{ abstract }</p>
-//     </div>
+//     <Media>
+//        <Media left>
+//          {image && <img src={image} />}
+//        </Media>
+//        <Media body>
+//          <Media heading>{title}</Media>
+//          <p>{createdDate}</p>
+//          {byline && <h2>{byline}</h2>}
+//          <p>{abstract}</p>
+//        </Media>
+//      </Media >
 //   );
 // }

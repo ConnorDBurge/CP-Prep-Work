@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
+import { ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class ArticleTeaser extends Component {
   render() {
@@ -10,13 +10,12 @@ class ArticleTeaser extends Component {
     */
     const { id, title, created_date: createdDate } = this.props;
     return (
-      <Card>
-        <Card.Header><Link to={`/articles/${id}`}>{title}</Link></Card.Header>
-        <Card.Body>
-          <Card.Subtitle className="mb-2 text-muted">{createdDate}</Card.Subtitle>
-        </Card.Body>
-        <Outlet />
-      </Card>
+      <div key={id}>
+        <ListGroupItemHeading>
+          <Link to={`/articles/${id}`}>{title}</Link>
+        </ListGroupItemHeading>
+        <ListGroupItemText>{createdDate}</ListGroupItemText>
+      </div>
     )
   }
 }
@@ -28,8 +27,13 @@ export default ArticleTeaser;
 // function ArticleTeaser({ id, title, created_date: createdDate, handleTitleClick }) {
 //   return (
 //     <div>
-//       <a onClick={ () => handleTitleClick(id) }>{ title }</a>
-//       <p>{ createdDate }</p>
+//       <ListGroupItemHeading>
+//         <a onClick={(e) => {
+//           e.preventDefault();
+//           handleTitleClick(id);
+//         }}>{title}</a>
+//       </ListGroupItemHeading>
+//       <ListGroupItemText>{createdDate}</ListGroupItemText>
 //     </div>
 //   );
 // }

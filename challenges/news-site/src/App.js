@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import navItems from './data/navItems.json';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import navItems from './config/Sections.json';
+import './App.css';
 import AppNav from './components/AppNav/AppNav.js';
-import HomePage from './pages/HomePage';
-import ArticlePage from './pages/ArticlePage';
+import HomePage from './pages/HomePage.js';
+import ArticlePage from './pages/ArticlePage.js';
+
 class App extends Component {
+
   state = {
     navItems: navItems
   }
 
   render() {
-    const { navItems } = this.state
+    const { navItems } = this.state;
 
     return (
       <div>
         <AppNav navItems={navItems} handleNavClick={(clickedItem) => console.log(clickedItem)} />
         <Router>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/articles/:articleID" element={<ArticlePage />} />
-          </Routes>
+          <div>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/articles/:articleID" component={ArticlePage} />
+          </div>
         </Router>
       </div>
     );
@@ -27,3 +30,21 @@ class App extends Component {
 }
 
 export default App;
+
+
+// Functional solution
+// function App() {
+//   const [ navItems, setNavItems ] = useState(navItems);
+
+//   return (
+//     <div>
+//       <AppNav navItems={navItems} handleNavClick={(clickedItem) => console.log(clickedItem)} />
+//       <Router>
+//         <div>
+//           <Route exact path="/" component={HomePage} />
+//           <Route exact path="/articles/:articleID" component={ArticlePage} />
+//         </div>
+//       </Router>
+//     </div>
+//   );
+// }

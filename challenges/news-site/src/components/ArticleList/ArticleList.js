@@ -4,7 +4,7 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 
 class ArticleList extends Component {
   render() {
-    const { articles, handleTitleClick } = this.props;
+    const { articles } = this.props;
     return (
       <ListGroup>
         {articles.map((article, index) => (

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class AppNav extends Component {
   render() {
@@ -8,9 +9,7 @@ class AppNav extends Component {
     return (
       <Navbar color="light">
         {navItems.map((navItem, index) =>
-          <a href="#" onClick={() => handleNavClick(navItem.value)} key={index}>
-            {navItem.label} |
-          </a>
+          <Link to={`/sections/${navItem.value}`} key={index}>{navItem.label}</Link>
         )}
       </Navbar>
     )

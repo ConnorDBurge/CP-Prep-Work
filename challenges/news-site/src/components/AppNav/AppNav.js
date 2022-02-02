@@ -9,7 +9,7 @@ class AppNav extends Component {
     return (
       <Navbar color="light">
         {navItems.map((navItem, index) =>
-          <Link to={`/sections/:${navItem.value}`} key={index}>{navItem.label}</Link>
+          <Link to={`/sections/${navItem.value}`} key={index}>{navItem.label}</Link>
         )}
       </Navbar>
     )

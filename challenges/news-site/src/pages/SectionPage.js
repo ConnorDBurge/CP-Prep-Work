@@ -1,10 +1,10 @@
 import React from 'react';
 
 const SectionPage = () => {
-    return ( 
-    <div>
-    
-    </div> );
+    return (
+        <div>
+            SectionPage
+        </div>);
 }
- 
+
 export default SectionPage;

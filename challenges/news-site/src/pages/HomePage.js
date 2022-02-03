@@ -17,10 +17,19 @@ class HomePage extends Component {
 		}
 	}
 
+	handleSearch = async (event) => {
+		try {
+			const articles = await ArticleAPI.searchArticles(event.target.value);
+			this.setState({ news: articles });
+		} catch (err) {
+			console.error(err);
+		}
+	}
+
 	render() {
 		return (
 			<div>
-				<ArticleList articles={this.state.news} />
+				<ArticleList articles={this.state.news} handleSearch={this.handleSearch} />
 			</div>
 		);
 	}

@@ -4,11 +4,11 @@ import { ListGroup, ListGroupItem, InputGroup, Input } from 'reactstrap';
 
 class ArticleList extends Component {
   render() {
-    const { articles } = this.props;
+    const { articles, handleSearch } = this.props;
     return (
       <div>
         <InputGroup>
-          <Input onChange={(e) => this.handleSearch(e)} type="text" placeholder="Search" />
+          <Input onChange={(e) => handleSearch(e)} type="text" placeholder="Search" />
         </InputGroup>
         <ListGroup>
           {articles.map((article, index) => (

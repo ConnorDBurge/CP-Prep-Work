@@ -29,8 +29,24 @@ const fetchArticles = async (filters = null) => {
 	return data;
 };
 
+const searchArticles = async (term) => {
+	if (term === '') {
+		return await tryFetch(BASE_URL);
+	} else {
+		const filter = `?filter={
+			"where": {
+			"title": {
+				"ilike": "${term}"
+			}
+			}
+		}`;
+		return await tryFetch(BASE_URL + filter);
+	}
+}
+
 export default {
 	fetchArticleByID,
 	fetchArticles,
-	fetchArticlesBySection
+	fetchArticlesBySection,
+	searchArticles
 };

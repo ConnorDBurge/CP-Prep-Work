@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ArticleList from '../components/ArticleList/ArticleList.js'
-import { fetchArticles, searchArticles } from '../api/ArticlesAPI';
+import ArticlesAPI from '../api/ArticlesAPI';
 import { InputGroup, Input } from 'reactstrap';
 
 class HomePage extends Component {
@@ -10,7 +10,7 @@ class HomePage extends Component {
 
   async componentDidMount() {
     try {
-      const articlesJson = await fetchArticles();
+      const articlesJson = await ArticlesAPI.fetchArticles();
       this.setState({ articles: articlesJson });
     } catch (e) {
       console.error('error fetching articles: ', e);
@@ -22,9 +22,9 @@ class HomePage extends Component {
     try {
       let articlesJson;
       if (!textToSearchFor) {
-        articlesJson = await fetchArticles();
+        articlesJson = await ArticlesAPI.fetchArticles();
       } else {
-        articlesJson = await searchArticles(textToSearchFor);
+        articlesJson = await ArticlesAPI.searchArticles(textToSearchFor);
       }
       this.setState({ articles: articlesJson });
     } catch (e) {

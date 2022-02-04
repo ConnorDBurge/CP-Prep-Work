@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ArticleList from '../components/ArticleList/ArticleList.js'
-import { fetchArticlesBySection } from '../api/ArticlesAPI.js'
+import ArticlesAPI from '../api/ArticlesAPI.js'
 
 class SectionPage extends Component {
   state = {
@@ -8,7 +8,7 @@ class SectionPage extends Component {
   }
 
   fetchArticles = () => {
-    fetchArticlesBySection(this.props.match.params.sectionID)
+    ArticlesAPI.fetchArticlesBySection(this.props.match.params.sectionID)
       .then((apiResponseJSON) => {
         this.setState({
           articles: apiResponseJSON

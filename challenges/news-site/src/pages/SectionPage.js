@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ArticleAPI from '../api/ArticlesAPI';
 import ArticleList from '../components/ArticleList/ArticleList';
 

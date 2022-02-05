@@ -1,15 +1,15 @@
 const BASE_URL = 'http://localhost:3001/api/users/login?include=user';
 
-const login = async (credentials) => {
+const login = (credentials) => {
     try {
-        const response = await fetch(BASE_URL, {
+        const response = fetch(BASE_URL, {
             headers: {
                 'Content-Type': 'application/json'
             },
             method: "POST",
             body: JSON.stringify(credentials)
         });
-        return await response.json();
+        return response
     } catch (err) {
         console.error(err);
     }

@@ -6,17 +6,24 @@ const AddArticle = () => {
 
     const [articleSubmitted, setArticleSubmitted] = useState(false);
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
         const article = {
             'title': `${event.target.title.value}`,
             'byline': `${event.target.byline.value}`,
             'abstract': `${event.target.abstract.value}`
         }
-        ArticleAPI.addArticle(article)
-            .then((res) => {
+        try {
+            const response = await ArticleAPI.addArticle(article);
+            if (response.status === 200) {
                 setArticleSubmitted(true);
-            });
+            } else {
+                console.log(response.status, 'Login Required')
+            }
+        } catch (error) {
+            console.error(error);
+        }
+
     }
 
 

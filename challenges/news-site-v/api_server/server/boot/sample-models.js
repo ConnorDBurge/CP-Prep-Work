@@ -3,17 +3,17 @@
 // This file is licensed under the Artistic License 2.0.
 // License text available at https://opensource.org/licenses/Artistic-2.0
 
-module.exports = function(app) {
+module.exports = function (app) {
   var User = app.models.user;
   var Role = app.models.Role;
   var RoleMapping = app.models.RoleMapping;
   var Team = app.models.Team;
 
   User.create([
-    {username: 'John', email: 'john@doe.com', password: 'opensesame'},
-    {username: 'Jane', email: 'jane@doe.com', password: 'opensesame'},
-    {username: 'Bob', email: 'bob@projects.com', password: 'opensesame'}
-  ], function(err, users) {
+    { username: 'John', email: 'john@doe.com', password: 'opensesame' },
+    { username: 'Jane', email: 'jane@doe.com', password: 'opensesame' },
+    { username: 'Bob', email: 'bob@projects.com', password: 'opensesame' }
+  ], function (err, users) {
     if (err) throw err;
 
     // console.log('Created users:', users);
@@ -22,16 +22,16 @@ module.exports = function(app) {
     users[0].projects.create({
       name: 'project1',
       balance: 100
-    }, function(err, project) {
+    }, function (err, project) {
       if (err) throw err;
 
       // console.log('Created project:', project);
 
       // add team members
       Team.create([
-        {ownerId: project.ownerId, memberId: users[0].id},
-        {ownerId: project.ownerId, memberId: users[1].id}
-      ], function(err, team) {
+        { ownerId: project.ownerId, memberId: users[0].id },
+        { ownerId: project.ownerId, memberId: users[1].id }
+      ], function (err, team) {
         if (err) throw err;
 
         // console.log('Created team:', team);
@@ -42,7 +42,7 @@ module.exports = function(app) {
     users[1].projects.create({
       name: 'project2',
       balance: 100
-    }, function(err, project) {
+    }, function (err, project) {
       if (err) throw err;
 
       // console.log('Created project:', project);
@@ -51,7 +51,7 @@ module.exports = function(app) {
       Team.create({
         ownerId: project.ownerId,
         memberId: users[1].id
-      }, function(err, team) {
+      }, function (err, team) {
         if (err) throw err;
 
         // console.log('Created team:', team);
@@ -61,7 +61,7 @@ module.exports = function(app) {
     //create the admin role
     Role.create({
       name: 'admin'
-    }, function(err, role) {
+    }, function (err, role) {
       if (err) throw err;
 
       // console.log('Created role:', role);
@@ -70,7 +70,7 @@ module.exports = function(app) {
       role.principals.create({
         principalType: RoleMapping.USER,
         principalId: users[2].id
-      }, function(err, principal) {
+      }, function (err, principal) {
         if (err) throw err;
 
         // console.log('Created principal:', principal);

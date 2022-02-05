@@ -4,7 +4,7 @@ import UsersAPI from '../api/UsersAPI';
 
 const LoginPage = () => {
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
         console.log(event.target.email.value);
         console.log(event.target.password.value);
@@ -14,7 +14,25 @@ const LoginPage = () => {
             password: event.target.password.value
         }
 
-        UsersAPI.login(credentials);
+        let userInfo = {
+            token: '',
+            username: '',
+            email: '',
+            userId: ''
+        }
+
+        try {
+            const response = await UsersAPI.login(credentials);
+            const data = await response.json()
+            userInfo.token = data.id
+            userInfo.username = data.user.username
+            userInfo.email = data.user.email
+            userInfo.userId = data.user.id
+        } catch (error) {
+            console.log(error)
+        }
+
+        console.log(userInfo)
     }
 
     return (

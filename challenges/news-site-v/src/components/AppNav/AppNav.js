@@ -7,28 +7,16 @@ class AppNav extends Component {
   render() {
     return (
       <Navbar color="light">
+        <Link to={`/`}>HOME</Link>
         {navItems.map((navItem, index) =>
           <Link to={`/sections/${navItem.value}`} key={index} >
             {navItem.label}
           </Link>
         )}
+        <Link to={`/login`}>LOGIN</Link>
       </Navbar>
     )
   }
 }
 
 export default AppNav;
-
-
-// Functional solution:
-// function AppNav() {
-//   return (
-//     <Navbar color="light">
-//       {navItems.map((navItem) =>
-//         <Link to={`/sections/${navItem.value}`} >
-//           {navItem.label}
-//         </Link>
-//       )}
-//     </Navbar>
-//   );
-// }

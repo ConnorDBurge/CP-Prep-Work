@@ -31,7 +31,7 @@ it('submits an article by calling addArticle()', (done) => {
   const articleObject = { title: 'test', byline: 'title', abstract: 'adsf' };
   return ArticlesAPI.addArticle(articleObject)
     .then((json) => {
-      const requestBody = request._calls[0][1].body;
+      const requestBody = request._calls[0].options.body;
       expect(JSON.parse(requestBody)).toEqual(articleObject);
       expect(json.ok).toEqual(true);
       done();

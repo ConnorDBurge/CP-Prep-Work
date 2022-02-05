@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import ArticleAPI from '../api/ArticlesAPI';
 
-const AddArticle = () => {
+const AddArticle = (props) => {
 
     const [articleSubmitted, setArticleSubmitted] = useState(false);
 
@@ -14,11 +14,17 @@ const AddArticle = () => {
             'abstract': `${event.target.abstract.value}`
         }
         try {
-            const response = await ArticleAPI.addArticle(article);
-            if (response.status === 200) {
-                setArticleSubmitted(true);
+            if (props.userInfo) {
+                const token = props.userInfo.token
+                console.log(token);
+                const response = await ArticleAPI.addArticle(article);
+                if (response.status === 200) {
+                    setArticleSubmitted(true);
+                } else {
+                    console.log(response.status, 'Login Required')
+                }
             } else {
-                console.log(response.status, 'Login Required')
+                throw new Error('No Token Was Found')
             }
         } catch (error) {
             console.error(error);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
 import UsersAPI from '../api/UsersAPI';
 
-const LoginPage = () => {
+const LoginPage = ({ setUserInfo }) => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -28,11 +28,10 @@ const LoginPage = () => {
             userInfo.username = data.user.username
             userInfo.email = data.user.email
             userInfo.userId = data.user.id
+            setUserInfo(userInfo);
         } catch (error) {
             console.log(error)
         }
-
-        console.log(userInfo)
     }
 
     return (

@@ -9,22 +9,35 @@ import AddArticle from './pages/AddArticle.js';
 import LoginPage from './pages/LoginPage.js';
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <Router>
-          <div>
-            <AppNav />
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/articles/:articleID" component={ArticlePage} />
-            <Route exact path="/sections/:sectionID" component={SectionPage} />
-            <Route exact path="/add-article" component={AddArticle} />
-            <Route exact path="/login" component={LoginPage} />
-          </div>
-        </Router>
-      </div>
-    );
-  }
+
+	state = {
+		userInfo: null
+	}
+
+	setUserInfo = (userInfoObject) => {
+		this.setState({ userInfo: userInfoObject })
+	}
+
+	render() {
+		return (
+			<div>
+				<Router>
+					<div>
+						<AppNav />
+						<Route exact path="/" component={HomePage} />
+						<Route exact path="/articles/:articleID" component={ArticlePage} />
+						<Route exact path="/sections/:sectionID" component={SectionPage} />
+						<Route exact path="/add-article" >
+							<AddArticle userInfo={this.state.userInfo} />
+						</Route>
+						<Route exact path="/login">
+							<LoginPage userInfo={this.state.userInfo} setUserInfo={this.setUserInfo} />
+						</Route>
+					</div>
+				</Router >
+			</div >
+		);
+	}
 }
 
 export default App;

@@ -43,16 +43,16 @@ const searchArticles = async (term) => {
 	}
 }
 
-const addArticle = async (articleObject) => {
+const addArticle = (articleObject, token) => {
 	try {
-		const response = await fetch(BASE_URL, {
+		return fetch(BASE_URL, {
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Authorization': token
 			},
 			method: "POST",
 			body: JSON.stringify(articleObject)
 		});
-		return response.json();
 	} catch (err) {
 		console.error(err);
 	}

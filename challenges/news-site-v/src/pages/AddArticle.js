@@ -2,21 +2,34 @@ import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import ArticleAPI from '../api/ArticlesAPI';
 
-const AddArticle = () => {
+const AddArticle = (props) => {
 
     const [articleSubmitted, setArticleSubmitted] = useState(false);
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
         const article = {
             'title': `${event.target.title.value}`,
             'byline': `${event.target.byline.value}`,
             'abstract': `${event.target.abstract.value}`
         }
-        ArticleAPI.addArticle(article)
-            .then((res) => {
-                setArticleSubmitted(true);
-            });
+        try {
+            if (props.userInfo) {
+                const token = props.userInfo.token
+                console.log(token);
+                const response = await ArticleAPI.addArticle(article);
+                if (response.status === 200) {
+                    setArticleSubmitted(true);
+                } else {
+                    console.log(response.status, 'Login Required')
+                }
+            } else {
+                throw new Error('No Token Was Found')
+            }
+        } catch (error) {
+            console.error(error);
+        }
+
     }
 
 

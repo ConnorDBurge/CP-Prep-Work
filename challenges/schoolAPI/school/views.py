@@ -1,9 +1,12 @@
 from http.client import HTTPResponse
 from django.http import JsonResponse
 from .models import Student, Course
+from .serializer import StudentSerializer
 
 def all_students(request):
-    pass
+    students = Student.objects.all()
+    serialized_students = StudentSerializer(students).all_students
+    return JsonResponse(data=serialized_students, status=200)
 
 def detail_student(request, student_id):
     pass

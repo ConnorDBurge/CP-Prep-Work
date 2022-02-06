@@ -86,3 +86,17 @@ def delete_course(request, course_id):
     course = Course.objects.get(id=course_id)
     course.delete()
     return JsonResponse(data={'message': 'Course deleted'}, status=200)  
+
+@csrf_exempt
+def enroll_student(request, course_id, student_id):
+    course = Course.objects.get(id=course_id)
+    student = Student.objects.get(id=student_id)
+    course.students.add(student)
+    return JsonResponse(data={'message': f'{student.first_name} {student.last_name} enrolled in {course.course_name}'}, status=200)
+
+@csrf_exempt
+def drop_student(request, course_id, student_id):
+    course = Course.objects.get(id=course_id)
+    student = Student.objects.get(id=student_id)
+    course.students.remove(student)
+    return JsonResponse(data={'message': f'{student.first_name} {student.last_name} dropped from {course.course_name}'}, status=200)

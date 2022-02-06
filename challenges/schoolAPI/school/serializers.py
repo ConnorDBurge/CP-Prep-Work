@@ -14,3 +14,10 @@ class StudentSerializer(object):
             }
             output['students'].append(student_data)
         return output
+    
+    @property
+    def detail_student(self):
+        return {
+                'first_name': self.data.first_name,
+                'last_name': self.data.last_name
+            }

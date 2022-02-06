@@ -8,7 +8,9 @@ def all_students(request):
     return JsonResponse(data=serialized_students, status=200)
 
 def detail_student(request, student_id):
-    pass
+    student = Student.objects.get(id=student_id)
+    serialized_student = StudentSerializer(student).detail_student
+    return JsonResponse(data=serialized_student, status=200)
 
 def edit_student(request, student_id):
     pass

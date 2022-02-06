@@ -1,7 +1,6 @@
-from http.client import HTTPResponse
 from django.http import JsonResponse
 from .models import Student, Course
-from .serializer import StudentSerializer
+from .serializers import StudentSerializer
 
 def all_students(request):
     students = Student.objects.all()
